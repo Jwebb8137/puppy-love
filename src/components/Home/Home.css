@@ -1,0 +1,61 @@
+#main-img {
+  width: 100%;
+}
+
+.main {
+  background: #f8e5e5;
+  height: 100%;
+  padding-bottom: 25px;
+}
+
+.container {
+  padding: 0 .5em;
+}
+
+h1 {
+  color: #000;
+  font-size: 2.5em;
+  margin-top: .75em;
+}
+
+h1, h2, h3, .info-container, .add-container {
+  font-family: 'Grandstander', cursive;
+}
+
+.sub-heading {
+  font-size: 1.25em;
+  margin-top: 1.25em;
+  padding: 0 .65em;
+}
+
+.font-alt {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.sub-text {
+  margin-top: .75em;
+}
+
+.sign-up-btn {
+  border-radius: .2em;
+  font-size: 1.5em;
+  margin-top: 1em;
+  padding: .25em .5em;
+}
+
+.mt-10 {
+  margin-top: 1em;
+}
+
+.lg-icon {
+  font-size: 3em;
+}
+
+.pink {
+  color: #FA255E;
+}
+
+.photo-100 {
+  margin-top: 1rem;
+  width: 100%;
+}

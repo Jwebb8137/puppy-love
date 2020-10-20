@@ -1,0 +1,23 @@
+.img-bubble {
+  border-radius: 50%;
+  width: 50px !important;
+}
+
+.profile-name {
+  font-size: 1.5rem;
+  margin: 1.5rem auto 1rem;
+}
+
+.icon-container {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.flex-2 {
+  flex: 2;
+}

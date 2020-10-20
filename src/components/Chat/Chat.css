@@ -1,0 +1,36 @@
+.chat-container {
+  width: 100vw;
+}
+
+.k-chat {
+  background-color: #fff;
+  border: 1px solid #000;
+  border-radius: 5px;
+  font-family: 'Grandstander', cursive;
+  font-size: .9rem;
+  width: 100vw !important;
+}
+
+.k-chat .k-alt .k-bubble {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  background-color: #fd4e7e;
+}
+
+.k-bubble {
+  border: 1px solid #000 !important;
+  margin-top: 8px;
+  padding: 15px 15px !important;
+}
+
+.k-chat .k-message-box {
+  border-color: inherit;
+  color: #fff;
+  background-color: #fd4e7e;
+}
+
+.bg-off-white {
+  background: #f5f5f5;
+  padding-bottom: 35px;
+}
+

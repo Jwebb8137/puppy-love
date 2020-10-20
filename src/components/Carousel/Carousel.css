@@ -1,0 +1,21 @@
+.profile-bg {
+  background: #fff;
+  height: 25vh;
+}
+
+.control-dots, .carousel-status  {
+  display: none !important;
+}
+
+.carousel.carousel-slider .control-arrow {
+    background: gray;
+}
+
+.carousel .slider-wrapper.axis-horizontal .slider .slide {
+  background: #fff;
+}
+
+.carousel.carousel-slider {
+  border-radius: 10px;
+}
+

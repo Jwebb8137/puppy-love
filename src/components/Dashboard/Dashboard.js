@@ -1,0 +1,95 @@
+import React, {Fragment, useState, useEffect} from "react";
+import './Dashboard.css';
+
+const Dashboard = ({ setAuth }) => {
+
+  const [userInfo, setUserInfo] = useState("");
+
+  async function getName() {
+    try {
+      const response = await fetch("/dashboard/", {
+        method: "GET",
+        headers: { token: localStorage.token }
+      });
+
+      const parseRes = await response.json();
+
+      setUserInfo(parseRes)
+
+      console.log(parseRes)
+
+    } catch (err) {
+      console.error(err.message)
+    }
+  }
+
+  const { user_id, headline, age, description, email, first_name, gender, last_name, pet_description, pet_name, pet_type, photo_url, seeking_gender, username} = userInfo;
+
+  const logout = e => {
+    e.preventDefault();
+    localStorage.removeItem("token");
+    setAuth(false);
+  }
+
+  useEffect(() => {
+    getName()
+  }, []);
+  return (
+    <Fragment>
+      <div className="dash-container">
+        <div className="container">
+          <div className="row mt-5">
+            <button className="dash-btn" onClick={e => logout(e)}>Logout <i class="fas fa-sign-in-alt"></i></button>
+            {/* <button className="dash-btn" onClick={e => logout(e)}>Edit Profile <i class="fas fa-edit"></i></button> */}
+          </div>
+        </div>
+        <h2 className="mt-10 dash-header"><i class="fas fa-paw"></i> <span className="pink">{first_name}'s Account</span> <i class="fas fa-paw"></i></h2>
+        <div className="img-container">
+         <img className="mt-5 dash-img" src={photo_url} />
+        </div>
+        <div className="info-container">
+          <button className="dash-btn float-r" onClick={e => logout(e)}>Edit Profile</button>
+          <h2 className="mt-5"><span className="pink">My Info</span></h2>          
+          <div className="info-row">
+            <p>Email: <span className="font-alt">{email}</span></p>
+          </div>
+          <div className="info-row">
+            <p>Username: <span className="font-alt">{username}</span></p>
+          </div>
+          <div className="info-row">
+            <p>Headline: <span className="font-alt">{headline}</span></p>
+          </div>
+          <div className="info-row">
+            <p>First Name: <span className="font-alt">{first_name}</span></p>
+          </div>
+          <div className="info-row">
+            <p>Last Name: <span className="font-alt">{last_name}</span></p>
+          </div>
+          <div className="info-row">
+            <p>Description: <span className="font-alt">{description}</span></p>
+          </div>
+          <div className="info-row">
+            <p>Age: <span className="font-alt">{age}</span></p>
+          </div>
+          <div className="info-row">
+            <p>Gender: <span className="font-alt">{gender}</span></p>
+          </div>
+          <div className="info-row">
+            <p>Seeking: <span className="font-alt">{seeking_gender}</span></p>
+          </div>
+          <div className="info-row">
+            <p>Pet Name: <span className="font-alt">{pet_name}</span></p>
+          </div>
+          <div className="info-row">
+            <p>Pet Type: <span className="font-alt">{pet_type}</span></p>
+          </div>
+          <div className="info-row">
+            <p>Pet Description: <span className="font-alt">{pet_description}</span></p>
+          </div>
+        </div>
+      </div>
+    </Fragment>
+  )
+}
+
+export default Dashboard;

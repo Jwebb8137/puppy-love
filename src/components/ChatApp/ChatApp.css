@@ -1,0 +1,27 @@
+.chat-header{
+  margin: 25px auto;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #fff;
+  opacity: 1; /* Firefox */
+}
+
+.k-author {
+  color: #fd4e7e;
+}
+
+.loading-msg {
+  font-size: 2rem;
+  min-height: 100vh;
+  padding-top: 20vh;
+}
+
+.chat-name {
+  display: block;
+  margin-top: 10px;
+}
+
+.support-text {
+  font-size: 1rem;
+}

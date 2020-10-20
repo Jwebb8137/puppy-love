@@ -1,0 +1,188 @@
+import React, { Component, Fragment } from 'react';
+import Chat from 'twilio-chat';
+import * as ReactDOM from 'react-dom';
+import './ChatApp.css';
+import ProfilePic from '../../images/profile1.jpg'
+import { Chat as ChatUI } from '@progress/kendo-react-conversational-ui';
+
+function MessageTemplate(props) {
+  return (
+      <div className="k-bubble">
+          <div>{props.item.text}</div>
+      </div>
+  );
+}
+
+class ChatApp extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      error: null,
+      isLoading: true,
+      messages: []
+    };
+
+    this.user = {
+      id: props.username,
+      name: props.username,
+      avatarUrl: ProfilePic
+    };
+
+    this.setupChatClient = this.setupChatClient.bind(this);
+    this.messagesLoaded = this.messagesLoaded.bind(this);
+    this.messageAdded = this.messageAdded.bind(this);
+    this.sendMessage = this.sendMessage.bind(this);
+    this.handleError = this.handleError.bind(this);
+
+  }
+
+  componentDidMount() {
+    console.log(this.props.targetUser)
+    fetch('/chat/token', {
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      method: 'POST',
+      body: `identity=${encodeURIComponent(this.props.username)}`
+    })
+      .then(res => res.json())
+      .then(data => Chat.create(data.token))
+      .then(this.setupChatClient)
+      .catch(this.handleError);
+  }
+
+  handleError(error) {
+    console.error(error);
+    this.setState({
+      error: 'Could not load chat.'
+    });
+  }
+
+  setupChatClient(client) {
+    const uid = `${this.props.currentUser*this.props.targetUser}`;
+    console.log(this.props.currentUser)
+    this.client = client;
+    this.client
+      .getChannelByUniqueName(uid)
+      .then(channel => channel)
+      .catch(error => {
+        if (error.body.code === 50300) {
+          return this.client.createChannel({ uniqueName: uid });
+        } else {
+          this.handleError(error);
+        }
+      })
+      .then(channel => {
+        this.channel = channel;
+        return this.channel.join().catch(() => {});
+      })
+      .then(() => {
+        this.setState({ isLoading: false });
+        this.channel.getMessages().then(this.messagesLoaded);
+        this.channel.on('messageAdded', this.messageAdded);
+      })
+      .catch(this.handleError);
+  }
+
+  twilioMessageToKendoMessage(message) {
+    console.log(message)
+    return {
+      text: message.body,
+      author: { id: message.author, name: message.author },
+      timestamp: message.state.timestamp
+    };
+  }
+
+  messagesLoaded(messagePage) {
+    this.setState({
+      messages: messagePage.items.map(this.twilioMessageToKendoMessage)
+    });
+  }
+
+  messageAdded(message) {
+    this.setState(prevState => ({
+      messages: [
+        ...prevState.messages,
+        this.twilioMessageToKendoMessage(message)
+      ]
+    }));
+  }
+
+  sendMessage(event) {
+    this.channel.sendMessage(event.message.text);
+  }
+
+  handleInputChange = (e) => {
+    let file = e.target.files[0];
+    let reader = new FileReader();
+    reader.onloadend = (event) => {
+        let message = {
+            author: this.user,
+            text: '',
+            attachments: [{
+                content: event.target.result,
+                contentType: 'image'
+            }]
+        }
+        this.setState((prevState) => ({
+            messages: [
+                ...prevState.messages,
+                message
+            ],
+        }));
+    };
+    reader.readAsDataURL(file);
+  }
+
+  uploadButton = (props) => {
+    return (
+        <React.Fragment>
+            <input type='file' onChange={this.handleInputChange} style={{display: 'none'}} ref={el => this.fileUpload = el}/>
+            <button className={'k-button k-flat k-button-icon'}  onClick={() => this.fileUpload.click()}>
+                <span className={'k-icon ' + props.icon} style={{fontSize: '20px'}}/>
+            </button>
+        </React.Fragment>
+    )
+  }
+
+  customMessage = (props) => {
+    return <React.Fragment>
+        {props.sendButton}
+        {props.messageInput}
+        {this.uploadButton({icon: 'k-i-image-insert'})}
+    </React.Fragment>;
+  }
+
+  componentWillUnmount() {
+    this.client.shutdown();
+  }
+
+  render() {
+    if (this.state.error) {
+      return <p>{this.state.error}</p>;
+    } else if (this.state.isLoading) {
+      return <p className="loading-msg">Loading chat... <br />
+        <i class="fas fa-paw pink mt-5"></i></p>;
+    }
+    return (
+      <Fragment>
+        <div className="container bg-off-white">
+          <h2 className="chat-header">
+            <span className="support-text">Now Chatting With ...</span>
+            <span className="chat-name"><i class="fas fa-paw pink"></i> {this.props.targetUsername} <span className="pink">&</span> {this.props.targetPet} <i class="fas fa-paw pink"></i>
+            </span>
+          </h2>
+          <ChatUI
+            user={this.user}
+            messages={this.state.messages}
+            onMessageSend={this.sendMessage}
+            width={500}
+            messageBox={this.customMessage}
+            messageTemplate={MessageTemplate}
+            placeholder={'Type a message...'}
+          />
+        </div>
+      </Fragment>
+    );
+  }
+}
+
+export default ChatApp;

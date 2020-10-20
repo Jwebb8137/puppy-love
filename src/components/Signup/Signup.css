@@ -1,0 +1,200 @@
+.input-field {
+  font-size: 16px;
+  margin: .5em auto;
+}
+
+textarea {
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-top: .75rem;
+  padding: 10px;
+  height: 25vh;
+  width: 100%;
+}
+
+.signup {
+  background-image: url("../../images/signup-bg.jpg");
+  background-size: cover;
+  height: 100%;
+  min-height: 100vh;
+  padding: 15vh 0;
+}
+
+.form-container {
+  background: #F8E5E5;
+  border-radius: 5px;
+  font-family: 'Grandstander', cursive;
+  margin: 1rem;
+  padding: 1.75rem 1rem;
+}
+
+input[typeOf="text"], input[typeOf="email"], input[type="password"] {
+  border: 1px solid black;
+  border-radius: 5px;
+  font-size: 20px;
+  margin: .25rem auto 0;
+  padding: 6px 5px;
+}
+
+.form-helper-text {
+  font-size: .7rem;
+}
+
+select {
+  border: 1px solid black;
+  border-radius: 5px;
+  font-size: 18px;
+  margin: .25rem auto 1rem;
+  padding: 6px 3px;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.row {
+  display: flex;
+  flex: 1;
+}
+
+.mt-5 {
+  margin-top: 20px;
+}
+
+.sub-heading-alt {
+  font-size: 1.5rem;
+}
+
+.line-height-alt {
+  line-height: 2em;
+}
+
+.signup-heading {
+  color: white;
+  font-size: 2.75rem;
+  margin-top: 2rem;
+}
+
+.signup-sub-heading {
+  font-size: 1.75rem;
+  margin-bottom: 0;
+}
+
+.fa-user-circle {
+  color: #282c34;
+  display: block;
+  font-size: 7rem;
+  margin: 1rem;
+}
+
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.inputfile + label {
+  font-size: .8em;
+  font-weight: 700;
+  color: #282c34;
+  background-color: white;
+  border: 1px solid black;
+  display: inline-block;
+  padding: .7rem .5rem;
+}
+
+.inputfile:focus + label,
+.inputfile + label:hover {
+  background-color: black;
+  color: white;
+}
+
+.inputfile + label {
+	cursor: pointer; /* "hand" cursor */
+}
+
+.inputfile:focus + label {
+	outline: 1px dotted #000;
+	outline: -webkit-focus-ring-color auto 5px;
+}
+
+.petinputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.petinputfile + label {
+  font-size: .8em;
+  font-weight: 700;
+  color: #282c34;
+  background-color: white;
+  border: 1px solid black;
+  display: inline-block;
+  padding: .7rem .5rem;
+}
+
+.petinputfile:focus + label,
+.petinputfile + label:hover {
+  background-color: black;
+  color: white;
+}
+
+.petinputfile + label {
+	cursor: pointer; /* "hand" cursor */
+}
+
+.petinputfile:focus + label {
+	outline: 1px dotted #000;
+	outline: -webkit-focus-ring-color auto 5px;
+}
+
+#profile-submit {
+  margin: 1.5rem 0 0;
+  width: 100%;
+}
+
+.profile-preview {
+  display: block;
+  border-radius: 50%;
+  margin: 25px auto;
+  width: 75%;
+}
+
+.mb-10 {
+  margin-bottom: 20px;
+}
+
+.block {
+  display: block;
+}
+
+.age-range {
+  font-size: 1rem;
+  margin: 0 .5rem;
+}
+
+.age-preview {
+  font-size: 1.25rem;
+}
+
+.range-input {
+  margin: .5rem 0;
+}
+
+input[type="range"] {
+  width: 55vw;
+}
+
+.w-expanded {
+  width: 100px;
+}

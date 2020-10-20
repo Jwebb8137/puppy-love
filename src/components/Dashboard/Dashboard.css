@@ -1,0 +1,42 @@
+.dash-btn {
+  background: #FA255E;
+  border: none;
+  color: #fff;
+  font-family: 'Grandstander', cursive;
+  height: 35px;
+  margin: 0 10px;
+  padding: 6px 12px;
+}
+
+.dash-container {
+  min-height: 80vh;
+}
+
+.dash-header {
+  margin-top: 35px;
+}
+
+.info-container {
+  border-radius: 5px;
+  text-align: left;
+  padding: 10px 20px 15px;
+  background: white;
+  border: 1px solid black;
+  margin: 10px;
+}
+
+.info-row {
+  display: block;
+  margin-top: 8px;
+}
+
+.dash-img {
+  border-radius: 5px;
+  height: 100%;
+  width: 90vw;
+}
+
+.float-r {
+  float: right;
+  margin-top: 3px;
+}

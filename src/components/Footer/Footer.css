@@ -1,0 +1,9 @@
+.footer-copyright {
+  color: #000;
+  padding: 15px 0;
+}
+
+.footer-copyright > a {
+  color: #FA255E;
+  text-decoration: none;
+}
