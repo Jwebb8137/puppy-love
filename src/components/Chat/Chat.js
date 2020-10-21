@@ -50,7 +50,7 @@ class Chat extends Component {
       const target_id = this.state.target_id;
       console.log("This is working")
       try {
-        const response = await fetch(`/target-info?target=${this.state.target_id}`, {
+        const response = await fetch(`${API_ENDPOINT}target-info?target=${this.state.target_id}`, {
           method: "GET",
           headers: { token: localStorage.token }
         });
