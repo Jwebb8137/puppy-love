@@ -71,6 +71,7 @@ header {
   position: absolute;
   visibility: hidden;
   z-index: -1111;
+  width: 1px;
 }
 
 /*-- Responsive CSS --*/
