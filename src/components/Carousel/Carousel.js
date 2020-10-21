@@ -14,7 +14,7 @@ const DemoCarousel = () => {
 
   const getProfiles = async () => {
     try {   
-      const response = await fetch("/users")
+      const response = await fetch(`${API_ENDPOINT}users`)
       const jsonData = await response.json()
 
       setProfiles(jsonData)
