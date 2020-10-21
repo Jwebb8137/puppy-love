@@ -1,5 +1,6 @@
 import React, { useState} from 'react';
 import { Link } from 'react-router-dom';
+import config from '../../config';
 import './Signin.css';
 
 const SignIn = ({ setAuth }) => {
@@ -8,6 +9,9 @@ const SignIn = ({ setAuth }) => {
     username: "",
     passwordInput: ""
   });
+
+  const { API_ENDPOINT } = config;
+  console.log(API_ENDPOINT)
 
   const { username, passwordInput } = inputs;
 
@@ -21,7 +25,7 @@ const SignIn = ({ setAuth }) => {
       try {
         const body = { username, passwordInput };
         console.log(body)
-        const response = await fetch("/login", {
+        const response = await fetch(`${API_ENDPOINT}login`, {
           method: "POST",
           headers: {"Content-type" : "application/json"},
           body: JSON.stringify(body)
