@@ -1,13 +1,16 @@
 import React, {Fragment, useState, useEffect} from "react";
+import config from '../../config';
 import './Dashboard.css';
 
 const Dashboard = ({ setAuth }) => {
+
+  const { API_ENDPOINT } = config;
 
   const [userInfo, setUserInfo] = useState("");
 
   async function getName() {
     try {
-      const response = await fetch("/dashboard/", {
+      const response = await fetch(`${API_ENDPOINT}dashboard`, {
         method: "GET",
         headers: { token: localStorage.token }
       });

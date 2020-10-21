@@ -2,9 +2,12 @@ import React, { useEffect, useState } from 'react';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
 import ProfileCard from '../ProfileCard/ProfileCard';
+import config from '../../config';
 import './Carousel.css';
 
 const DemoCarousel = () => {
+
+  const { API_ENDPOINT } = config;
 
   const [profiles, setProfiles] = useState([]);
   const [userInfo, setUserInfo] = useState({});
@@ -22,7 +25,7 @@ const DemoCarousel = () => {
 
   async function getUser() {
     try {
-      const response = await fetch("/dashboard/", {
+      const response = await fetch(`${API_ENDPOINT}dashboard`, {
         method: "GET",
         headers: { token: localStorage.token }
       });

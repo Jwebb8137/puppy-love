@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import {Route, BrowserRouter, Redirect, Switch} from 'react-router-dom';
 import './App.css';
+import config from '../../config';
 import '@progress/kendo-theme-material/dist/all.css';
 import Navbar from './components/Navbar/Navbar';
 import Home from './components/Home/Home';
@@ -15,6 +16,8 @@ import '@progress/kendo-theme-material/dist/all.css';
 
 function App() {
   
+  const { API_ENDPOINT } = config;
+
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   const setAuth = (boolean) => {
@@ -23,7 +26,7 @@ function App() {
 
   async function isAuth() {
     try {
-      const response = await fetch("/is-verified", {
+      const response = await fetch(`${API_ENDPOINT}is-verified`, {
         method: "GET",
         headers: { token : localStorage.token }
       });

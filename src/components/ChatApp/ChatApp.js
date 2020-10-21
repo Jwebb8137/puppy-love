@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import Chat from 'twilio-chat';
+import config from '../../config';
 import * as ReactDOM from 'react-dom';
 import './ChatApp.css';
 import ProfilePic from '../../images/profile1.jpg'
@@ -38,7 +39,8 @@ class ChatApp extends Component {
 
   componentDidMount() {
     console.log(this.props.targetUser)
-    fetch('/chat/token', {
+    const { API_ENDPOINT } = config;
+    fetch(`${API_ENDPOINT}chat/token`, {
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       method: 'POST',
       body: `identity=${encodeURIComponent(this.props.username)}`

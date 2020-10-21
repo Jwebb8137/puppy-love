@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import config from '../../config';
 import ChatLogin from '../ChatLogin/ChatLogin';
 import ChatApp from '../ChatApp/ChatApp';
 import './Chat.css';
@@ -21,9 +22,11 @@ class Chat extends Component {
 
   componentDidMount() {
 
+    const { API_ENDPOINT } = config;
+
     const getCurrentId = async () => {
       try {
-        const response = await fetch("/dashboard/", {
+        const response = await fetch(`${API_ENDPOINT}dashboard`, {
           method: "GET",
           headers: { token: localStorage.token }
         });
@@ -91,14 +94,14 @@ class Chat extends Component {
         targetPet={this.state.target_petName}
         currentUser={this.state.current_id}
       />;
-    } else {
-      loginOrChat = (
-        <ChatLogin
-          handleLogin={this.handleLogin}
-          handleUsernameChange={this.handleUsernameChange}
-          username={this.state.username}
-        />
-      );
+    // } else {
+    //   loginOrChat = (
+    //     <ChatLogin
+    //       handleLogin={this.handleLogin}
+    //       handleUsernameChange={this.handleUsernameChange}
+    //       username={this.state.username}
+    //     />
+    //   );
     }
     return (
       <div className="chat-container">

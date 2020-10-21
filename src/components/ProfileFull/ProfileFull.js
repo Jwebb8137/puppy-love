@@ -1,5 +1,6 @@
 import React, {Fragment} from 'react';
 import {Link} from 'react-router-dom';
+import config from '../../config';
 import Modal from '../Modal/Modal';
 import './ProfileFull.css';
 
@@ -17,6 +18,7 @@ class ProfileFull extends React.Component {
 
   componentDidMount = () => {
     const currentUserId = this.props.match.params.userid;
+    const { API_ENDPOINT } = config;
     const setProfileInfo = (jsonData) => {
       this.setState({
         profileInfo: jsonData
@@ -26,7 +28,7 @@ class ProfileFull extends React.Component {
     const getProfile = async () => {
       console.log("getting data")
       try {   
-        const response = await fetch(`/users/${currentUserId}`)
+        const response = await fetch(`${API_ENDPOINT}users/${currentUserId}`)
         const jsonData = await response.json()
   
         setProfileInfo(jsonData)
