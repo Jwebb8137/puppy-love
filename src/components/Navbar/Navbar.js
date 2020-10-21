@@ -21,7 +21,6 @@ export default class Navbar extends React.Component {
             <Link to='/signin'><li onClick={this.handleMenu}><i className="fab fa-blogger-b"></i> Login</li></Link>
             <label htmlFor="toggle-btn" className="hide-menu-btn" onClick={this.handleMenu}><i className="fas fa-times"></i></label>
           </ul>
-          <input typeof="checkbox" id="toggle-btn" />
           <label htmlFor="toggle-btn" className="show-menu-btn"><i className="fas fa-bars" onClick={this.handleMenu}></i></label>
         </nav>
       </header>
