@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import { Link, Redirect } from "react-router-dom";
+import config from '../../config';
 import './Signup.css';
 
 const Signup = ({ setAuth }) => {
+
+  const { API_ENDPOINT } = config;
 
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
