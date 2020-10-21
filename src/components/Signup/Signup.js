@@ -5,8 +5,6 @@ import './Signup.css';
 
 const Signup = ({ setAuth }) => {
 
-  const { API_ENDPOINT } = config;
-
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -27,6 +25,8 @@ const Signup = ({ setAuth }) => {
   const [petFileInputState, setPetFileInputState] = useState("");
   const [previewSource, setPreviewSource] = useState("");
   const [previewPetSource, setPreviewPetSource] = useState("");
+
+  const { API_ENDPOINT } = config;
 
   const onSubmitForm = async (e) => {
     e.preventDefault();
