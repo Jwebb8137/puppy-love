@@ -34,7 +34,7 @@ const Signup = ({ setAuth }) => {
 
     try {
       const body = { email, username, password, headline, first_name, last_name, age, hobbies, gender, seeking_gender, description, pet_type, pet_name, pet_description, pet_meet_description, pet_hobbies, previewSource, previewPetSource }
-      const response = await fetch("/users", {
+      const response = await fetch(`${API_ENDPOINT}users`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body)
