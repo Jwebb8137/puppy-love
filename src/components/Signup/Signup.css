@@ -166,7 +166,7 @@ select {
 .profile-preview {
   display: block;
   margin: 25px auto;
-  width: 85%;
+  height: 300px;
   border-radius: 5px;
 }
 
