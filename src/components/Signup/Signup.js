@@ -28,6 +28,10 @@ const Signup = ({ setAuth }) => {
 
   const { API_ENDPOINT } = config;
 
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
   const onSubmitForm = async (e) => {
     e.preventDefault();
 
