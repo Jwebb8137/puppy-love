@@ -13,11 +13,11 @@
   min-height: 80vh;
   max-width: 500px;
   margin: 0 auto;
-  padding: 25px;
+  padding: 0;
 }
 
 .dash-header {
-  margin-top: 35px;
+  margin: 25px auto;
 }
 
 .info-container {
@@ -35,9 +35,8 @@
 }
 
 .dash-img {
-  border-radius: 5px;
   height: 100%;
-  width: 90vw;
+  width: 100vw;
   max-width: 400px;
 }
 
@@ -48,4 +47,16 @@
 
 .pink-bg {
   background: #ffc0cb;
+}
+
+@media (min-width: 768px) { 
+  .dash-img {
+    border-radius: 5px;
+    height: 100%;
+    width: 90vw;
+    max-width: 400px;
+  }
+  .dash-container {
+    padding: 25px;
+  }
 }

@@ -41,18 +41,17 @@ const Dashboard = ({ setAuth }) => {
     <Fragment>
       <div className="pink-bg">
         <div className="dash-container">
+          <div className="img-container">
+            <img className="mt-5 dash-img" src={photo_url} />
+          </div>
           <div className="container">
             <div className="row mt-5">
               <button className="dash-btn" onClick={e => logout(e)}>Logout <i class="fas fa-sign-in-alt"></i></button>
-              {/* <button className="dash-btn" onClick={e => logout(e)}>Edit Profile <i class="fas fa-edit"></i></button> */}
+              <button className="dash-btn">Edit Profile</button>
             </div>
           </div>
-          <h2 className="mt-10 dash-header"><i class="fas fa-paw"></i> <span className="pink">{first_name}'s Account</span> <i class="fas fa-paw"></i></h2>
-          <div className="img-container">
-          <img className="mt-5 dash-img" src={photo_url} />
-          </div>
+          <h2 className="dash-header"><i class="fas fa-paw"></i> <span className="pink">{first_name}'s Account</span> <i class="fas fa-paw"></i></h2>
           <div className="info-container">
-            <button className="dash-btn float-r" onClick={e => logout(e)}>Edit Profile</button>
             <h2 className="mt-5"><span className="pink">My Info</span></h2>          
             <div className="info-row">
               <p>Email: <span className="font-alt">{email}</span></p>
