@@ -90,7 +90,7 @@ const Signup = ({ setAuth }) => {
   }
 
   if (isLoading) {
-    return <p className="loading-msg">Loading chat... <br />
+    return <p className="loading-msg">Creating Profile ... <br />
     <i class="fas fa-paw pink mt-5"></i></p>;
   }
 
@@ -130,8 +130,7 @@ const Signup = ({ setAuth }) => {
               onChange={handleFileInputChange} 
               name="image" 
               id="file" 
-              class="inputfile"
-              required 
+              class="inputfile" 
             />
             <label htmlFor="file">Upload Picture</label>
           </div>
@@ -215,7 +214,6 @@ const Signup = ({ setAuth }) => {
               name="pet_image" 
               id="petFile" 
               class="petinputfile"
-              required 
             />
             <label htmlFor="petFile">Upload Picture</label>
           </div>
