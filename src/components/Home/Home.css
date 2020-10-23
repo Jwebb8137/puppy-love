@@ -82,4 +82,8 @@ h1, h2, h3, .info-container, .add-container {
   #sec-img{
     display: block;
   }
+  .sub-heading {
+    font-size: 2rem;
+    margin-bottom: .45rem;
+  }
 }
