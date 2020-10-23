@@ -23,7 +23,6 @@ a.link {
 .signin-heading {
   color: #000;
   font-size: 2.5rem;
-  margin: 2rem;
 }
 
 @media (min-width: 768px) { 
