@@ -33,6 +33,8 @@
   max-width: 500px;
   margin: auto;
   padding: 0;
+  border-right: 1px solid hotpink;
+  border-left: 1px solid hotpink;
 }
 
 .carousel .slide img {
