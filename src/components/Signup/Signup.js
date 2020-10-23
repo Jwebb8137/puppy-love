@@ -88,7 +88,7 @@ const Signup = ({ setAuth }) => {
       <h2 className="signup-heading">Puppy <span className="pink">Love </span><i class="fas fa-paw"></i></h2>
       <form className="form-container" onSubmit={e => onSubmitForm(e)}>
       <h3 className="signup-sub-heading">Let's <span className="pink">Get Started!</span></h3>
-        <div className="container">
+        <div className="container-col">
           <div className='input-field mt-5'>
             <label>Email </label>
             <input typeof='email' value={email} onChange={e => setEmail(e.target.value)}/>
@@ -136,7 +136,7 @@ const Signup = ({ setAuth }) => {
                 <option value="female">A Woman</option>
               </select>
             </div>
-            <div className='input-field'>
+            <div className='input-field ml-5'>
               <label>Seeking </label>
               <select onChange={e => setSeekingGender(e.target.value)}>
                 <option value="none" selected disabled hidden></option> 

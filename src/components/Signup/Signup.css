@@ -3,6 +3,10 @@
   margin: .5em auto;
 }
 
+label {
+  display: block;
+}
+
 textarea {
   border: 1px solid black;
   border-radius: 5px;
@@ -13,8 +17,7 @@ textarea {
 }
 
 .signup {
-  background-image: url("../../images/signup-bg.jpg");
-  background-size: cover;
+  background: #dadada;
   height: 100%;
   min-height: 100vh;
   padding: 15vh 0;
@@ -26,6 +29,16 @@ textarea {
   font-family: 'Grandstander', cursive;
   margin: 1rem;
   padding: 1.75rem 1rem;
+}
+
+.container-col {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.ml-5 {
+  margin-left: 20px;
 }
 
 input[typeOf="text"], input[typeOf="email"], input[type="password"] {
@@ -193,6 +206,7 @@ select {
 }
 
 input[type="range"] {
+  max-width: 350px;
   width: 55vw;
 }
 
