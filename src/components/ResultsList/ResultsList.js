@@ -11,11 +11,11 @@ const ResultsList = (props) => {
     return(
       <Fragment>
         <div className="container bg-pink">
-          <h2>
-            Ready To Start <span className="pink">Looking?</span>
-          </h2>
           <img src={Dog} className="w-100 mt-5"/>
           <div className="row flex-col">
+            <h2 id="results-heading">
+              Ready To Start <span className="pink">Looking?</span>
+            </h2>
             <p className="mt-5 sub-text">Create an account to start browsing now!</p>
             <Link to="signup"><ButtonAlt name="Sign Up" icon="fa fa-paw"/></Link>
           </div>
