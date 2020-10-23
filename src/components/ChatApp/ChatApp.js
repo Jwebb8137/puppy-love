@@ -166,7 +166,7 @@ class ChatApp extends Component {
     }
     return (
       <Fragment>
-        <div className="container bg-off-white">
+        <div className="col-flex bg-off-white">
           <h2 className="chat-header">
             <span className="support-text">Now Chatting With ...</span>
             <span className="chat-name"><i class="fas fa-paw pink"></i> {this.props.targetUsername} <span className="pink">&</span> {this.props.targetPet} <i class="fas fa-paw pink"></i>
