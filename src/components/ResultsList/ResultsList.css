@@ -122,6 +122,7 @@
 .results-alt {
   margin: auto;
   max-width: 600px;
+  min-height: 100vh;
 }
 
 .min-100 {
