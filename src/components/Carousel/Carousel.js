@@ -6,7 +6,7 @@ import config from '../../config';
 import './Carousel.css';
 
 const [isLoading, setIsLoading] = useState(true);
-const [error, setError] = useState("");
+const [err, setError] = useState("");
 
 const DemoCarousel = () => {
 
