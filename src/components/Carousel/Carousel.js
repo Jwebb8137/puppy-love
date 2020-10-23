@@ -53,7 +53,7 @@ const DemoCarousel = () => {
 
   console.log(userInfo)
 
-  if (error) {
+  if (err) {
     return <p>{err}</p>;
   } else if (isLoading) {
     return <p className="loading-msg">Loading Users... <br />
