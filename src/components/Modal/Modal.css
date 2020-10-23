@@ -50,6 +50,7 @@
   margin: 10px auto 2.5rem;
   width: 65%;
   padding: .55rem;
+  max-width: 300px;
 }
 .modal-sub-heading {
   font-size: 1.2rem;
@@ -72,4 +73,15 @@
   float: right;
   margin: 1rem;
   font-size: 2rem;
+}
+
+@media (min-width: 768px) { 
+  .modal-container {
+    float: right;
+    position: absolute;
+    top: 0;
+    right: 25vw;
+    margin-top: 5vh;
+    max-width: 450px;
+  }
 }
