@@ -39,7 +39,7 @@ const Dashboard = ({ setAuth }) => {
   }, []);
   return (
     <Fragment>
-      <div className="bg-gray">
+      <div className="pink-bg">
         <div className="dash-container">
           <div className="container">
             <div className="row mt-5">
