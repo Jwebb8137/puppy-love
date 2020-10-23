@@ -54,7 +54,7 @@ const DemoCarousel = () => {
   console.log(userInfo)
 
   if (error) {
-    return <p>{error}</p>;
+    return <p>{err}</p>;
   } else if (isLoading) {
     return <p className="loading-msg">Loading Users... <br />
       <i class="fas fa-paw pink mt-5"></i></p>;
