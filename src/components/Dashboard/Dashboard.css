@@ -1,11 +1,12 @@
 .dash-btn {
   background: #FA255E;
   border: none;
+  border-radius: 5px;
   color: #fff;
   font-family: 'Grandstander', cursive;
-  height: 35px;
+  font-size: 1rem;
   margin: 0 10px;
-  padding: 6px 12px;
+  padding: 13px 20px;
 }
 
 .dash-container {
@@ -47,6 +48,10 @@
 
 .pink-bg {
   background: #ffc0cb;
+}
+
+.jc-center {
+  justify-content: center;
 }
 
 @media (min-width: 768px) { 

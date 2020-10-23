@@ -45,11 +45,12 @@ const Dashboard = ({ setAuth }) => {
             <img className="dash-img" src={photo_url} />
           </div>
           <div className="container">
-            <div className="row mt-5">
+            <div className="row mt-5 jc-center">
               <button className="dash-btn" onClick={e => logout(e)}>Logout <i class="fas fa-sign-in-alt"></i></button>
               <button className="dash-btn">Edit Profile</button>
             </div>
           </div>
+          <h2 className="dash-header"><i class="fas fa-paw"></i> <span className="pink">{first_name}'s Account</span> <i class="fas fa-paw"></i></h2>
           <div className="info-container">
             <h2 className="mt-5"><span className="pink">Your Account</span></h2>          
             <div className="info-row">

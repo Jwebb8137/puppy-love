@@ -50,7 +50,7 @@ class ProfileFull extends React.Component {
     return (
       <Fragment>
         <div className="main container bg-white">
-          <div className="sub-container mt-5">
+          <div className="sub-container">
             <h1 className="profile-heading">{first_name} & {pet_name}</h1>
             <span className="w-100 username-text">
               <i class="far fa-star pink"></i>

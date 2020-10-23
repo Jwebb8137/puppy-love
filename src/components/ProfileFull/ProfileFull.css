@@ -16,7 +16,6 @@
 
 .bg-white {
   background: pink;
-  padding-bottom: 1rem;
 }
 
 .sub-container {
@@ -91,4 +90,10 @@
 
 .mt-0 {
   margin-top: 0;
+}
+
+@media (min-width: 768px) { 
+  .sub-container {
+    margin: 25px;
+  }
 }
