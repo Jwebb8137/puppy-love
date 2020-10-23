@@ -91,15 +91,16 @@ const Signup = ({ setAuth }) => {
         <div className="container-col">
           <div className='input-field mt-5'>
             <label>Email </label>
-            <input typeof='email' value={email} onChange={e => setEmail(e.target.value)}/>
+            <input typeof='email' value={email} required onChange={e => setEmail(e.target.value)}/>
           </div>
           <div className='input-field'>
             <label>Username </label>
-            <input typeof='text' value={username} onChange={e => setUsername(e.target.value)}/>
+            <input typeof='text' value={username} required onChange={e => setUsername(e.target.value)}/>
           </div>
           <div className='input-field'>
             <label>Password </label>
-            <input type='password' value={password} onChange={e => setPassword(e.target.value)}/>
+            <input type='password' value={password} required pattern="^.*(?=.{6,})(?=.*[a-z])(?=.*[A-Z]).*$"
+            onChange={e => setPassword(e.target.value)}/>
           </div>
           <h3 className="signup-sub-heading mt-10">All About <span className="pink">You!</span></h3>
           <div className='input-field'>
@@ -118,19 +119,20 @@ const Signup = ({ setAuth }) => {
               onChange={handleFileInputChange} 
               name="image" 
               id="file" 
-              class="inputfile" 
+              class="inputfile"
+              required 
             />
             <label htmlFor="file">Upload Picture</label>
           </div>
           <div className='input-field mt-5'>
             <label>Headline</label>
-            <input typeof='text' value={headline} maxlength="50" onChange={e => setHeadline(e.target.value)}/>
+            <input typeof='text' value={headline} required maxlength="50" onChange={e => setHeadline(e.target.value)}/>
           </div>
           <span className="form-helper-text">(Your best one-liner! Keep it short tho <i class="fas fa-paw"></i>)</span>
           <div className="row mt-5">
             <div className='input-field'>
               <label>I am</label>
-              <select onChange={e => setGender(e.target.value)}>
+              <select onChange={e => setGender(e.target.value)} required>
                 <option value="none" selected disabled hidden></option> 
                 <option value="male">A Man</option>
                 <option value="female">A Woman</option>
@@ -138,7 +140,7 @@ const Signup = ({ setAuth }) => {
             </div>
             <div className='input-field ml-5'>
               <label>Seeking </label>
-              <select onChange={e => setSeekingGender(e.target.value)}>
+              <select onChange={e => setSeekingGender(e.target.value)} required>
                 <option value="none" selected disabled hidden></option> 
                 <option value="male">A Man</option>
                 <option value="female">A Woman</option>
@@ -147,11 +149,11 @@ const Signup = ({ setAuth }) => {
           </div>
           <div className='input-field'>
             <label>First Name </label>
-            <input typeof='text'  value={first_name} onChange={e => setFirstname(e.target.value)}/>
+            <input typeof='text'  value={first_name} required onChange={e => setFirstname(e.target.value)}/>
           </div>
           <div className='input-field'>
             <label>Last Name </label>
-            <input typeof='text'  value={last_name} onChange={e => setLastname(e.target.value)}/>
+            <input typeof='text'  value={last_name} required onChange={e => setLastname(e.target.value)}/>
           </div>
           <div className="mt-5">
             <label htmlFor="age" className="block">Your Age</label>
@@ -168,7 +170,8 @@ const Signup = ({ setAuth }) => {
               value={description}
               onChange={e => setDescription(e.target.value)}
               placeholder="Tell us a little about yourself!"
-              maxlength="250">         
+              maxlength="250"
+              required>         
             </textarea>
           </div>
           <div className='input-field mt-5'>
@@ -178,7 +181,8 @@ const Signup = ({ setAuth }) => {
               value={hobbies}
               onChange={e => setHobbies(e.target.value)}
               placeholder="Tell us a little about yourself!"
-              maxlength="250">         
+              maxlength="250"
+              required>         
             </textarea>
           </div>
           <h3 className="signup-sub-heading mt-10">All About <span className="pink">Your Pet!</span></h3>
@@ -199,17 +203,18 @@ const Signup = ({ setAuth }) => {
               onChange={handlePetFileInputChange} 
               name="pet_image" 
               id="petFile" 
-              class="petinputfile" 
+              class="petinputfile"
+              required 
             />
             <label htmlFor="petFile">Upload Picture</label>
           </div>
           <div className='input-field mt-5'>
             <label>Pet Name </label>
-            <input typeof='text' value={pet_name} onChange={e => setPetname(e.target.value)}/>
+            <input typeof='text' value={pet_name} required onChange={e => setPetname(e.target.value)}/>
           </div>
           <div className='input-field'>
             <label className="block">Pet Type </label>
-            <select onChange={e => setPetType(e.target.value)} className="w-expanded">
+            <select onChange={e => setPetType(e.target.value)} className="w-expanded" required>
               <option value="none" selected disabled hidden></option> 
               <option value="dog">Dog</option>
               <option value="cat">Cat</option>
@@ -221,7 +226,8 @@ const Signup = ({ setAuth }) => {
             <textarea 
               value={pet_description}
               onChange={e => setPetDescription(e.target.value)}
-              maxlength="250">         
+              maxlength="250"
+              required>         
             </textarea>
           </div>
           <div className='input-field mt-5'>
@@ -230,7 +236,8 @@ const Signup = ({ setAuth }) => {
             <textarea 
               value={pet_hobbies}
               onChange={e => setPetHobbies(e.target.value)}
-              maxlength="250">         
+              maxlength="250"
+              required>         
             </textarea>
           </div>
           <div className='input-field mt-5'>
@@ -239,7 +246,8 @@ const Signup = ({ setAuth }) => {
             <textarea 
               value={pet_meet_description}
               onChange={e => setPetMeetDescription(e.target.value)}
-              maxlength="250">         
+              maxlength="250"
+              required>         
             </textarea>
           </div>
         </div>
