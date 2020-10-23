@@ -104,7 +104,7 @@ class Chat extends Component {
     //   );
     }
     return (
-      <div className="chat-container">
+      <div className="chat-container container bg-off-white">
         <div className="chat-container">{loginOrChat}</div>
       </div>
     );

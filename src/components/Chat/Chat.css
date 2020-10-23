@@ -9,6 +9,7 @@
   font-family: 'Grandstander', cursive;
   font-size: .9rem;
   width: 100vw !important;
+  max-height: 550px;
 }
 
 .k-chat .k-alt .k-bubble {

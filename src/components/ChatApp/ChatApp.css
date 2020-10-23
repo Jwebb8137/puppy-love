@@ -25,3 +25,9 @@
 .support-text {
   font-size: 1rem;
 }
+
+@media (min-width: 768px) { 
+  .support-text {
+    margin-top: 1.5rem;
+  }
+}
