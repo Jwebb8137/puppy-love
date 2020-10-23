@@ -123,3 +123,7 @@
   margin: auto;
   max-width: 600px;
 }
+
+.min-100 {
+  min-height: 100vw;
+}
