@@ -12,7 +12,9 @@ const ResultsList = (props) => {
       <Fragment>
         <div className="flex-col bg-pink">
           <div className="results-alt">
-            <img src={Dog} className="w-100"/>
+            <div className="w-full">
+              <img src={Dog} className="w-100"/>
+            </div>
             <h2 id="results-heading">
               Ready To Start <span className="pink">Looking?</span>
             </h2>

@@ -115,5 +115,6 @@
 }
 
 .results-alt {
+  margin: auto;
   max-width: 800px;
 }
