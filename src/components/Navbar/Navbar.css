@@ -115,9 +115,9 @@ header {
 
 @media (min-width: 768px) { 
   .navigation li {
-    color: #fa255e;
+    color: #000;
   }
   .navigation li i{
-    color: #000;
+    color: #fa255e;
   }
 }
