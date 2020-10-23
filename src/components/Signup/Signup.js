@@ -25,7 +25,7 @@ const Signup = ({ setAuth }) => {
   const [petFileInputState, setPetFileInputState] = useState("");
   const [previewSource, setPreviewSource] = useState("");
   const [previewPetSource, setPreviewPetSource] = useState("");
-  const [isLoading, setIsLoading] = useState("false");
+  const [isLoading, setIsLoading] = useState(false);
 
   const { API_ENDPOINT } = config;
 
@@ -93,7 +93,7 @@ const Signup = ({ setAuth }) => {
     return <p className="loading-msg">Loading chat... <br />
     <i class="fas fa-paw pink mt-5"></i></p>;
   }
-  
+
   return (
     <div className='signup'>
       <form className="form-container" onSubmit={e => onSubmitForm(e)}>
