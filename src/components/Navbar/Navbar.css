@@ -112,3 +112,13 @@ header {
     top: 0px;
   }
 }
+
+@media (min-width: 768px) { 
+  .navigation li {
+    color: #fa255e;
+  }
+
+  .navigation li i{
+    color: #000;
+  }
+}
