@@ -16,7 +16,7 @@
 
 .bg-white {
   background: pink;
-  padding: .45rem;
+  padding: .45rem 0 0;
 }
 
 .sub-container {
