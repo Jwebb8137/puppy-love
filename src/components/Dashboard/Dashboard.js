@@ -50,9 +50,8 @@ const Dashboard = ({ setAuth }) => {
               <button className="dash-btn">Edit Profile</button>
             </div>
           </div>
-          <h2 className="dash-header"><i class="fas fa-paw"></i> <span className="pink">{first_name}'s Account</span> <i class="fas fa-paw"></i></h2>
           <div className="info-container">
-            <h2 className="mt-5"><span className="pink">My Info</span></h2>          
+            <h2 className="mt-5"><span className="pink">Your Account</span></h2>          
             <div className="info-row">
               <p>Email: <span className="font-alt">{email}</span></p>
             </div>
