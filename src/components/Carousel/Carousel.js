@@ -5,15 +5,14 @@ import ProfileCard from '../ProfileCard/ProfileCard';
 import config from '../../config';
 import './Carousel.css';
 
-const [isLoading, setIsLoading] = useState(true);
-const [err, setError] = useState("");
-
 const DemoCarousel = () => {
 
   const { API_ENDPOINT } = config;
 
   const [profiles, setProfiles] = useState([]);
   const [userInfo, setUserInfo] = useState({});
+  const [isLoading, setIsLoading] = useState(true);
+  const [err, setError] = useState("");
 
   const getProfiles = async () => {
     try {   
@@ -21,10 +20,10 @@ const DemoCarousel = () => {
       const jsonData = await response.json();
 
       setProfiles(jsonData);
-      // setIsLoading(false);
+      setIsLoading(false);
     } catch (err) {
         console.error(err.message)
-        // setError(err)
+        setError(err)
     }
   }
 
