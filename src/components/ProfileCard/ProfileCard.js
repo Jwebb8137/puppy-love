@@ -16,7 +16,7 @@ const ProfileCard = (props) => {
           <i className={`${props.petType} flex-1`}></i>
         </div>
         <h3 className='profile-name'><i class="fas fa-paw pink"></i> {props.firstName} & {props.petName} <i class="fas fa-paw pink"></i></h3>
-        <p>{props.description}</p>
+        <p>{props.headline}</p>
         <Link to={userChat}><button className='btn profile-msg-btn'>Message <i class="fas fa-caret-right"></i></button></Link>
         <Link to={profileLink}><button className='btn-alt-2 profile-msg-btn'>Profile <i class="fas fa-caret-right"></i></button></Link>
       </div>

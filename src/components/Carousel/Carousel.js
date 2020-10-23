@@ -62,6 +62,7 @@ const DemoCarousel = () => {
               lastName={profile.last_name}
               petName={profile.pet_name}
               description={profile.description}
+              headline={profile.headline}
               gender={`fas fa-${profile.gender}`}
               petType={`fas fa-${profile.pet_type}`}
               petUrl={profile.photo_pet_url}

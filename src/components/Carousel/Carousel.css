@@ -19,3 +19,7 @@
   border-radius: 0;
 }
 
+.carousel .thumbs-wrapper {
+  margin: 0 !important;
+}
+
