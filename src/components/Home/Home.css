@@ -7,6 +7,10 @@ html,body
   width: 100%;
 }
 
+#sec-img {
+  display: none;
+}
+
 .main {
   background: #f8e5e5;
   height: 100%;

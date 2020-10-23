@@ -72,6 +72,14 @@
   .main {
     padding: 20px;
   }
+
+  #main-img{
+    display: none;
+  }
+
+  #sec-img{
+    display: block;
+  }
 }
 
 @media (min-width: 992px) { 

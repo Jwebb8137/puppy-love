@@ -1,6 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom';
 import Main from '../../images/Main.png';
+import AltMain from '../../images/bg-exp.png';
 import Photo1 from '../../images/Photo1.png';
 import Photo2 from '../../images/Photo2.png';
 import Button from '../Buttons/Button';
@@ -12,6 +13,7 @@ class Home extends React.Component {
     return(
       <div className='main'>
         <img id='main-img' src={Main} alt='Puppy Love'/>
+        <img id='sec-img' src={AltMain} alt='Puppy Love'/>
         <div className='btn-container'>
           <Link to='/signup'><Button name='Sign Up' icon='fas fa-plus'/></Link>
           <Link to='signin'><ButtonAlt name='Login' icon='fas fa-sign-in-alt'/></Link>      
