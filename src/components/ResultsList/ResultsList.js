@@ -11,15 +11,17 @@ const ResultsList = (props) => {
     return(
       <Fragment>
         <div className="container bg-pink">
-          <img src={Dog} className="w-100 mt-5"/>
+          <img src={Dog} className="w-100"/>
+          <h2 id="results-heading mt-10">
+            Ready To Start <span className="pink">Looking?</span>
+          </h2>
           <div className="row flex-col">
-            <h2 id="results-heading">
-              Ready To Start <span className="pink">Looking?</span>
-            </h2>
             <p className="mt-5 sub-text">Create an account to start browsing now!</p>
             <Link to="signup"><ButtonAlt name="Sign Up" icon="fa fa-paw"/></Link>
           </div>
-          <Link to="signin" className="sub-link">Login</Link>
+          <div className="row">
+            <Link to="signin" className="sub-link">Login</Link>
+          </div>
         </div>
       </Fragment>
     )
