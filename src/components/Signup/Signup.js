@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, Redirect } from "react-router-dom";
 import config from '../../config';
 import './Signup.css';
@@ -25,12 +25,19 @@ const Signup = ({ setAuth }) => {
   const [petFileInputState, setPetFileInputState] = useState("");
   const [previewSource, setPreviewSource] = useState("");
   const [previewPetSource, setPreviewPetSource] = useState("");
+  const [isLoading, setIsLoading] = useState("true");
 
   const { API_ENDPOINT } = config;
 
   useEffect(() => {
     window.scrollTo(0, 0)
-  }, [])
+  }, []);
+
+  this.state = {
+    error: null,
+    isLoading: true,
+    messages: []
+  };
 
   const onSubmitForm = async (e) => {
     e.preventDefault();
