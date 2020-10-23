@@ -75,6 +75,9 @@ header {
   visibility: hidden;
   z-index: -1111;
 }
+a:hover {
+  opacity: .8;
+}
 
 /*-- Responsive CSS --*/
 @media screen and (max-width:767px) {
