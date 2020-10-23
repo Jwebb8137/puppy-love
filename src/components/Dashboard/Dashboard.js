@@ -42,7 +42,7 @@ const Dashboard = ({ setAuth }) => {
       <div className="pink-bg">
         <div className="dash-container">
           <div className="img-container">
-            <img className="mt-5 dash-img" src={photo_url} />
+            <img className="dash-img" src={photo_url} />
           </div>
           <div className="container">
             <div className="row mt-5">
