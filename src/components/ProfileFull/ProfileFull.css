@@ -15,8 +15,7 @@
 }
 
 .bg-white {
-  background-image: url("../../images/signup-bg.jpg");
-  background-size: cover;
+  background: pink;
   padding: .45rem;
 }
 
@@ -25,6 +24,7 @@
   border-radius: 10px;
   opacity: .9;
   padding: 1.5rem .75rem;
+  max-width: 600px;
 }
 
 .w-100 {
@@ -37,7 +37,7 @@
 
 .add-container {
   padding: 0rem;
-  text-align: left;
+  text-align: center;
   width: 50vw;
   margin: 0 auto 1rem;
 }
