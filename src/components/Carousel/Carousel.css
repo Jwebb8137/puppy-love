@@ -36,12 +36,15 @@
   padding: 10vh 0;
 }
 
+.carousel .slide img {
+  max-width: 300px;
+}
+
 @media (min-width: 768px) { 
   .carousel.carousel-slider {
     border-radius: 10px;
   }
   .carousel .slide img {
-    max-width: 300px;
     width: 100%;
     vertical-align: top;
     border: 0;
