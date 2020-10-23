@@ -33,7 +33,6 @@ const ResultsList = (props) => {
   return (
     <Fragment>
       <Carousel />
-      <Link to="/" className="home-link"><h2 className="carousel-heading">Puppy <span className="pink">Love</span> <i class="fas fa-paw"></i></h2></Link>
     </Fragment>
   )
 }
