@@ -13,7 +13,8 @@ textarea {
   margin-top: .75rem;
   padding: 10px;
   height: 25vh;
-  width: 100%;
+  max-width: 450px;
+  width: 75vw;
 }
 
 .signup {

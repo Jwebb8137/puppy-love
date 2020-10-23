@@ -5,6 +5,9 @@ import ProfileCard from '../ProfileCard/ProfileCard';
 import config from '../../config';
 import './Carousel.css';
 
+const [isLoading, setIsLoading] = useState(true);
+const [error, setError] = useState("");
+
 const DemoCarousel = () => {
 
   const { API_ENDPOINT } = config;
@@ -14,12 +17,14 @@ const DemoCarousel = () => {
 
   const getProfiles = async () => {
     try {   
-      const response = await fetch(`${API_ENDPOINT}users`)
-      const jsonData = await response.json()
+      const response = await fetch(`${API_ENDPOINT}users`);
+      const jsonData = await response.json();
 
-      setProfiles(jsonData)
+      setProfiles(jsonData);
+      setIsLoading(false);
     } catch (err) {
         console.error(err.message)
+        setError(err)
     }
   }
 
@@ -47,6 +52,13 @@ const DemoCarousel = () => {
   }, []);
 
   console.log(userInfo)
+
+  if (error) {
+    return <p>{error}</p>;
+  } else if (isLoading) {
+    return <p className="loading-msg">Loading Users... <br />
+      <i class="fas fa-paw pink mt-5"></i></p>;
+  }
 
   return (
       <Carousel>

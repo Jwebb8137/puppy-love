@@ -1,12 +1,15 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect } from 'react';
 import {Link} from 'react-router-dom';
 import './ResultsList.css';
 import Carousel from '../Carousel/Carousel';
 import Dog from '../../images/dog.jpg';
 import ButtonAlt from "../Buttons/ButtonAlt";
 
+useEffect(() => {
+  window.scrollTo(0, 0)
+}, []);
+
 const ResultsList = (props) => {
-  console.log(props.isAuth)
   if (!props.isAuth) {
     return(
       <Fragment>
