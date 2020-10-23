@@ -10,7 +10,7 @@ const ResultsList = (props) => {
   if (!props.isAuth) {
     return(
       <Fragment>
-        <div className="container">
+        <div className="container bg-pink">
           <h2>
             Ready To Start <span className="pink">Looking?</span>
           </h2>
@@ -19,8 +19,8 @@ const ResultsList = (props) => {
             <p className="mt-5 sub-text">Create an account to start browsing now!</p>
             <Link to="signup"><ButtonAlt name="Sign Up" icon="fa fa-paw"/></Link>
           </div>
+          <Link to="signin" className="sub-link">Login</Link>
         </div>
-        <Link to="signin" className="sub-link">Login</Link>
       </Fragment>
     )
   }
