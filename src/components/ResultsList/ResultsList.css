@@ -105,3 +105,11 @@
 .bg-pink {
   background: #f8e5e5;
 }
+
+.jc-center {
+  justify-content: center;
+}
+
+#results-heading {
+  margin-top: 25px;
+}
