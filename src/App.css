@@ -51,8 +51,12 @@
     font-size: 2rem;
   }
 
+  .sub-heading {
+    max-width: 650px;
+  }
+
   .sub-text {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     margin-top: .5rem;
   }
 
