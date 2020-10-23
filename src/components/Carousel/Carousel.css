@@ -17,6 +17,7 @@
 
 .carousel.carousel-slider {
   border-radius: 0;
+  max-height: 600px;
 }
 
 .carousel .thumbs-wrapper {
@@ -25,5 +26,26 @@
 
 .carousel .slider-wrapper.axis-horizontal .slider .slide {
   background: #f8e5e5;
+}
+
+.carousel-root {
+  padding: 10px;
+  background: #e0e0e0;
+  max-width: 500px;
+  margin: auto;
+  padding: 10vh 0;
+}
+
+@media (min-width: 768px) { 
+  .carousel.carousel-slider {
+    border-radius: 10px;
+  }
+  .carousel .slide img {
+    max-width: 300px;
+    width: 100%;
+    vertical-align: top;
+    border: 0;
+    margin: 1rem 0 0;
+  }
 }
 

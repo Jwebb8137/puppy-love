@@ -106,6 +106,10 @@
   background: #f8e5e5;
 }
 
+.bg-pink-alt {
+  background: #ffc0cb;
+}
+
 .jc-center {
   justify-content: center;
 }
