@@ -16,7 +16,7 @@ const ResultsList = (props) => {
           </h2>
           <img src={Dog} className="w-100 mt-5"/>
           <div className="row flex-col">
-            <p className="mt-5">Create an account to start browsing now!</p>
+            <p className="mt-5 sub-text">Create an account to start browsing now!</p>
             <Link to="signup"><ButtonAlt name="Sign Up" icon="fa fa-paw"/></Link>
           </div>
         </div>

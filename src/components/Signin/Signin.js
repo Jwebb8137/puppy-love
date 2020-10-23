@@ -47,11 +47,13 @@ const SignIn = ({ setAuth }) => {
       <form className="form-container" onSubmit={onSubmitForm}>
       <h3 className="signup-sub-heading"><span className="pink">Welcome</span> Back!</h3>
         <div className="container">
-          <div className='input-field'>
-            <input typeof='text' value={username} onChange={e => onChange(e)} name="username" placeholder="Username"/>
-          </div>
-          <div className='input-field'>
-            <input type='password' value={passwordInput} onChange={e => onChange(e)} name="passwordInput" placeholder="Password"/>
+          <div className="row flex-col">
+            <div className='input-field'>
+              <input typeof='text' value={username} onChange={e => onChange(e)} name="username" placeholder="Username"/>
+            </div>
+            <div className='input-field'>
+              <input type='password' value={passwordInput} onChange={e => onChange(e)} name="passwordInput" placeholder="Password"/>
+            </div>
           </div>
         </div>
         <button id="profile-submit" className="btn-sm btn-sm-bg-alt">Sign In <i class="fas fa-caret-right"></i></button>

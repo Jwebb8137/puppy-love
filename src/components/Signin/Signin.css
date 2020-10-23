@@ -1,5 +1,7 @@
 #profile-submit {
-  margin-bottom: 1rem;
+  max-width: 300px;
+  display: block;
+  margin: 1rem auto;
 }
 
 a.link {
