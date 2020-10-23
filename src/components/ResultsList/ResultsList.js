@@ -12,7 +12,7 @@ const ResultsList = (props) => {
       <Fragment>
         <div className="flex-col bg-pink">
           <img src={Dog} className="w-100"/>
-          <h2 id="results-heading mt-10">
+          <h2 id="results-heading">
             Ready To Start <span className="pink">Looking?</span>
           </h2>
           <div className="row flex-col">
