@@ -7,6 +7,10 @@ import './Carousel.css';
 
 const DemoCarousel = () => {
 
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, []);
+
   const { API_ENDPOINT } = config;
 
   const [profiles, setProfiles] = useState([]);
