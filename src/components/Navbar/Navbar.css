@@ -120,4 +120,7 @@ header {
   .navigation li i{
     color: #fa255e;
   }
+  .brand-logo {
+    padding: 5px 0;
+  }
 }
