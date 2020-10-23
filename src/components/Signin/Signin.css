@@ -26,23 +26,27 @@ a.link {
 }
 
 input:not([type=submit]):invalid {
-  background-color: #ffdddd;
+  background-color: #fff;
 }
 
 input:not([type=submit]):valid {
-  background-color: #616161c7;
+  background-color: #fff;
 }
 
 input:not([type=submit]):invalid:required {
-  background: #ffdddd url('http://www.developerdrive.com/wp-content/uploads/2013/08/asterisk1.png') no-repeat right top; 
+  background: #fff url('http://www.developerdrive.com/wp-content/uploads/2013/08/asterisk1.png') no-repeat right top; 
 }
 
 input:not([type=submit]):valid:required {
-  background: #616161c7 url('http://www.developerdrive.com/wp-content/uploads/2013/08/asterisk1.png') no-repeat right top; 
+  background: #fff url('http://www.developerdrive.com/wp-content/uploads/2013/08/asterisk1.png') no-repeat right top; 
 }
 
 input:not([type=submit]):optional {
-  background-color: #616161c7;
+  background-color: #fff;
+}
+
+::placeholder {
+  color: black;
 }
 
 @media (min-width: 768px) { 
