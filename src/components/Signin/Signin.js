@@ -49,10 +49,10 @@ const SignIn = ({ setAuth }) => {
         <div className="container">
           <div className="row flex-col">
             <div className='input-field'>
-              <input typeof='text' value={username} onChange={e => onChange(e)} name="username" placeholder="Username"/>
+              <input typeof='text' value={username} onChange={e => onChange(e)} name="username" placeholder="Username" required/>
             </div>
             <div className='input-field'>
-              <input type='password' value={passwordInput} onChange={e => onChange(e)} name="passwordInput" placeholder="Password"/>
+              <input type='password' value={passwordInput} onChange={e => onChange(e)} name="passwordInput" placeholder="Password" required/>
             </div>
           </div>
         </div>
