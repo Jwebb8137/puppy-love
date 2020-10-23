@@ -7,3 +7,7 @@
 a.link {
   color: #000;
 }
+
+#sign-in {
+  max-width: 400px;
+}

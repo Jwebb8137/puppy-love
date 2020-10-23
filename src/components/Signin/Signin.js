@@ -42,7 +42,7 @@ const SignIn = ({ setAuth }) => {
     };
 
   return (
-    <div className='signup'>
+    <div id="sign-in" className='signup'>
       <h2 className="signup-heading">Puppy <span className="pink">Love </span><i class="fas fa-paw"></i></h2>
       <form className="form-container" onSubmit={onSubmitForm}>
       <h3 className="signup-sub-heading"><span className="pink">Welcome</span> Back!</h3>

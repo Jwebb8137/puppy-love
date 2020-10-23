@@ -17,11 +17,11 @@ textarea {
 }
 
 .signup {
-  background-image: url("../../images/signup-bg.jpg");
+  background-image: url(/static/media/signup-bg.39a284d7.jpg);
   background-size: cover;
   height: 100%;
   min-height: 100vh;
-  padding: 15vh 0;
+  padding: 150px 15px 0;
 }
 
 .form-container {
@@ -213,4 +213,10 @@ input[type="range"] {
 
 .w-expanded {
   width: 100px;
+}
+
+@media (min-width: 768px) { 
+  .signup-heading {
+    font-size: 3.5rem;
+  }
 }
