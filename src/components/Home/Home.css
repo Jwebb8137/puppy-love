@@ -72,3 +72,9 @@ h1, h2, h3, .info-container, .add-container {
   max-width: 600px;
   width: 100%;
 }
+
+@media (min-width: 768px) { 
+  #sec-img{
+    display: block;
+  }
+}
