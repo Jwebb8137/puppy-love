@@ -32,8 +32,7 @@
   background: #ffc0cb;
   max-width: 500px;
   margin: auto;
-  padding: 0;
-  border: 1px solid hotpink;
+  padding-bottom: 10vh;
 }
 
 .carousel .slide img {

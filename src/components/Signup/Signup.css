@@ -38,6 +38,7 @@ textarea {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-top: 15px;
 }
 .ml-5 {
   margin-left: 20px;
@@ -187,8 +188,8 @@ select {
 .profile-preview {
   display: block;
   margin: 0 auto 20px;
-  height: 225px;
-  max-width: 100%;
+  max-height: 200px;
+  max-width: 200px;
   border-radius: 5px;
 }
 
