@@ -11,8 +11,6 @@ const DemoCarousel = () => {
 
   const [profiles, setProfiles] = useState([]);
   const [userInfo, setUserInfo] = useState({});
-  const [isLoading, setIsLoading] = useState(true);
-  const [err, setError] = useState("");
 
   const getProfiles = async () => {
     try {   
@@ -20,10 +18,8 @@ const DemoCarousel = () => {
       const jsonData = await response.json();
 
       setProfiles(jsonData);
-      setIsLoading(false);
     } catch (err) {
         console.error(err.message)
-        setError(err)
     }
   }
 
@@ -49,13 +45,6 @@ const DemoCarousel = () => {
     getProfiles();
     getUser();
   }, []);
-
-  if (err) {
-    return <p>{err}</p>;
-  } else if (isLoading) {
-    return <p className="loading-msg">Loading Users... <br />
-      <i class="fas fa-paw pink mt-5"></i></p>;
-  }
 
   return (
       <Carousel>
