@@ -23,3 +23,7 @@
   margin: 0 !important;
 }
 
+.carousel .slider-wrapper.axis-horizontal .slider .slide {
+  background: #f8e5e5;
+}
+
