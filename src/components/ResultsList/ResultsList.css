@@ -113,3 +113,7 @@
 #results-heading {
   margin-top: 25px;
 }
+
+.results-alt {
+  max-width: 800px;
+}
