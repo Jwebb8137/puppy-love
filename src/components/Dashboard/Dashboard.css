@@ -10,6 +10,8 @@
 
 .dash-container {
   min-height: 80vh;
+  max-width: 500px;
+  margin: 0 auto 3rem;
 }
 
 .dash-header {
@@ -34,6 +36,7 @@
   border-radius: 5px;
   height: 100%;
   width: 90vw;
+  max-width: 400px;
 }
 
 .float-r {
