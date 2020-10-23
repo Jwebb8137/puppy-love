@@ -32,7 +32,9 @@ const ResultsList = (props) => {
   }
   return (
     <Fragment>
-      <Carousel />
+      <div className="bg-pink">
+        <Carousel />
+      </div>
     </Fragment>
   )
 }
