@@ -29,6 +29,10 @@ a.link {
   color: black !important;
 }
 
+input:focus {
+  outline: #fa255e auto 1px !important;
+}
+
 input:not([type=submit]):invalid {
   background-color: #fff;
 }
