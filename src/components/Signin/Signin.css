@@ -25,6 +25,10 @@ a.link {
   font-size: 2.5rem;
 }
 
+::placeholder {
+  color: black !important;
+}
+
 input:not([type=submit]):invalid {
   background-color: #fff;
 }
@@ -43,10 +47,6 @@ input:not([type=submit]):valid:required {
 
 input:not([type=submit]):optional {
   background-color: #fff;
-}
-
-::placeholder {
-  color: black;
 }
 
 @media (min-width: 768px) { 
