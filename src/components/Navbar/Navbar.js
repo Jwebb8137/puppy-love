@@ -16,9 +16,9 @@ export default class Navbar extends React.Component {
         </div>
         <nav>
           <ul  id='nav' className="navigation">
-            <Link to='/'><li onClick={this.handleMenu}><i className="fas fa-house-damage"></i> Home</li></Link>
-            <Link to='/browse'><li onClick={this.handleMenu}><i className="far fa-image"></i> Browse</li></Link>
-            <Link to='/signin'><li onClick={this.handleMenu}><i className="fab fa-blogger-b"></i> Login</li></Link>
+            <Link to='/'><li onClick={this.handleMenu}><i className="fas fa-home"></i> Home</li></Link>
+            <Link to='/browse'><li onClick={this.handleMenu}><i className="fas fa-users"></i> Browse</li></Link>
+            <Link to='/signin'><li onClick={this.handleMenu}><i className="fas fa-user"></i> Login</li></Link>
             <label htmlFor="toggle-btn" className="hide-menu-btn" onClick={this.handleMenu}><i className="fas fa-times"></i></label>
           </ul>
           <label htmlFor="toggle-btn" className="show-menu-btn"><i className="fas fa-bars" onClick={this.handleMenu}></i></label>

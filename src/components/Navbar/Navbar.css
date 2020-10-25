@@ -24,7 +24,7 @@ header {
   max-width: 100%;
 }
 .fa-times {
-  color: #fff;
+  color: #000;
 }
 .navigation {
   margin: 0px;
@@ -37,17 +37,19 @@ header {
   float: left;
 }
 .navigation li {
-  color: #fff;
+  color: #000;
   font-family: 'Grandstander', cursive;
-  font-size: 1.5em;
+  font-size: 1.75em;
   padding: 10px 20px;
   text-transform: uppercase;
   text-align: left;
   display: block;
   text-decoration: none;
+  display: flex;
+  align-items: center;
 }
 .navigation li i {
-  margin-right: .25em;
+  margin-right: .5em;
   font-size: 20px;
   margin-bottom: 7px;
 }
@@ -79,6 +81,10 @@ a:hover {
   opacity: .8;
 }
 
+.navigation li i{
+  color: #fa255e;
+}
+
 /*-- Responsive CSS --*/
 @media screen and (max-width:767px) {
   .show-menu-btn,
@@ -89,7 +95,7 @@ a:hover {
     position: fixed;
     width: 100vw;
     height: 100vh;
-    background: #FA255E;
+    background: #f8e5e5;    
     top: -150%;
     left: 0;
     padding: 50px 0px;
@@ -120,10 +126,13 @@ a:hover {
   .navigation li {
     color: #000;
   }
-  .navigation li i{
-    color: #fa255e;
-  }
   .brand-logo {
     padding: 5px 0;
+  }
+  header {
+    border-bottom: 1px solid gray;
+  }
+  .navigation li{
+    font-size: 1.5em;
   }
 }

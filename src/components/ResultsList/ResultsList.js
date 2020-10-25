@@ -31,7 +31,7 @@ const ResultsList = (props) => {
   }
   return (
     <Fragment>
-      <div className="">
+      <div className="carousel-container">
         <Carousel />
       </div>
     </Fragment>

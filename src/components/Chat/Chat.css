@@ -4,7 +4,7 @@
   border-radius: 5px;
   font-family: 'Grandstander', cursive;
   font-size: .9rem;
-  width: 100vw !important;
+  width: 90vw !important;
   max-height: 550px;
 }
 
@@ -12,6 +12,10 @@
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   color: #fff;
   background-color: #fd4e7e;
+}
+
+.k-chat input:focus {
+  outline: none !important;
 }
 
 .k-bubble {
@@ -22,8 +26,11 @@
 
 .k-chat .k-message-box {
   border-color: inherit;
-  color: #fff;
-  background-color: #fd4e7e;
+  color: #000;
+}
+
+.k-message-box .k-button svg {
+  color: #fd4e7e;
 }
 
 .bg-off-white {

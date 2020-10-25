@@ -9,15 +9,20 @@ a.link {
 }
 
 #sign-in {
-  max-width: 400px;
+  max-width: 450px;
   padding: 2rem;
+  border: 1px solid grey;
 }
 
 .signin {
-  background: #ffb6c1;
+  background-image: url(/static/media/signup-bg.0f2a6e48.jpg);
+  background-size: cover;
   height: 100%;
+  background-position-y: bottom;
   min-height: 100vh;
   padding: 150px 15px 0;
+  max-width: 1000px;
+  margin: auto;
 }
 
 .signin-heading {

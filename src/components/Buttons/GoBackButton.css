@@ -1,0 +1,16 @@
+.go-back-btn {
+  display: block;
+  padding: 9px 15px;
+  border-radius: 5px;
+  border: none;
+  background: #fa255e;
+  color: #fff;
+  font-family: 'Grandstander', cursive;
+  font-size: 1rem;
+  margin-top: 20px;
+  margin-bottom: -5px;
+}
+
+.mr-1 {
+  margin-right: 3px;
+}

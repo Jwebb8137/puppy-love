@@ -7,7 +7,8 @@ import './ProfileFull.css';
 class ProfileFull extends React.Component {
   state = {
     profileInfo: [],
-    show: false
+    show: false,
+    loading: true
   };
 
   showModal = e => {
@@ -21,7 +22,8 @@ class ProfileFull extends React.Component {
     const { API_ENDPOINT } = config;
     const setProfileInfo = (jsonData) => {
       this.setState({
-        profileInfo: jsonData
+        profileInfo: jsonData,
+        loading: false
       });
     };
 
@@ -46,7 +48,13 @@ class ProfileFull extends React.Component {
     const petIcon = `fas fa-${pet_type}`;
     const genderIcon = `fas fa-${gender}`;
 
-    console.log(this.state.profileInfo)
+    if (this.state.loading) {
+      return (
+        <p className="loading-msg h-100 bg-pink">Loading Profile ... <br />
+        <i class="fas fa-paw pink mt-5"></i></p>
+      )
+    }
+
     return (
       <Fragment>
         <div className="main container bg-white">

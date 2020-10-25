@@ -26,6 +26,7 @@ textarea {
 
 .form-container {
   background: #F8E5E5;
+  border: 1px solid grey;
   border-radius: 5px;
   font-family: 'Grandstander', cursive;
   margin: 1rem auto 0;
@@ -127,13 +128,14 @@ select {
   color: #282c34;
   background-color: white;
   border: 1px solid black;
+  border-radius: 5px;
   display: inline-block;
   padding: .7rem .5rem;
 }
 
 .inputfile:focus + label,
 .inputfile + label:hover {
-  background-color: black;
+  background-color: gray;
   color: white;
 }
 
@@ -161,13 +163,14 @@ select {
   color: #282c34;
   background-color: white;
   border: 1px solid black;
+  border-radius: 5px;
   display: inline-block;
   padding: .7rem .5rem;
 }
 
 .petinputfile:focus + label,
 .petinputfile + label:hover {
-  background-color: black;
+  background-color: gray;
   color: white;
 }
 

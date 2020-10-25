@@ -58,6 +58,7 @@
   .dash-img {
     border-radius: 5px;
     height: 100%;
+    margin-top: 25px;
     width: 90vw;
     max-width: 400px;
   }

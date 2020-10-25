@@ -190,7 +190,7 @@ const Signup = ({ setAuth }) => {
             <textarea 
               value={hobbies}
               onChange={e => setHobbies(e.target.value)}
-              placeholder="Tell us a little about yourself!"
+              placeholder="What do you love to do?!"
               maxlength="250"
               required>         
             </textarea>
@@ -236,6 +236,7 @@ const Signup = ({ setAuth }) => {
               value={pet_description}
               onChange={e => setPetDescription(e.target.value)}
               maxlength="250"
+              placeholder="Tell us about your pet!"
               required>         
             </textarea>
           </div>
@@ -246,6 +247,7 @@ const Signup = ({ setAuth }) => {
               value={pet_hobbies}
               onChange={e => setPetHobbies(e.target.value)}
               maxlength="250"
+              placeholder="Fun things your pet likes to do!"
               required>         
             </textarea>
           </div>
@@ -256,6 +258,7 @@ const Signup = ({ setAuth }) => {
               value={pet_meet_description}
               onChange={e => setPetMeetDescription(e.target.value)}
               maxlength="250"
+              placeholder="We want to hear about how you met!"
               required>         
             </textarea>
           </div>

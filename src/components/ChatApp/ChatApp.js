@@ -1,10 +1,10 @@
 import React, { Component, Fragment } from 'react';
 import Chat from 'twilio-chat';
 import config from '../../config';
-import * as ReactDOM from 'react-dom';
 import './ChatApp.css';
-import ProfilePic from '../../images/profile1.jpg'
 import { Chat as ChatUI } from '@progress/kendo-react-conversational-ui';
+import {withRouter} from 'react-router-dom';
+import GoBackButton from '../Buttons/GoBackButton';
 
 function MessageTemplate(props) {
   return (
@@ -26,7 +26,7 @@ class ChatApp extends Component {
     this.user = {
       id: props.username,
       name: props.username,
-      avatarUrl: ProfilePic
+      avatarUrl: ""
     };
 
     this.setupChatClient = this.setupChatClient.bind(this);
@@ -166,6 +166,7 @@ class ChatApp extends Component {
     }
     return (
       <Fragment>
+        <GoBackButton props={this.props}/>
         <div className="col-flex bg-off-white">
           <h2 className="chat-header">
             <span className="support-text">Now Chatting With ...</span>
@@ -187,4 +188,4 @@ class ChatApp extends Component {
   }
 }
 
-export default ChatApp;
+export default withRouter(ChatApp);

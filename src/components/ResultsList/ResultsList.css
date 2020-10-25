@@ -128,3 +128,8 @@
 .min-100 {
   min-height: 100vw;
 }
+
+.carousel-container {
+  background: #f8e5e5;
+  min-height: 100vh;
+}

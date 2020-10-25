@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Modal.css";
 import PropTypes from "prop-types";
-import Cat from '../../images/cat.png';
 
 export default class Modal extends React.Component {
   onClose = e => {
     this.props.onClose && this.props.onClose(e);
   };
+
+  componentDidUpdate = () => {
+    window.scrollTo(0, 0)
+  }
+  
   render() {
     if (!this.props.show) {
       return null;
@@ -22,23 +26,21 @@ export default class Modal extends React.Component {
             {this.props.petDescription}
           </div>
           <div>
-            <h3 className="modal-sub-heading"><span className="pink">Hobbies </span><i class="fas fa-fish"></i></h3>
+           <h3 className="profile-sub-heading">My <span className="pink">Hobbies! </span><i class="fas fa-hiking"></i></h3>
             {this.props.petHobbies}
           </div>
-          <div>
-            <h3 className="modal-sub-heading"><span className="pink">Our Story </span><i class="fas fa-heartbeat"></i></h3>
-            {this.props.petMeet}
-          </div>
+          <div>{this.props.petMeet}</div>
         </div>
         <div class="actions">
           <button class="toggle-button btn font-alt" onClick={this.onClose}>
-            Close <i class="fas fa-times"></i>
+            Close <i class="fas fa-times color-w ml-1"></i>
           </button>
         </div>
       </div>
     );
   }
 }
+
 Modal.propTypes = {
   onClose: PropTypes.func.isRequired,
   show: PropTypes.bool.isRequired
