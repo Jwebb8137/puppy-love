@@ -8,7 +8,7 @@
 }
 
 .carousel.carousel-slider .control-arrow {
-    background: gray;
+  background: gray;
 }
 
 .carousel .slider-wrapper.axis-horizontal .slider .slide {
@@ -16,6 +16,7 @@
 }
 
 .carousel.carousel-slider {
+  border-bottom: 1px solid gray;
   border-radius: 0;
 }
 
@@ -37,6 +38,11 @@
 
 .carousel .slide img {
   max-width: 400px;
+}
+
+.loading-icon {
+  font-size: 3rem;
+  margin: 40px auto;
 }
 
 @media (min-width: 768px) { 

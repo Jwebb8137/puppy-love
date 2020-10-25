@@ -21,3 +21,8 @@
 .flex-2 {
   flex: 2;
 }
+
+#card-icon {
+  padding: 15px 0 25px;
+  width: 200px;
+}

@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import "./ProfileCard.css";
-import Chat from "../Chat/Chat";
+import Logo from "../../images/logo-alt.jpg";
 
 const ProfileCard = (props) => {
   const profileLink = `/user/${props.id}`;
@@ -20,6 +20,7 @@ const ProfileCard = (props) => {
         <Link to={userChat}><button className='btn profile-msg-btn'>Message <i class="fas fa-caret-right"></i></button></Link>
         <Link to={profileLink}><button className='btn-alt-2 profile-msg-btn'>Profile <i class="fas fa-caret-right"></i></button></Link>
       </div>
+      <img src={Logo} id="card-icon"/>
     </div>
   )
 }

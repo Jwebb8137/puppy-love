@@ -1,5 +1,5 @@
 .results {
-  background: lightpink;
+  background: #fff;  
   position: relative;
   z-index: 0;
 }
@@ -131,5 +131,4 @@
 
 .carousel-container {
   background: #f8e5e5;
-  min-height: 100vh;
 }
