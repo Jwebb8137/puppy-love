@@ -15,7 +15,7 @@ a.link {
 }
 
 .signin {
-  background-image: url(/static/media/signup-bg.0f2a6e48.jpg);
+  background-image: url("../../images/signup-bg.jpg");
   background-size: cover;
   height: 100%;
   background-position-y: bottom;
