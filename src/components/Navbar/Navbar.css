@@ -84,6 +84,11 @@ a:hover {
   color: #fa255e;
 }
 
+.navigation li:hover, #logo {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
 /*-- Responsive CSS --*/
 @media screen and (max-width:767px) {
   .show-menu-btn,

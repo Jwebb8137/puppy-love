@@ -28,7 +28,6 @@ class ProfileFull extends React.Component {
     };
 
     const getProfile = async () => {
-      console.log("getting data")
       try {   
         const response = await fetch(`${API_ENDPOINT}users/${currentUserId}`)
         const jsonData = await response.json()

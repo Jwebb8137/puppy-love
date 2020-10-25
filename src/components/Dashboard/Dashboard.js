@@ -19,8 +19,6 @@ const Dashboard = ({ setAuth }) => {
 
       setUserInfo(parseRes)
 
-      console.log(parseRes)
-
     } catch (err) {
       console.error(err.message)
     }

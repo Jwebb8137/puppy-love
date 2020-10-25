@@ -40,8 +40,6 @@ const DemoCarousel = () => {
 
       setUserInfo(parseRes)
 
-      console.log("Getting user info")
-
     } catch (err) {
       console.error(err.message)
     }

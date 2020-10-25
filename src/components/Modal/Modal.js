@@ -29,7 +29,10 @@ export default class Modal extends React.Component {
            <h3 className="profile-sub-heading">My <span className="pink">Hobbies! </span><i class="fas fa-hiking"></i></h3>
             {this.props.petHobbies}
           </div>
-          <div>{this.props.petMeet}</div>
+          <div>
+            <h3 className="profile-sub-heading">Our <span className="pink">Story! </span><i class="fas fa-heartbeat"></i></h3>
+            {this.props.petMeet}
+            </div>
         </div>
         <div class="actions">
           <button class="toggle-button btn font-alt" onClick={this.onClose}>
