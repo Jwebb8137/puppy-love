@@ -24,7 +24,7 @@ header {
   max-width: 100%;
 }
 .fa-times {
-  color: #000;
+  color: #fff;
 }
 .navigation {
   margin: 0px;
@@ -37,16 +37,16 @@ header {
   float: left;
 }
 .navigation li {
+  background: floralwhite;
   color: #000;
   font-family: 'Grandstander', cursive;
   font-size: 1.75em;
+  margin: .15rem 0;
   padding: 10px 20px;
   text-transform: uppercase;
   text-align: left;
   display: block;
   text-decoration: none;
-  display: flex;
-  align-items: center;
 }
 .navigation li i {
   margin-right: .5em;
@@ -98,10 +98,12 @@ a:hover {
     background: #f8e5e5;    
     top: -150%;
     left: 0;
-    padding: 50px 0px;
+    padding: 75px 0px;
     transition: 1s;
   }
   .navigation li {
+    border-bottom: 1px solid gray;
+    border-top: 1px solid gray;
     width: 100%;
   }
   .navigation li a {
@@ -113,12 +115,24 @@ a:hover {
     font-size: 20px;
   }
   .hide-menu-btn {
+    background: #fa255e;
     position: absolute;
     top: 15px;
+    padding: 0px 10px;
     right: 20px;
+    border-radius: 5px;
   }
   .nav-respond {
     top: 0px;
+  }
+  .top-border {
+    border-top: 1px solid gray;
+    margin-top: 25px;
+  }
+  #mobile-logo {
+    display: block;
+    padding: 12px 8px;
+    width: 200px;
   }
 }
 
@@ -134,5 +148,9 @@ a:hover {
   }
   .navigation li{
     font-size: 1.5em;
+  }
+  #mobile-logo {
+    display: none;
+    width: 200px;
   }
 }
