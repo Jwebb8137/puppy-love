@@ -11,7 +11,7 @@ import Dashboard from './components/Dashboard/Dashboard';
 import ResultsList from './components/ResultsList/ResultsList';
 import ProfileFull from './components/ProfileFull/ProfileFull';
 import Footer from './components/Footer/Footer';
-import Chat from './components/Chat/Chat';
+import Chat from './components/ChatApp/Chat';
 import '@progress/kendo-theme-material/dist/all.css';
 
 function App() {

@@ -1,7 +1,7 @@
-import App from "./App"
+import Carousel from "./Carousel";
 import React from 'react';
 import { shallow } from 'enzyme';
-  
+
 it("renders without crashing", () => {
-  shallow(<App />);
+  shallow(<Carousel />);
 });

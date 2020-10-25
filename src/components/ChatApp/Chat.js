@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import config from '../../config';
-import ChatLogin from '../ChatLogin/ChatLogin';
-import ChatApp from '../ChatApp/ChatApp';
+import ChatApp from './ChatApp';
 import './Chat.css';
 
 class Chat extends Component {
@@ -72,7 +71,6 @@ class Chat extends Component {
     getCurrentId();
     getTargetInfo();
     
-    console.log(`chatting with user ${this.state.target_name}`)
   }
 
 
@@ -80,6 +78,7 @@ class Chat extends Component {
     event.preventDefault();
     this.setState({ loggedIn: true });
   }
+
   handleUsernameChange(event) {
     this.setState({ username: event.target.value });
   }

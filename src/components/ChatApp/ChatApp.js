@@ -38,7 +38,6 @@ class ChatApp extends Component {
   }
 
   componentDidMount() {
-    console.log(this.props.targetUser)
     const { API_ENDPOINT } = config;
     fetch(`${API_ENDPOINT}chat/token`, {
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -60,7 +59,6 @@ class ChatApp extends Component {
 
   setupChatClient(client) {
     const uid = `${this.props.currentUser*this.props.targetUser}`;
-    console.log(this.props.currentUser)
     this.client = client;
     this.client
       .getChannelByUniqueName(uid)
@@ -85,7 +83,6 @@ class ChatApp extends Component {
   }
 
   twilioMessageToKendoMessage(message) {
-    console.log(message)
     return {
       text: message.body,
       author: { id: message.author, name: message.author },
