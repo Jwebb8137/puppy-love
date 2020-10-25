@@ -50,8 +50,11 @@ class ProfileFull extends React.Component {
 
     if (this.state.loading) {
       return (
-        <p className="loading-msg h-100 bg-pink">Loading Profile ... <br />
-        <i class="fas fa-paw pink mt-5"></i></p>
+        <div className="loading-msg">
+          <i class="fas fa-paw pink loading-icon"></i>
+          <p>Loading Profile ...</p>
+          <i class="fas fa-paw pink loading-icon"></i>
+       </div>
       )
     }
 

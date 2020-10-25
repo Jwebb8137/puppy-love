@@ -56,7 +56,7 @@ const DemoCarousel = () => {
     return (
       <div className="loading-msg">
         <i class="fas fa-paw pink loading-icon"></i>
-        <p>Searching Your Area</p>
+        <p>Searching Your Area ...</p>
         <i class="fas fa-paw pink loading-icon"></i>
       </div>
     )

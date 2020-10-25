@@ -12,8 +12,11 @@
 }
 
 .loading-msg {
+  background: #f8e5e5;
+  font-family: 'Grandstander', cursive;
   font-size: 2rem;
   min-height: 100vh;
+  min-width: 100vw;
   padding-top: 20vh;
 }
 

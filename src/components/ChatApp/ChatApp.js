@@ -161,8 +161,13 @@ class ChatApp extends Component {
     if (this.state.error) {
       return <p>{this.state.error}</p>;
     } else if (this.state.isLoading) {
-      return <p className="loading-msg">Loading chat... <br />
-        <i class="fas fa-paw pink mt-5"></i></p>;
+      return (
+        <div className="loading-msg">
+          <i class="fas fa-paw pink loading-icon"></i>
+          <p>Loading Chat ...</p>
+          <i class="fas fa-paw pink loading-icon"></i>
+        </div>
+      )
     }
     return (
       <Fragment>

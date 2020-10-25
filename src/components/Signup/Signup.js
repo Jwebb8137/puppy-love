@@ -90,8 +90,13 @@ const Signup = ({ setAuth }) => {
   }
 
   if (isLoading) {
-    return <p className="loading-msg h-100 bg-pink">Creating Profile ... <br />
-    <i class="fas fa-paw pink mt-5"></i></p>;
+    return (
+      <div className="loading-msg">
+        <i class="fas fa-paw pink loading-icon"></i>
+        <p>Creating Profile ...</p>
+        <i class="fas fa-paw pink loading-icon"></i>
+      </div>
+    )
   }
 
   return (

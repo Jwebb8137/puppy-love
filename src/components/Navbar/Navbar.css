@@ -37,7 +37,6 @@ header {
   float: left;
 }
 .navigation li {
-  background: floralwhite;
   color: #000;
   font-family: 'Grandstander', cursive;
   font-size: 1.75em;
@@ -102,6 +101,7 @@ a:hover {
     transition: 1s;
   }
   .navigation li {
+    background: floralwhite;
     border-bottom: 1px solid gray;
     border-top: 1px solid gray;
     width: 100%;
