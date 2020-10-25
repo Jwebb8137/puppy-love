@@ -10,8 +10,9 @@ const SignIn = ({ setAuth }) => {
     passwordInput: ""
   });
 
+  const [err, setError] = useState("");
+
   const { API_ENDPOINT } = config;
-  console.log(API_ENDPOINT)
 
   const { username, passwordInput } = inputs;
 
@@ -24,7 +25,6 @@ const SignIn = ({ setAuth }) => {
 
       try {
         const body = { username, passwordInput };
-        console.log(body)
         const response = await fetch(`${API_ENDPOINT}login`, {
           method: "POST",
           headers: {"Content-type" : "application/json"},
@@ -38,6 +38,7 @@ const SignIn = ({ setAuth }) => {
         setAuth(true);
       } catch (err) {
         console.error(err.message)
+        setError("Wrong username or password, try again!")
       }
     };
 
@@ -55,6 +56,9 @@ const SignIn = ({ setAuth }) => {
               <input type='password' value={passwordInput} onChange={e => onChange(e)} name="passwordInput" placeholder="Password" required/>
             </div>
           </div>
+        </div>
+        <div className="err-msg">
+          {err}
         </div>
         <button id="profile-submit" className="btn-sm btn-sm-bg-alt">Sign In <i class="fas fa-caret-right"></i></button>
         <span className="mt-5"></span>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link, Redirect } from "react-router-dom";
 import config from '../../config';
 import './Signup.css';
@@ -26,6 +26,7 @@ const Signup = ({ setAuth }) => {
   const [previewSource, setPreviewSource] = useState("");
   const [previewPetSource, setPreviewPetSource] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [err, setError] = useState("");
 
   const { API_ENDPOINT } = config;
 
@@ -36,10 +37,10 @@ const Signup = ({ setAuth }) => {
   const onSubmitForm = async (e) => {
     e.preventDefault();
 
-    if(!previewSource) return;
-
-    console.log("Form submitted")
-
+    if(!previewSource && !previewPetSource) {
+      setError("* A Picture Is Required!")
+      return;
+    }  
     try {
       setIsLoading("true")
       const body = { email, username, password, headline, first_name, last_name, age, hobbies, gender, seeking_gender, description, pet_type, pet_name, pet_description, pet_meet_description, pet_hobbies, previewSource, previewPetSource }
@@ -118,6 +119,7 @@ const Signup = ({ setAuth }) => {
             <input type='password' value={password} required pattern="^.*(?=.{6,})(?=.*[a-z])(?=.*[A-Z]).*$"
             onChange={e => setPassword(e.target.value)}/>
           </div>
+          <span className="form-helper-text">(Must be 8 characters long, one uppercase letter, and a number <i class="fas fa-paw"></i>)</span>
           <h3 className="signup-sub-heading mt-10">All About <span className="pink">You!</span></h3>
           <div className='input-field'>
             {previewSource && (
@@ -138,6 +140,7 @@ const Signup = ({ setAuth }) => {
               class="inputfile" 
             />
             <label htmlFor="file">Upload Picture</label>
+            <div className="err-msg">{err}</div>
           </div>
           <div className='input-field mt-5'>
             <label>Headline</label>
