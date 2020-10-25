@@ -1,5 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { Link, Redirect } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
 import config from '../../config';
 import './Signup.css';
 
@@ -144,7 +143,7 @@ const Signup = ({ setAuth }) => {
           </div>
           <div className='input-field mt-5'>
             <label>Headline</label>
-            <input typeof='text' value={headline} required maxlength="50" onChange={e => setHeadline(e.target.value)}/>
+            <input typeof='text' value={headline} required maxLength="50" onChange={e => setHeadline(e.target.value)}/>
           </div>
           <span className="form-helper-text">(Your best one-liner! Keep it short tho <i class="fas fa-paw"></i>)</span>
           <div className="row mt-5">
@@ -188,7 +187,7 @@ const Signup = ({ setAuth }) => {
               value={description}
               onChange={e => setDescription(e.target.value)}
               placeholder="Tell us a little about yourself!"
-              maxlength="250"
+              maxLength="250"
               required>         
             </textarea>
           </div>
@@ -199,7 +198,7 @@ const Signup = ({ setAuth }) => {
               value={hobbies}
               onChange={e => setHobbies(e.target.value)}
               placeholder="What do you love to do?!"
-              maxlength="250"
+              maxLength="250"
               required>         
             </textarea>
           </div>
@@ -243,7 +242,7 @@ const Signup = ({ setAuth }) => {
             <textarea 
               value={pet_description}
               onChange={e => setPetDescription(e.target.value)}
-              maxlength="250"
+              maxLength="250"
               placeholder="Tell us about your pet!"
               required>         
             </textarea>
@@ -254,7 +253,7 @@ const Signup = ({ setAuth }) => {
             <textarea 
               value={pet_hobbies}
               onChange={e => setPetHobbies(e.target.value)}
-              maxlength="250"
+              maxLength="250"
               placeholder="Fun things your pet likes to do!"
               required>         
             </textarea>
@@ -265,7 +264,7 @@ const Signup = ({ setAuth }) => {
             <textarea 
               value={pet_meet_description}
               onChange={e => setPetMeetDescription(e.target.value)}
-              maxlength="250"
+              maxLength="250"
               placeholder="We want to hear about how you met!"
               required>         
             </textarea>

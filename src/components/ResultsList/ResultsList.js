@@ -12,7 +12,7 @@ const ResultsList = (props) => {
         <div className="flex-col min-100">
           <div className="results-alt">
             <div className="w-full">
-              <img src={Dog} className="w-100 results-img"/>
+              <img src={Dog} className="w-100 results-img" alt="Puppy Love Dog"/>
             </div>
             <h2 id="results-heading">
               Ready To Start <span className="pink">Looking?</span>

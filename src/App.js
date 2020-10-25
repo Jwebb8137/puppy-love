@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import {Route, BrowserRouter, Redirect, Switch} from 'react-router-dom';
+import { Route, BrowserRouter, Redirect } from 'react-router-dom';
 import './App.css';
 import config from './config';
 import '@progress/kendo-theme-material/dist/all.css';
@@ -15,11 +15,9 @@ import Chat from './components/ChatApp/Chat';
 import '@progress/kendo-theme-material/dist/all.css';
 
 function App() {
-  
+
   const { API_ENDPOINT } = config;
-
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-
   const setAuth = (boolean) => {
     setIsAuthenticated(boolean);
   }
@@ -30,7 +28,6 @@ function App() {
         method: "GET",
         headers: { token : localStorage.token }
       });
-
       const parseRes = await response.json();     
       parseRes === true ? setIsAuthenticated(true) : setIsAuthenticated(false);
     } catch (err) {

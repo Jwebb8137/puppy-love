@@ -6,9 +6,10 @@ import Logo from "../../images/logo-alt.jpg";
 const ProfileCard = (props) => {
   const profileLink = `/user/${props.id}`;
   const userChat = `/chat/${props.id}`;
+  const imgAlt = `puppy-love-${props.id}`
   return(
     <div className='results'>
-      <img className='profile-img carousel-img' src={props.img} alt="profile-image"/>
+      <img className='profile-img carousel-img' src={props.img} alt={imgAlt}/>
       <div className='profile-txt'>
         <div className='icon-container'>
           <i className={`${props.gender} flex-1`}></i>
