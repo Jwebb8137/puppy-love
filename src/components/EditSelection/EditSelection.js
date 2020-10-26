@@ -72,7 +72,7 @@ const EditSelection = (props) => {
         }}
       >
       {" "}
-      Update Profile <i className="fas fa-caret-right"></i>{" "}
+      Update Photo <i className="fas fa-user"></i>{" "}
       </button>
     )
   }
