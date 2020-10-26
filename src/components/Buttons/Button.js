@@ -3,7 +3,7 @@ import './Button.css';
 
 const Button = ({ name, icon }) => {
   return (
-    <a class="btn btn-sm btn-sm-bg">{name} <i class={icon}></i></a>
+    <button class="btn btn-sm btn-sm-bg">{name} <i class={icon}></i></button>
   )
 }
 

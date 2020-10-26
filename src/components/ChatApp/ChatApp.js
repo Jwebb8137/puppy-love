@@ -58,7 +58,7 @@ class ChatApp extends Component {
   }
 
   setupChatClient(client) {
-    const uid = `${this.props.currentUser*this.props.targetUser}`;
+    const uid = `${(this.props.currentUser*0.5)*(this.props.targetUser*0.5)}`;
     this.client = client;
     this.client
       .getChannelByUniqueName(uid)

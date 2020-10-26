@@ -53,20 +53,21 @@ const DemoCarousel = () => {
   if (isLoading) {
     return (
       <div className="loading-msg">
-        <i class="fas fa-paw pink loading-icon"></i>
+        <i className="fas fa-paw pink loading-icon"></i>
         <p>Searching Your Area ...</p>
-        <i class="fas fa-paw pink loading-icon"></i>
+        <i className="fas fa-paw pink loading-icon"></i>
       </div>
     )
   }
 
   return (
-    <Carousel>
+    <Carousel showThumbs={false}>
       {profiles
         .filter(profile => profile.user_id !== userInfo.user_id && profile.gender === userInfo.seeking_gender)
         .map(profile => {
         return (
-          <ProfileCard 
+          <ProfileCard
+            key={profile.user_id} 
             id={profile.user_id}
             username={profile.username}
             img={profile.photo_url} 

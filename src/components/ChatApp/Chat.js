@@ -46,8 +46,6 @@ class Chat extends Component {
     }
 
     const getTargetInfo = async () => {
-      const target_id = this.state.target_id;
-      console.log("This is working")
       try {
         const response = await fetch(`${API_ENDPOINT}target-info?target=${this.state.target_id}`, {
           method: "GET",

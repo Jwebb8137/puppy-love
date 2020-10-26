@@ -92,9 +92,9 @@ const Signup = ({ setAuth }) => {
   if (isLoading) {
     return (
       <div className="loading-msg">
-        <i class="fas fa-paw pink loading-icon"></i>
+        <i className="fas fa-paw pink loading-icon"></i>
         <p>Creating Profile ...</p>
-        <i class="fas fa-paw pink loading-icon"></i>
+        <i className="fas fa-paw pink loading-icon"></i>
       </div>
     )
   }
@@ -102,7 +102,7 @@ const Signup = ({ setAuth }) => {
   return (
     <div className='signup'>
       <form className="form-container" onSubmit={e => onSubmitForm(e)}>
-      <h2 className="signup-title">Puppy <span className="pink">Love </span><i class="fas fa-paw"></i></h2>
+      <h2 className="signup-title">Puppy <span className="pink">Love </span><i className="fas fa-paw"></i></h2>
       <h3 className="signup-sub-heading">Let's <span className="pink">Get Started!</span></h3>
         <div className="container-col">
           <div className='input-field mt-5'>
@@ -118,7 +118,7 @@ const Signup = ({ setAuth }) => {
             <input type='password' value={password} required pattern="^.*(?=.{6,})(?=.*[a-z])(?=.*[A-Z]).*$"
             onChange={e => setPassword(e.target.value)}/>
           </div>
-          <span className="form-helper-text">(Must be 8 characters long, one uppercase letter, and a number <i class="fas fa-paw"></i>)</span>
+          <span className="form-helper-text">(Must be 8 characters long, one uppercase letter, and a number <i className="fas fa-paw"></i>)</span>
           <h3 className="signup-sub-heading mt-10">All About <span className="pink">You!</span></h3>
           <div className='input-field'>
             {previewSource && (
@@ -129,14 +129,14 @@ const Signup = ({ setAuth }) => {
               />
             )}
             {!previewSource && (
-              <i class="fas fa-user-circle"></i>
+              <i className="fas fa-user-circle"></i>
             )}
             <input type="file"
               value={fileInputState} 
               onChange={handleFileInputChange} 
               name="image" 
               id="file" 
-              class="inputfile" 
+              className="inputfile" 
             />
             <label htmlFor="file">Upload Picture</label>
             <div className="err-msg">{err}</div>
@@ -145,7 +145,7 @@ const Signup = ({ setAuth }) => {
             <label>Headline</label>
             <input typeof='text' value={headline} required maxLength="50" onChange={e => setHeadline(e.target.value)}/>
           </div>
-          <span className="form-helper-text">(Your best one-liner! Keep it short tho <i class="fas fa-paw"></i>)</span>
+          <span className="form-helper-text">(Your best one-liner! Keep it short tho <i className="fas fa-paw"></i>)</span>
           <div className="row mt-5">
             <div className='input-field'>
               <label>I am</label>
@@ -182,7 +182,7 @@ const Signup = ({ setAuth }) => {
           </div>
           <div className='input-field mt-5'>
             <label>A quick <span className="pink">introduction</span>!</label>
-            <span className="form-helper-text block mt-1">(What do you want others to know that makes you, well you! <i class="fas fa-paw"></i>)</span>
+            <span className="form-helper-text block mt-1">(What do you want others to know that makes you, well you! <i className="fas fa-paw"></i>)</span>
             <textarea 
               value={description}
               onChange={e => setDescription(e.target.value)}
@@ -193,7 +193,7 @@ const Signup = ({ setAuth }) => {
           </div>
           <div className='input-field mt-5'>
             <label>Your <span className="pink">Hobbies & Interests</span>!</label>
-            <span className="form-helper-text block mt-1">(Passions, interests, and other things you absolutely love to do! <i class="fas fa-paw"></i>)</span>
+            <span className="form-helper-text block mt-1">(Passions, interests, and other things you absolutely love to do! <i className="fas fa-paw"></i>)</span>
             <textarea 
               value={hobbies}
               onChange={e => setHobbies(e.target.value)}
@@ -203,7 +203,7 @@ const Signup = ({ setAuth }) => {
             </textarea>
           </div>
           <h3 className="signup-sub-heading mt-10">All About <span className="pink">Your Pet!</span></h3>
-          <span className="form-helper-text block mt-1">Here is your chance to show them off! <i class="fas fa-paw"></i></span>
+          <span className="form-helper-text block mt-1">Here is your chance to show them off! <i className="fas fa-paw"></i></span>
           <div className='input-field'>
             {previewPetSource && (
               <img 
@@ -213,14 +213,14 @@ const Signup = ({ setAuth }) => {
               />
             )}
             {!previewPetSource && (
-              <i class="fas fa-user-circle"></i>
+              <i className="fas fa-user-circle"></i>
             )}
             <input type="file"
               value={petFileInputState} 
               onChange={handlePetFileInputChange} 
               name="pet_image" 
               id="petFile" 
-              class="petinputfile"
+              className="petinputfile"
             />
             <label htmlFor="petFile">Upload Picture</label>
           </div>
@@ -238,7 +238,7 @@ const Signup = ({ setAuth }) => {
           </div>
           <div className='input-field mt-5'>
             <label>Your Pet's <span className="pink">introduction</span>!</label>
-            <span className="form-helper-text block mt-1">(Your chance to introduce your pet to the world! <i class="fas fa-paw"></i>)</span>
+            <span className="form-helper-text block mt-1">(Your chance to introduce your pet to the world! <i className="fas fa-paw"></i>)</span>
             <textarea 
               value={pet_description}
               onChange={e => setPetDescription(e.target.value)}
@@ -249,7 +249,7 @@ const Signup = ({ setAuth }) => {
           </div>
           <div className='input-field mt-5'>
             <label>Your Pet's <span className="pink">Hobbies</span>!</label>
-            <span className="form-helper-text block mt-1">(Cool tricks, favorite treats, and anything else you want to share! <i class="fas fa-paw"></i>)</span>
+            <span className="form-helper-text block mt-1">(Cool tricks, favorite treats, and anything else you want to share! <i className="fas fa-paw"></i>)</span>
             <textarea 
               value={pet_hobbies}
               onChange={e => setPetHobbies(e.target.value)}
@@ -260,7 +260,7 @@ const Signup = ({ setAuth }) => {
           </div>
           <div className='input-field mt-5'>
             <label>How Did You <span className="pink">Meet</span>?</label>
-            <span className="form-helper-text block mt-1">(We want to know how you and your pet found each other / or met! <i class="fas fa-paw"></i>)</span>
+            <span className="form-helper-text block mt-1">(We want to know how you and your pet found each other / or met! <i className="fas fa-paw"></i>)</span>
             <textarea 
               value={pet_meet_description}
               onChange={e => setPetMeetDescription(e.target.value)}
@@ -270,7 +270,7 @@ const Signup = ({ setAuth }) => {
             </textarea>
           </div>
         </div>
-        <button typeof="submit" id="profile-submit" className="btn-sm btn-sm-bg-alt">Get Started <i class="fas fa-caret-right"></i></button>
+        <button typeof="submit" id="profile-submit" className="btn-sm btn-sm-bg-alt">Get Started <i className="fas fa-caret-right"></i></button>
       </form>
     </div>
   )

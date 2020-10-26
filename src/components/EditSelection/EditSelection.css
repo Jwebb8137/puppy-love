@@ -1,0 +1,23 @@
+.edit-img {
+  width: 100px;
+}
+
+#modal-img {
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 5px;
+  position: absolute;
+  max-width: 250px;
+  top: 10vh;
+  width: 70vw;
+}
+
+#modal-close {
+  display: block;
+  width: 100%;
+  text-align: end;
+}
+
+#img-submit {
+  margin-bottom: 25px;
+}

@@ -1,5 +1,6 @@
 import React, {Fragment, useState, useEffect} from "react";
 import config from '../../config';
+import EditSelection from '../EditSelection/EditSelection';
 import './Dashboard.css';
 
 const Dashboard = ({ setAuth }) => {
@@ -35,6 +36,7 @@ const Dashboard = ({ setAuth }) => {
   useEffect(() => {
     getName()
   }, []);
+
   return (
     <Fragment>
       <div className="pink-bg">
@@ -45,7 +47,7 @@ const Dashboard = ({ setAuth }) => {
           <div className="container">
             <div className="row mt-5 jc-center">
               <button className="dash-btn" onClick={e => logout(e)}>Logout <i class="fas fa-sign-in-alt"></i></button>
-              <button className="dash-btn">Edit Profile</button>
+              <EditSelection user={userInfo}/>
             </div>
           </div>
           <h2 className="dash-header"><i class="fas fa-paw"></i> <span className="pink">{first_name}'s Account</span> <i class="fas fa-paw"></i></h2>

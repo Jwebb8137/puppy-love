@@ -50,9 +50,9 @@ class ProfileFull extends React.Component {
     if (this.state.loading) {
       return (
         <div className="loading-msg">
-          <i class="fas fa-paw pink loading-icon"></i>
+          <i className="fas fa-paw pink loading-icon"></i>
           <p>Loading Profile ...</p>
-          <i class="fas fa-paw pink loading-icon"></i>
+          <i className="fas fa-paw pink loading-icon"></i>
        </div>
       )
     }
@@ -63,34 +63,34 @@ class ProfileFull extends React.Component {
           <div className="sub-container">
             <h1 className="profile-heading">{first_name} & {pet_name}</h1>
             <span className="w-100 username-text">
-              <i class="far fa-star pink"></i>
+              <i className="far fa-star pink"></i>
                 {username}
-              <i class="far fa-star pink"></i>
+              <i className="far fa-star pink"></i>
             </span>
             <div className="profile-img-container">
-              <img className="profile-full-img" src={photo_url}/>
+              <img className="profile-full-img" src={photo_url} alt=""/>
             </div>
             <div className="about-container">
-              <h3 className="profile-sub-heading">About <span className="pink">Me! </span><i class={genderIcon}></i></h3>
+              <h3 className="profile-sub-heading">About <span className="pink">Me! </span><i className={genderIcon}></i></h3>
               <p className="profile-sub-text">{description}</p>
             </div>
-            <Link to={userChat} className="home-link"><button className='toggle-button btn modal-btn'>Message <i class="fas fa-comment"></i></button></Link>
+            <Link to={userChat} className="home-link"><button className='toggle-button btn modal-btn'>Message <i className="fas fa-comment"></i></button></Link>
             <div className="about-container">
               <h3 className="profile-sub-heading">Meet <span className="pink">{pet_name}! </span><i className={petIcon}></i></h3>
               <p className="profile-sub-text">{pet_description}</p>
               <button
-                class="toggle-button btn modal-btn"
+                className="toggle-button btn modal-btn"
                 id="centered-toggle-button"
                 onClick={e => {
                     this.showModal(e);
                   }}
                 >
                 {" "}
-                {pet_name}'s Profile <i class="fas fa-caret-right"></i>{" "}
+                {pet_name}'s Profile <i className="fas fa-caret-right"></i>{" "}
               </button>
             </div>
             <div className="about-container">
-              <h3 className="profile-sub-heading">My <span className="pink">Hobbies! </span><i class="fas fa-hiking"></i></h3>
+              <h3 className="profile-sub-heading">My <span className="pink">Hobbies! </span><i className="fas fa-hiking"></i></h3>
               <p className="profile-sub-text">{hobbies}</p>
             </div>
             <h3 className="fp-heading">Additional <span className="pink">Information!</span></h3>  
@@ -114,7 +114,7 @@ class ProfileFull extends React.Component {
           </div>
         </div>
         <div className="modal-container">
-          <Modal onClose={this.showModal} show={this.state.show} img={this.state.profileInfo.photo_pet_url} petName={pet_name} petDescription={pet_description} petHobbies={pet_hobbies} petMeet={pet_meet_description}>
+          <Modal onClose={this.showModal} show={this.state.show} img={photo_pet_url} petName={pet_name} petDescription={pet_description} petHobbies={pet_hobbies} petMeet={pet_meet_description}>
             {pet_description}
           </Modal>
         </div>
