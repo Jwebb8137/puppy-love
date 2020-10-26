@@ -20,26 +20,19 @@ class Chat extends Component {
   }
 
   componentDidMount() {
-
     const { API_ENDPOINT } = config;
-
     const getCurrentId = async () => {
       try {
         const response = await fetch(`${API_ENDPOINT}dashboard`, {
           method: "GET",
           headers: { token: localStorage.token }
         });
-  
         const parseRes = await response.json();
-
         this.setState({
           current_id: parseRes.user_id,
           username: parseRes.username,
           loggedIn: true
         })
-  
-        console.log(this.state.current_id)
-  
       } catch (err) {
         console.error(err.message)
       }
@@ -51,24 +44,17 @@ class Chat extends Component {
           method: "GET",
           headers: { token: localStorage.token }
         });
-  
         const parseRes = await response.json();
-
         this.setState({
           target_name: parseRes.first_name,
           target_petName: parseRes.pet_name
         })
-  
-        console.log(this.state.current_id)
-  
       } catch (err) {
         console.error(err.message)
       }
     }
-
     getCurrentId();
     getTargetInfo();
-    
   }
 
 
@@ -91,14 +77,6 @@ class Chat extends Component {
         targetPet={this.state.target_petName}
         currentUser={this.state.current_id}
       />;
-    // } else {
-    //   loginOrChat = (
-    //     <ChatLogin
-    //       handleLogin={this.handleLogin}
-    //       handleUsernameChange={this.handleUsernameChange}
-    //       username={this.state.username}
-    //     />
-    //   );
     }
     return (
       <div className="chat-container container bg-off-white">

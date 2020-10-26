@@ -13,6 +13,10 @@
   width: 70vw;
 }
 
+.modal .inputfile + label {
+  font-size: 1rem;
+} 
+
 #modal-close {
   display: block;
   width: 100%;

@@ -5,7 +5,7 @@ import Logo from "../../images/logo-alt.jpg";
 
 const ProfileCard = (props) => {
   const profileLink = `/user/${props.id}`;
-  const userChat = `/chat/${props.id}`;
+  const userChat = `/chat/user?user=${props.user_id}&target=${props.id}`;
   const imgAlt = `puppy-love-${props.id}`
   return(
     <div className='results'>

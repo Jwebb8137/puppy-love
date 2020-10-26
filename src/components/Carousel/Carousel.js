@@ -70,6 +70,7 @@ const DemoCarousel = () => {
             key={profile.user_id} 
             id={profile.user_id}
             username={profile.username}
+            user_id={userInfo.user_id}
             img={profile.photo_url} 
             firstName={profile.first_name}
             lastName={profile.last_name}

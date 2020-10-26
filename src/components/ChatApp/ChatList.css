@@ -1,0 +1,51 @@
+.inbox-row {
+  background: lightpink;
+  border-radius: 5px;
+  font-family: 'Grandstander', cursive;
+  font-size: 1.2rem;
+  margin: 15px auto;
+  padding: 14px 20px;
+  position: relative;
+  width: 75vw;
+}
+
+.unread-count {
+  position: absolute;
+  right: 10px;
+}
+
+.inbox {
+  color: #000;
+  text-decoration: none;
+}
+
+.helper-text{
+  display: block;
+  font-size: 1.1rem;
+  margin: auto;
+  max-width: 450px;
+}
+
+.chat-heading {
+  font-size: 2.75rem;
+  margin-top: 30px;
+}
+
+.message-box {
+  margin-top: 35px;
+}
+
+.bg-white {
+  background: #fff;
+}
+
+.logo-msg {
+  height: 60px;
+  margin-top: 50px;
+}
+
+@media (min-width: 768px) { 
+  .chat-heading {
+    margin-top: 50px;
+  }
+}

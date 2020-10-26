@@ -12,6 +12,7 @@ import ResultsList from './components/ResultsList/ResultsList';
 import ProfileFull from './components/ProfileFull/ProfileFull';
 import Footer from './components/Footer/Footer';
 import Chat from './components/ChatApp/Chat';
+import ChatList from './components/ChatApp/ChatList';
 import '@progress/kendo-theme-material/dist/all.css';
 
 function App() {
@@ -67,6 +68,15 @@ function App() {
           exact path="/browse" 
           render={props => 
             <ResultsList {...props} setAuth={setAuth} isAuth={isAuthenticated}/>          
+          }
+        />
+        <Route exact path="/chatlist/:user" 
+          render={props => 
+            isAuthenticated ? (
+              <ChatList {...props} setAuth={setAuth} />
+            ) : (
+              <Redirect to="/signin" />
+            )
           }
         />
         <Route exact path="/dashboard" 

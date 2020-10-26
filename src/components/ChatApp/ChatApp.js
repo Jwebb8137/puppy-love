@@ -4,6 +4,7 @@ import config from '../../config';
 import './ChatApp.css';
 import { Chat as ChatUI } from '@progress/kendo-react-conversational-ui';
 import {withRouter} from 'react-router-dom';
+import queryString from 'query-string'
 import GoBackButton from '../Buttons/GoBackButton';
 
 function MessageTemplate(props) {
@@ -20,25 +21,25 @@ class ChatApp extends Component {
     this.state = {
       error: null,
       isLoading: true,
-      messages: []
+      messages: [],
+      target_name: "",
+      target_petName: ""
     };
-
     this.user = {
       id: props.username,
       name: props.username,
       avatarUrl: ""
     };
-
     this.setupChatClient = this.setupChatClient.bind(this);
     this.messagesLoaded = this.messagesLoaded.bind(this);
     this.messageAdded = this.messageAdded.bind(this);
     this.sendMessage = this.sendMessage.bind(this);
     this.handleError = this.handleError.bind(this);
-
   }
 
   componentDidMount() {
     const { API_ENDPOINT } = config;
+    const values = queryString.parse(this.props.location.search)
     fetch(`${API_ENDPOINT}chat/token`, {
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       method: 'POST',
@@ -48,6 +49,23 @@ class ChatApp extends Component {
       .then(data => Chat.create(data.token))
       .then(this.setupChatClient)
       .catch(this.handleError);
+
+      const getTargetInfo = async () => {
+        try {
+          const response = await fetch(`${API_ENDPOINT}target-info?target=${values.target}`, {
+            method: "GET",
+            headers: { token: localStorage.token }
+          });
+          const parseRes = await response.json();
+          this.setState({
+            target_name: parseRes.first_name,
+            target_petName: parseRes.pet_name
+          })
+        } catch (err) {
+          console.error(err.message)
+        }
+      }
+    getTargetInfo();
   }
 
   handleError(error) {
@@ -58,12 +76,17 @@ class ChatApp extends Component {
   }
 
   setupChatClient(client) {
-    const uid = `${(this.props.currentUser*0.5)*(this.props.targetUser*0.5)}`;
+    const values = queryString.parse(this.props.location.search)
+    console.log(values)
+    const channelName = `${values.q}`;
+    const uid = `${(parseInt(values.target) / 5) * (parseInt(values.user) / 5)}`;
     this.client = client;
     this.client
-      .getChannelByUniqueName(uid)
+      .getChannelByUniqueName(values.q ? channelName : uid)
       .then(channel => channel)
       .catch(error => {
+        console.log(error)
+        console.log(error.body)
         if (error.body.code === 50300) {
           return this.client.createChannel({ uniqueName: uid });
         } else {
@@ -78,6 +101,17 @@ class ChatApp extends Component {
         this.setState({ isLoading: false });
         this.channel.getMessages().then(this.messagesLoaded);
         this.channel.on('messageAdded', this.messageAdded);
+        this.channel.setAllMessagesConsumed();
+      })
+      //get user channels
+      .then(() => {
+        client.getUserChannelDescriptors().then(function(paginator) {
+          paginator.items.map(item => console.log(item))
+          // for (i=0; i<paginator.items.length; i++) {
+          //   var channel = paginator.items[i];
+          //   console.log('Channel: ' + channel.friendlyName);
+          // }
+        }); 
       })
       .catch(this.handleError);
   }
@@ -113,20 +147,20 @@ class ChatApp extends Component {
     let file = e.target.files[0];
     let reader = new FileReader();
     reader.onloadend = (event) => {
-        let message = {
-            author: this.user,
-            text: '',
-            attachments: [{
-                content: event.target.result,
-                contentType: 'image'
-            }]
-        }
-        this.setState((prevState) => ({
-            messages: [
-                ...prevState.messages,
-                message
-            ],
-        }));
+      let message = {
+        author: this.user,
+        text: '',
+        attachments: [{
+          content: event.target.result,
+          contentType: 'image'
+        }]
+      }
+      this.setState((prevState) => ({
+        messages: [
+          ...prevState.messages,
+          message
+        ],
+      }));
     };
     reader.readAsDataURL(file);
   }
@@ -170,10 +204,9 @@ class ChatApp extends Component {
       <Fragment>
         <GoBackButton props={this.props}/>
         <div className="col-flex bg-off-white">
-          <h2 className="chat-header">
-            <span className="support-text">Now Chatting With ...</span>
-            <span className="chat-name"><i class="fas fa-paw pink"></i> {this.props.targetUsername} <span className="pink">&</span> {this.props.targetPet} <i class="fas fa-paw pink"></i>
-            </span>
+          <h2 className="chat-header">           
+            <i class="fas fa-paw pink" /> Now Chatting <i class="fas fa-paw pink" />        
+            <span className="form-helper-text block chat-helper">(Try asking them about their pet, favorite animal, or their interests!)</span> 
           </h2>
           <ChatUI
             user={this.user}

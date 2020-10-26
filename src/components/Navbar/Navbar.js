@@ -19,6 +19,7 @@ export default class Navbar extends React.Component {
             <Link to='/'><li className="top-border" onClick={this.handleMenu}><i className="fas fa-home"></i> Home</li></Link>
             <Link to='/browse'><li onClick={this.handleMenu}><i className="fas fa-users"></i> Browse</li></Link>
             <Link to='/signin'><li onClick={this.handleMenu}><i className="fas fa-user"></i> Login</li></Link>
+            <Link to='/chatlist/user'><li onClick={this.handleMenu}><i className="fas fa-user"></i> Messages</li></Link>
             <label htmlFor="toggle-btn" className="hide-menu-btn" onClick={this.handleMenu}><i className="fas fa-times"></i></label>
             <img src={Logo} id="mobile-logo" alt="Puppy Love Logo"/>
           </ul>
