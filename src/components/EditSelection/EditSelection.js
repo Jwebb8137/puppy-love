@@ -5,10 +5,8 @@ import "./EditSelection.css";
 const { API_ENDPOINT } = config;
 
 const EditSelection = (props) => {
-  console.log(props.user)
   const { photo_url } = props.user;
   const { user_id } = props.user;
-  console.log(photo_url)
   const [description, setDescription] = useState(props.photo_url);
   const [previewSource, setPreviewSource] = useState("");
   const [fileInputState, setFileInputState] = useState("");
@@ -55,8 +53,8 @@ const EditSelection = (props) => {
           body: JSON.stringify(body)
         }
       );
-
-      setShow(false);
+      onClose()
+      window.location.reload()
     } catch (err) {
       console.error(err.message);
     }
@@ -101,9 +99,9 @@ const EditSelection = (props) => {
                   id="file" 
                   className="inputfile" 
                 />
-                <label htmlFor="file">Upload Picture</label>
+                <label htmlFor="file">Upload Photo <i class="fas fa-caret-right"></i></label>
                 <div className="err-msg">{err}</div>
-                <button id="img-submit" className="dash-btn mb-25" onClick={e => updateDescription(e)}>Submit</button>
+                <button id="img-submit" className="dash-btn mb-25" onClick={e => updateDescription(e)}>Submit <i class="fas fa-caret-right"></i></button>
               </div>
             </div>
           </div>

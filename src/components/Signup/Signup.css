@@ -125,6 +125,7 @@ select {
 }
 
 .inputfile + label {
+  font-family: 'Grandstander', cursive;
   font-size: .8em;
   font-weight: 700;
   color: #282c34;

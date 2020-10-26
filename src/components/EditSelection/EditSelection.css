@@ -18,6 +18,11 @@
   text-align: end;
 }
 
+#modal-close:hover {
+  opacity: .8;
+  transform: scale(1);
+}
+
 #img-submit {
   margin-bottom: 25px;
 }
