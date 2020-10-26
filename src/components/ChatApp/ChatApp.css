@@ -18,6 +18,8 @@
   min-height: 100vh;
   min-width: 100vw;
   padding-top: 20vh;
+  position: absolute;
+  top: 0;
 }
 
 .chat-name {

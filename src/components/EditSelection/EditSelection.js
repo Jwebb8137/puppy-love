@@ -29,6 +29,7 @@ const EditSelection = (props) => {
   }
 
   const [show, setShow] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const showModal = e => {
     setShow(true);
@@ -43,7 +44,7 @@ const EditSelection = (props) => {
   const updateDescription = async e => {
     e.preventDefault();
     try {
-      console.log(previewSource)
+      setIsLoading(true)
       const body = { previewSource, user_id };
       const response = await fetch(
         `${API_ENDPOINT}users/${user_id}`,
@@ -53,7 +54,6 @@ const EditSelection = (props) => {
           body: JSON.stringify(body)
         }
       );
-      onClose()
       window.location.reload()
     } catch (err) {
       console.error(err.message);
@@ -72,6 +72,16 @@ const EditSelection = (props) => {
       {" "}
       Update Photo <i className="fas fa-user"></i>{" "}
       </button>
+    )
+  }
+
+  if (isLoading) {
+    return (
+      <div className="loading-msg">
+        <i className="fas fa-paw pink loading-icon"></i>
+        <p>Updating Photo ...</p>
+        <i className="fas fa-paw pink loading-icon"></i>
+     </div>
     )
   }
 
