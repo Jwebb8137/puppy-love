@@ -56,7 +56,7 @@ const EditSelection = (props) => {
         }
       );
 
-      // window.location = "/";
+      setShow(false);
     } catch (err) {
       console.error(err.message);
     }
