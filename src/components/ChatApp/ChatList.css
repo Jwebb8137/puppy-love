@@ -1,17 +1,26 @@
 .inbox-row {
   background: lightpink;
+  border: 1px solid black;
   border-radius: 5px;
   font-family: 'Grandstander', cursive;
   font-size: 1.2rem;
-  margin: 15px 0;
+  margin: 15px auto;
   padding: 14px 20px;
   position: relative;
-  width: 100%;
+  width: 85%;
 }
 
 .unread-count {
-  font-size: 1.5rem;
+  font-size: .85rem;
   position: absolute;
+  right: 10px;
+  top: 8px;
+}
+
+.total-count {
+  font-size: .85rem;
+  position: absolute;
+  bottom: 8px;
   right: 10px;
 }
 
@@ -21,24 +30,35 @@
 }
 
 .inbox-container {
+  display: inline-block;
   padding: 20px;
 }
 
 .helper-text{
   display: block;
+  font-family: 'Grandstander', cursive;
   font-size: 1.1rem;
   margin: auto;
   max-width: 450px;
 }
 
+.helper-text-alt{
+  display: block;
+  font-family: 'Grandstander', cursive;
+  font-size: .75rem;
+  padding: 0;
+  margin: 10px auto 0;
+}
+
 .chat-heading {
-  font-size: 2.75rem;
+  font-size: 2rem;
   margin-top: 30px;
 }
 
 .message-box {
-  margin: 35px auto 0;
+  margin: 15px auto 0;
   max-width: 500px;
+  width: 100%;
 }
 
 .bg-white {
@@ -50,8 +70,20 @@
   margin-top: 50px;
 }
 
+.logo-msg-no {
+  height: 60px;
+  margin-top: 0;
+}
+
+.no-message-img {
+  border-radius: 10px;
+  margin: 25px auto 20px;
+  width: 100%;
+}
+
 @media (min-width: 768px) { 
   .chat-heading {
+    font-size: 2.75rem;
     margin-top: 50px;
   }
 }

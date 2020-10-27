@@ -94,6 +94,7 @@ const EditSelection = (props) => {
              <div className='input-field'>
                 {previewSource && (
                   <img 
+                    id="edit-img"
                     className="profile-preview"
                     src={previewSource} 
                     alt="chosen" 
@@ -109,7 +110,7 @@ const EditSelection = (props) => {
                   id="file" 
                   className="inputfile" 
                 />
-                <label htmlFor="file">Upload Photo <i class="fas fa-caret-right"></i></label>
+                <label htmlFor="file" id="img-upload">Upload Photo <i class="fas fa-caret-right"></i></label>
                 <div className="err-msg">{err}</div>
                 <button id="img-submit" className="dash-btn mb-25" onClick={e => updateDescription(e)}>Submit <i class="fas fa-caret-right"></i></button>
               </div>

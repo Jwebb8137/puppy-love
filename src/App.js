@@ -43,7 +43,9 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <Route path={["/signup","/signin","/results","/"]} component={Navbar}/>
+        <Route path={["/signup","/signin","/results","/"]} render={props => 
+          <Navbar {...props} setAuth={setAuth} isAuth={isAuthenticated}/>
+        }/>
         <Route exact path="/" component={Home}/>
         <Route exact path="/signup" 
           render={props => 

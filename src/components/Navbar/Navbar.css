@@ -89,6 +89,12 @@ a:hover {
   transform: scale(1.1);
 }
 
+#nav-logout {
+  position: absolute;
+  top: 14px;
+  left: 0;
+}
+
 /*-- Responsive CSS --*/
 @media screen and (max-width:767px) {
   .show-menu-btn,
@@ -142,6 +148,12 @@ a:hover {
 }
 
 @media (min-width: 768px) { 
+  #nav-logout {
+    font-size: .6rem;
+    padding: 10px 15px;
+    position: relative;
+    top: 5px;
+  }
   .navigation li {
     color: #000;
   }
@@ -152,10 +164,16 @@ a:hover {
     border-bottom: 1px solid gray;
   }
   .navigation li{
-    font-size: 1.5em;
+    font-size: 1rem;
   }
   #mobile-logo {
     display: none;
     width: 200px;
+  }
+}
+
+@media (min-width: 1024px) { 
+  .navigation li{
+    font-size: 1.25rem;
   }
 }

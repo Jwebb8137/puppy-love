@@ -6,6 +6,7 @@ import { Chat as ChatUI } from '@progress/kendo-react-conversational-ui';
 import {withRouter} from 'react-router-dom';
 import queryString from 'query-string'
 import GoBackButton from '../Buttons/GoBackButton';
+import Logo from "../../images/logo-alt.jpg";
 
 function MessageTemplate(props) {
   return (
@@ -210,7 +211,7 @@ class ChatApp extends Component {
     return (
       <Fragment>
         <GoBackButton props={this.props}/>
-        <div className="col-flex bg-off-white">
+        <div className="col-flex">
           <h2 className="chat-header">           
             <i class="fas fa-paw pink" /> Now Chatting <i class="fas fa-paw pink" />        
             <span className="form-helper-text block chat-helper">(Try asking them about their pet, favorite animal, or their interests!)</span> 
@@ -224,6 +225,7 @@ class ChatApp extends Component {
             messageTemplate={MessageTemplate}
             placeholder={'Type a message...'}
           />
+          <img src={Logo} id="card-icon" alt="Puppy Love Logo" className="mt-10"/>
         </div>
       </Fragment>
     );

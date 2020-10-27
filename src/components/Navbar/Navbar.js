@@ -8,7 +8,35 @@ export default class Navbar extends React.Component {
     document.getElementById('nav').classList.toggle("nav-respond");
   }
 
+  logout = e => {
+    e.preventDefault();
+    localStorage.removeItem("token");
+    this.props.setAuth(false);
+    window.location = "/";
+  }
+
   render() {
+    if (this.props.isAuth) {
+      return (
+        <header>
+        <div className="brand-logo">
+          <Link to='/'><img id='logo' className='brand-logo' src={Logo} alt="Brand Logo" /></Link>
+        </div>
+        <nav>
+          <ul  id='nav' className="navigation">
+            <Link to='/'><li className="top-border" onClick={this.handleMenu}><i className="fas fa-home"></i> Home</li></Link>
+            <Link to='/browse'><li onClick={this.handleMenu}><i className="fas fa-users"></i> Browse</li></Link>
+            <Link to='/signin'><li onClick={this.handleMenu}><i className="fas fa-user"></i> Account</li></Link>
+            <Link to='/chatlist/user'><li onClick={this.handleMenu}><i className="fas fa-user"></i> Messages</li></Link>
+            <label htmlFor="toggle-btn" className="hide-menu-btn" onClick={this.handleMenu}><i className="fas fa-times"></i></label>
+            <button id="nav-logout" className="dash-btn" onClick={e => this.logout(e)}>Logout <i class="fas fa-sign-in-alt"></i></button>
+            <img src={Logo} id="mobile-logo" alt="Puppy Love Logo"/>
+          </ul>
+          <label htmlFor="toggle-btn" className="show-menu-btn"><i className="fas fa-bars" onClick={this.handleMenu}></i></label>
+        </nav>
+      </header>
+      )
+    }
     return (
       <header>
         <div className="brand-logo">
@@ -18,9 +46,10 @@ export default class Navbar extends React.Component {
           <ul  id='nav' className="navigation">
             <Link to='/'><li className="top-border" onClick={this.handleMenu}><i className="fas fa-home"></i> Home</li></Link>
             <Link to='/browse'><li onClick={this.handleMenu}><i className="fas fa-users"></i> Browse</li></Link>
-            <Link to='/signin'><li onClick={this.handleMenu}><i className="fas fa-user"></i> Login</li></Link>
+            <Link to='/signin'><li onClick={this.handleMenu}><i className="fas fa-user"></i> Account</li></Link>
             <Link to='/chatlist/user'><li onClick={this.handleMenu}><i className="fas fa-user"></i> Messages</li></Link>
             <label htmlFor="toggle-btn" className="hide-menu-btn" onClick={this.handleMenu}><i className="fas fa-times"></i></label>
+            <Link to='/signin'><button id="nav-logout" onClick={this.handleMenu} className="dash-btn">Login <i class="fas fa-sign-in-alt"></i></button></Link>
             <img src={Logo} id="mobile-logo" alt="Puppy Love Logo"/>
           </ul>
           <label htmlFor="toggle-btn" className="show-menu-btn"><i className="fas fa-bars" onClick={this.handleMenu}></i></label>

@@ -1,4 +1,5 @@
 import React, {Fragment, useState, useEffect} from "react";
+import {Link} from 'react-router-dom';
 import config from '../../config';
 import EditSelection from '../EditSelection/EditSelection';
 import './Dashboard.css';
@@ -26,12 +27,7 @@ const Dashboard = ({ setAuth }) => {
   }
 
   const { user_id, headline, age, description, email, first_name, gender, last_name, pet_description, pet_name, pet_type, photo_url, seeking_gender, username} = userInfo;
-
-  const logout = e => {
-    e.preventDefault();
-    localStorage.removeItem("token");
-    setAuth(false);
-  }
+  const profile = `../user/${userInfo.user_id}`;
 
   useEffect(() => {
     getName()
@@ -46,7 +42,7 @@ const Dashboard = ({ setAuth }) => {
           </div>
           <div className="container">
             <div className="row mt-5 jc-center">
-              <button className="dash-btn" onClick={e => logout(e)}>Logout <i class="fas fa-sign-in-alt"></i></button>
+              <Link to={profile}><button className="dash-btn">My Profile <i class="fas fa-sign-in-alt"></i></button></Link>
               <EditSelection user={userInfo}/>
             </div>
           </div>

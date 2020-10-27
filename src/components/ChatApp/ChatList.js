@@ -5,6 +5,9 @@ import Chat from 'twilio-chat';
 import config from '../../config';
 import "./ChatList.css";
 import Logo from "../../images/logo-alt.jpg";
+import Cat from "../../images/no-messages.jpg";
+import ButtonAlt from "../../components/Buttons/ButtonAlt";
+
 require('dotenv').config();
 
 class ChatList extends Component {
@@ -17,11 +20,9 @@ class ChatList extends Component {
       error: null,
       isLoading: true,
       messages: [],
-      testing: ""
+      messageList: false
     };
   }
-
-  
 
   componentDidMount() {
     const { API_ENDPOINT } = config;
@@ -68,9 +69,9 @@ class ChatList extends Component {
     const updateMessages = messageList => {
       this.setState({
         messages: messageList,
-        isLoading: false
+        isLoading: false,
+        messageList: true
       })  
-      console.log(this.state)
     }
     const uid = this.state.current_id;
     this.client = client;
@@ -92,6 +93,7 @@ class ChatList extends Component {
   }}
 
   render() {
+    console.log(this.state.messages)
     if (this.state.error) {
       return <p>{this.state.error}</p>;
     } else if (this.state.isLoading) {
@@ -100,53 +102,54 @@ class ChatList extends Component {
           <div className="container">
             <div className="loading-msg">
               <i class="fas fa-paw pink loading-icon"></i>
-              <p>Loading Chat ...</p>
+              <p>Loading Messages ...</p>
               <i class="fas fa-paw pink loading-icon"></i>
             </div>
           </div>
         </Fragment>
       )
     }
+
+      if (this.state.messages.length < 1) {
+        return (
+          <Fragment>
+          <div className="container h-100 bg-white inbox-container"> 
+            <div className="block">
+              <h2 className="chat-heading"><i class="fas fa-paw pink"></i> Conversations <i class="fas fa-paw pink"></i></h2>
+              <img className="no-message-img" src={Cat} alt="No messages cat" />
+              <span className="helper-text">Looks like you haven't started any conversation yet!</span>
+              <Link to='../browse'><ButtonAlt name='Start Looking' icon='fas fa-city'/></Link>
+            </div>
+            <img src={Logo} className="logo-msg-no"/>
+          </div>
+          </Fragment>  
+        )
+      }
       
       return (
         <Fragment>
-        <div className="container h-100 bg-white inbox-container">
-          
+        <div className="container h-100 bg-white inbox-container"> 
           <div className="block">
             <h2 className="chat-heading"><i class="fas fa-paw pink"></i> Conversations <i class="fas fa-paw pink"></i></h2>
-            <div>
-           <span className="helper-text">Keep conversations going and have fun getting to know others!</span>
+           <span className="helper-text-alt">(Keep conversations going and have fun getting to meet and chat with others!)</span>
           </div>
           <div className="message-box">
             {this.state.messages
                 .map((convo, i) => {
-                  const getUserInfo = async (ServiceSid, Sid) => {
-                    fetch(`https://chat.twilio.com/v2/Services/${ServiceSid}/Users/${Sid}`, {
-                      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                      method: 'GET',
-                    })
-                      .then(res => res.json())
-                      .then(data => console.log(data))
-                      .catch("Not Working");
-                  }
-                const Sid = convo.descriptor.member_sid;
-                console.log(Sid)
-                const ServiceSid = "IS68bd1bf08d9740eaacbd4dfccb81f34e"
                 const url =`../chat/user?q=${convo.uniqueName}`
                 const count = convo.messagesCount;
                 const unreadCount = convo.lastConsumedMessageIndex === null ? count : count - convo.lastConsumedMessageIndex - 1
-                getUserInfo(ServiceSid, Sid)
                 return (
                   <Link to={url} className="inbox">
                     <div className="row inbox-row">
-                      <p><i class="fas fa-paw"></i> Conversation {i+1}</p>
-                      <span className="unread-count">{unreadCount} <i class="far fa-comment"></i></span>
+                      <p><i class="fas fa-paw"></i> {convo.createdBy === this.state.username ? "Conversation" : convo.createdBy}</p>
+                      <span className="unread-count">{unreadCount} Unread</span>
+                      <span className="total-count">{convo.messagesCount} Total</span>
                     </div>
                   </Link>
                   )   
                 })
               }          
-            </div>
             <img src={Logo} className="logo-msg"/>
           </div>
         </div>

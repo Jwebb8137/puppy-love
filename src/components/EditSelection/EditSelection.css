@@ -6,11 +6,11 @@
   background: #f8e5e5;
   border: 1px solid gray;
   border-radius: 5px;
-  padding: 5px;
   position: absolute;
   max-width: 250px;
   top: 10vh;
-  width: 70vw;
+  width: 200px;
+  padding: 0;
 }
 
 .modal .inputfile + label {
@@ -29,5 +29,14 @@
 }
 
 #img-submit {
+  font-size: .8rem;
   margin-bottom: 25px;
+}
+
+#img-upload {
+  font-size: .8rem;
+}
+
+#edit-img {
+  max-width: 95%;
 }
