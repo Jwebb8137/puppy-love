@@ -23,7 +23,8 @@ class ChatApp extends Component {
       isLoading: true,
       messages: [],
       target_name: "",
-      target_petName: ""
+      target_petName: "",
+      target_id: ""
     };
     this.user = {
       id: props.username,
@@ -58,6 +59,7 @@ class ChatApp extends Component {
           });
           const parseRes = await response.json();
           this.setState({
+            target_id: parseRes.user_id,
             target_name: parseRes.first_name,
             target_petName: parseRes.pet_name
           })
@@ -79,10 +81,15 @@ class ChatApp extends Component {
     const values = queryString.parse(this.props.location.search)
     console.log(values)
     const channelName = `${values.q}`;
-    const uid = `${(parseInt(values.target) / 5) * (parseInt(values.user) / 5)}`;
+    console.log(channelName)
+    // const uid = `${this.props.currentUser*this.props.targetUser}`
+    const uid = values.q ? values.q : `${(parseInt(values.target) / 5) * (parseInt(values.user) / 5)}`;
+    console.log(uid)
+    console.log(this.props.currentUser)
+    console.log(this.props.target)
     this.client = client;
     this.client
-      .getChannelByUniqueName(values.q ? channelName : uid)
+      .getChannelByUniqueName(uid)
       .then(channel => channel)
       .catch(error => {
         console.log(error)

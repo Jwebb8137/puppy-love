@@ -19,7 +19,9 @@ class Chat extends Component {
     this.handleUsernameChange = this.handleUsernameChange.bind(this);
   }
 
+
   componentDidMount() {
+    console.log(this.props.match.params)
     const { API_ENDPOINT } = config;
     const getCurrentId = async () => {
       try {
@@ -47,7 +49,7 @@ class Chat extends Component {
         const parseRes = await response.json();
         this.setState({
           target_name: parseRes.first_name,
-          target_petName: parseRes.pet_name
+          target_petName: parseRes.pet_name,
         })
       } catch (err) {
         console.error(err.message)

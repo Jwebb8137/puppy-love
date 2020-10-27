@@ -5,6 +5,7 @@ import Chat from 'twilio-chat';
 import config from '../../config';
 import "./ChatList.css";
 import Logo from "../../images/logo-alt.jpg";
+require('dotenv').config();
 
 class ChatList extends Component {
   constructor(props) {
@@ -15,7 +16,8 @@ class ChatList extends Component {
       logginIn: "",
       error: null,
       isLoading: true,
-      messages: []
+      messages: [],
+      testing: ""
     };
   }
 
@@ -71,16 +73,17 @@ class ChatList extends Component {
       console.log(this.state)
     }
     const uid = this.state.current_id;
-    console.log(uid)
     this.client = client;
     try {
       const getMessages = await client.getUserChannelDescriptors().then(function(paginator) {
-        const messageList = paginator.items.map(item => item)
+        const messageList = paginator.items.map(item => {
+          return item
+        })
         // for (i=0; i<paginator.items.length; i++) {
         //   var channel = paginator.items[i];
         //   console.log('Channel: ' + channel.friendlyName);
         // }
-        console.log(messageList);
+        console.log(messageList)
         updateMessages(messageList);
       });
     } catch (error) {
@@ -107,27 +110,37 @@ class ChatList extends Component {
       
       return (
         <Fragment>
-        <div className="container h-100 bg-white">
+        <div className="container h-100 bg-white inbox-container">
           
           <div className="block">
-            <h2 className="chat-heading">Conversations</h2>
+            <h2 className="chat-heading"><i class="fas fa-paw pink"></i> Conversations <i class="fas fa-paw pink"></i></h2>
             <div>
            <span className="helper-text">Keep conversations going and have fun getting to know others!</span>
           </div>
           <div className="message-box">
             {this.state.messages
                 .map((convo, i) => {
-                console.log(convo.client.channels.channels._c);
-                const channel = convo.channel;
-                const sid = convo.sid;
+                  const getUserInfo = async (ServiceSid, Sid) => {
+                    fetch(`https://chat.twilio.com/v2/Services/${ServiceSid}/Users/${Sid}`, {
+                      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                      method: 'GET',
+                    })
+                      .then(res => res.json())
+                      .then(data => console.log(data))
+                      .catch("Not Working");
+                  }
+                const Sid = convo.descriptor.member_sid;
+                console.log(Sid)
+                const ServiceSid = "IS68bd1bf08d9740eaacbd4dfccb81f34e"
                 const url =`../chat/user?q=${convo.uniqueName}`
                 const count = convo.messagesCount;
                 const unreadCount = convo.lastConsumedMessageIndex === null ? count : count - convo.lastConsumedMessageIndex - 1
+                getUserInfo(ServiceSid, Sid)
                 return (
                   <Link to={url} className="inbox">
                     <div className="row inbox-row">
-                      <p><i class="fas fa-paw"></i> Conversation {i}</p>
-                      <span className="unread-count">{unreadCount}</span>
+                      <p><i class="fas fa-paw"></i> Conversation {i+1}</p>
+                      <span className="unread-count">{unreadCount} <i class="far fa-comment"></i></span>
                     </div>
                   </Link>
                   )   

@@ -1,3 +1,4 @@
+import { parse } from 'query-string';
 import React, {Fragment} from 'react';
 import {Link} from 'react-router-dom';
 import config from '../../config';
@@ -8,7 +9,8 @@ class ProfileFull extends React.Component {
   state = {
     profileInfo: [],
     show: false,
-    loading: true
+    loading: true,
+    current_id: ""
   };
 
   showModal = e => {
@@ -27,6 +29,23 @@ class ProfileFull extends React.Component {
       });
     };
 
+    const getName = async () => {
+      try {
+        const response = await fetch(`${API_ENDPOINT}dashboard`, {
+          method: "GET",
+          headers: { token: localStorage.token }
+        });
+  
+        const parseRes = await response.json();
+        console.log(parseRes)
+        this.setState({
+          current_id: parseRes.user_id
+        })
+      } catch (err) {
+        console.error(err.message)
+      }
+    }
+
     const getProfile = async () => {
       try {   
         const response = await fetch(`${API_ENDPOINT}users/${currentUserId}`)
@@ -37,12 +56,15 @@ class ProfileFull extends React.Component {
           console.error(err.message)
       }
     }  
+    getName();
     getProfile();
   }  
 
   render() {
-    const currentUserId = this.props.match.params.userid;
-    const userChat = `/chat/${currentUserId}`;
+    // const currentUserId = this.props.match.params.userid;
+    // const url =`../chat/user?q=${convo.uniqueName}`
+    console.log(this.state)
+    const userChat = `/chat/user?user=${this.state.current_id}&target=${this.state.profileInfo.user_id}`;
     const {first_name, last_name, age, hobbies, pet_name, pet_type, pet_hobbies, pet_meet_description, username, description, gender, seeking_gender, photo_url, pet_description, photo_pet_url} = this.state.profileInfo;
     const petIcon = `fas fa-${pet_type}`;
     const genderIcon = `fas fa-${gender}`;

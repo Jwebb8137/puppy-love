@@ -3,13 +3,14 @@
   border-radius: 5px;
   font-family: 'Grandstander', cursive;
   font-size: 1.2rem;
-  margin: 15px auto;
+  margin: 15px 0;
   padding: 14px 20px;
   position: relative;
-  width: 75vw;
+  width: 100%;
 }
 
 .unread-count {
+  font-size: 1.5rem;
   position: absolute;
   right: 10px;
 }
@@ -17,6 +18,10 @@
 .inbox {
   color: #000;
   text-decoration: none;
+}
+
+.inbox-container {
+  padding: 20px;
 }
 
 .helper-text{
@@ -32,7 +37,8 @@
 }
 
 .message-box {
-  margin-top: 35px;
+  margin: 35px auto 0;
+  max-width: 500px;
 }
 
 .bg-white {
