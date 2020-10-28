@@ -43,11 +43,5 @@
 
 ## Additional Information
 <p>This application was designed and developed as part of a full-stack project that required developing an application using the PERN stack. As my first full-stack project I expanded upon those requirements by including additional features and functionality within the application such as login authentication & use of 3rd party API's (Twilio & Cloudinary). Also worth nothing is that while working with Twilio's Chat API I did run into issues that limited my ability to incorporate a fully functioning chat feature within the application. While is does allow user's connected into the same chat room to real-time communicate and send messages to other users there is limited functionality as of this writing related to receiving messages and retrieving conversations.</p>  
-  
-## Screenshots
-
-<p>
-  <img src="./src/images/20201027_233839.jpg" class="m-5 d-inline-block" width="300"/>
-</p>
 
 
