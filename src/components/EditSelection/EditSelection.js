@@ -110,7 +110,7 @@ const EditSelection = (props) => {
                 <div className="err-msg">{err}</div>
                 <button id="img-submit" className="dash-btn mb-25" onClick={e => updateDescription(e)}>Submit <i class="fas fa-caret-right"></i></button>
               </div>
-              <p className="img-text">( Having trouble? We recommend cropping or uploading images that have a 1:1 ratio / square shape! )</p>
+              <p className="img-text">( Having trouble? We recommend images as close to 400 x 400 as possible! )</p>
             </div>
           </div>
         </div>

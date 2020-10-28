@@ -133,7 +133,7 @@ const Signup = ({ setAuth }) => {
               className="inputfile" 
             />
             <label htmlFor="file">Upload Picture</label>
-            <p className="form-helper-text mt-5">(We recommend cropping or uploading images that have a 1:1 ratio / square shape!)</p>
+            <p className="form-helper-text mt-5">(We recommend images as close to 400 x 400 as possible!)</p>
             <div className="err-msg">{err}</div>
           </div>
           <div className='input-field mt-5'>
@@ -218,7 +218,7 @@ const Signup = ({ setAuth }) => {
               className="petinputfile"
             />
             <label htmlFor="petFile">Upload Picture</label>
-            <p className="form-helper-text mt-5">(We recommend cropping or uploading images that have a 1:1 ratio / square shape!)</p>
+            <p className="form-helper-text mt-5">(We recommend images as close to 400 x 400 as possible!)</p>
           </div>
           <div className='input-field mt-5'>
             <label>Pet Name </label>
