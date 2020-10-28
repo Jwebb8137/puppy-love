@@ -1,7 +1,8 @@
 .profile-full-img {
   margin: 1.25rem auto 0;
   min-width: 200px;
-  max-width: 100vw;
+  max-width: 400px;
+  width: 100vw;
 }
 
 .profile-heading {
@@ -15,7 +16,7 @@
 }
 
 .bg-white {
-  background: pink;
+  background: #ffc0cb;
 }
 
 .sub-container {
