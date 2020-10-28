@@ -40,10 +40,10 @@ const DemoCarousel = () => {
       console.error(err.message)
     }
   }
-
   useEffect(() => {
     getProfiles();
     getUser();
+    // eslint-disable-next-line
   }, []);
 
   if (isLoading) {

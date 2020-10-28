@@ -12,7 +12,7 @@ const SignIn = ({ setAuth }) => {
   const [err, setError] = useState("");
   const { API_ENDPOINT } = config;
   const { username, passwordInput } = inputs;
-  
+
   const onChange = (e) => {
     setInputs({ ...inputs, [e.target.name]: e.target.value });
   };
@@ -38,7 +38,7 @@ const SignIn = ({ setAuth }) => {
 
   return (
     <div className='signin'>
-      <h2 className="signin-heading">Puppy<span className="pink">Love </span><i class="fas fa-paw"></i></h2>
+      <h2 className="signin-heading">Puppy<span className="pink">Love </span><i className="fas fa-paw"></i></h2>
       <form id="sign-in" className="form-container" onSubmit={onSubmitForm}>
       <h3 className="signup-sub-heading"><span className="pink">Welcome</span> Back!</h3>
         <div className="container">
@@ -54,9 +54,9 @@ const SignIn = ({ setAuth }) => {
         <div className="err-msg">
           {err}
         </div>
-        <button id="profile-submit" className="btn-sm btn-sm-bg-alt">Sign In <i class="fas fa-caret-right"></i></button>
+        <button id="profile-submit" className="btn-sm btn-sm-bg-alt">Sign In <i className="fas fa-caret-right"></i></button>
         <span className="mt-5"></span>
-        <Link to="/signup" className="pink">Create Account <i class="fas fa-angle-right"></i></Link>
+        <Link to="/signup" className="pink">Create Account <i className="fas fa-angle-right"></i></Link>
       </form>
     </div>
   )

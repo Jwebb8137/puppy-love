@@ -29,7 +29,7 @@ export default class Navbar extends React.Component {
             <Link to='/signin'><li onClick={this.handleMenu}><i className="fas fa-user"></i> Account</li></Link>
             <Link to='/chatlist/user'><li onClick={this.handleMenu}><i className="fas fa-user"></i> Messages</li></Link>
             <label htmlFor="toggle-btn" className="hide-menu-btn" onClick={this.handleMenu}><i className="fas fa-times"></i></label>
-            <button id="nav-logout" className="dash-btn" onClick={e => this.logout(e)}>Logout <i class="fas fa-sign-in-alt"></i></button>
+            <button id="nav-logout" className="dash-btn" onClick={e => this.logout(e)}>Logout <i className="fas fa-sign-in-alt"></i></button>
             <img src={Logo} id="mobile-logo" alt="Puppy Love Logo"/>
           </ul>
           <label htmlFor="toggle-btn" className="show-menu-btn"><i className="fas fa-bars" onClick={this.handleMenu}></i></label>
@@ -49,7 +49,7 @@ export default class Navbar extends React.Component {
             <Link to='/signin'><li onClick={this.handleMenu}><i className="fas fa-user"></i> Account</li></Link>
             <Link to='/chatlist/user'><li onClick={this.handleMenu}><i className="fas fa-user"></i> Messages</li></Link>
             <label htmlFor="toggle-btn" className="hide-menu-btn" onClick={this.handleMenu}><i className="fas fa-times"></i></label>
-            <Link to='/signin'><button id="nav-logout" onClick={this.handleMenu} className="dash-btn">Login <i class="fas fa-sign-in-alt"></i></button></Link>
+            <Link to='/signin'><button id="nav-logout" onClick={this.handleMenu} className="dash-btn">Login <i className="fas fa-sign-in-alt"></i></button></Link>
             <img src={Logo} id="mobile-logo" alt="Puppy Love Logo"/>
           </ul>
           <label htmlFor="toggle-btn" className="show-menu-btn"><i className="fas fa-bars" onClick={this.handleMenu}></i></label>

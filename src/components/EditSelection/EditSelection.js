@@ -7,6 +7,7 @@ const { API_ENDPOINT } = config;
 const EditSelection = (props) => {
   const { user_id } = props.user;
   const [previewSource, setPreviewSource] = useState("");
+  // eslint-disable-next-line
   const [fileInputState, setFileInputState] = useState("");
   const [err, setErr] = useState("");
 
@@ -39,6 +40,7 @@ const EditSelection = (props) => {
     try {
       setIsLoading(true)
       const body = { previewSource, user_id };
+      // eslint-disable-next-line
       const response = await fetch(
         `${API_ENDPOINT}users/${user_id}`,
         {
@@ -49,6 +51,7 @@ const EditSelection = (props) => {
       );
       window.location.reload()
     } catch (err) {
+      setErr(err)
       console.error(err.message);
     }
   };

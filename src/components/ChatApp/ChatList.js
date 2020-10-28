@@ -1,4 +1,3 @@
-import { parse } from 'query-string';
 import React, { Component, Fragment } from 'react';
 import {Link} from 'react-router-dom';
 import Chat from 'twilio-chat';
@@ -57,6 +56,7 @@ class ChatList extends Component {
       .catch(handleError);
     }
     
+
     const handleError = error => {
       console.error(error);
       this.setState({
@@ -72,9 +72,9 @@ class ChatList extends Component {
           messageList: true
         })  
       }
-      const uid = this.state.current_id;
       this.client = client;
       try {
+        // eslint-disable-next-line
         const getMessages = await client.getUserChannelDescriptors().then(function(paginator) {
           const messageList = paginator.items.map(item => {
             return item
@@ -88,7 +88,6 @@ class ChatList extends Component {
   }
 
   render() {
-    console.log(this.state.messages)
     if (this.state.error) {
       return <p>{this.state.error}</p>;
     } else if (this.state.isLoading) {
@@ -96,9 +95,9 @@ class ChatList extends Component {
         <Fragment>
           <div className="container">
             <div className="loading-msg">
-              <i class="fas fa-paw pink loading-icon"></i>
+              <i className="fas fa-paw pink loading-icon"></i>
               <p>Loading Messages ...</p>
-              <i class="fas fa-paw pink loading-icon"></i>
+              <i className="fas fa-paw pink loading-icon"></i>
             </div>
           </div>
         </Fragment>
@@ -109,12 +108,12 @@ class ChatList extends Component {
         <Fragment>
         <div className="container h-100 bg-white inbox-container"> 
           <div className="block">
-            <h2 className="chat-heading"><i class="fas fa-paw pink"></i> Conversations <i class="fas fa-paw pink"></i></h2>
+            <h2 className="chat-heading"><i className="fas fa-paw pink"></i> Conversations <i className="fas fa-paw pink"></i></h2>
             <img className="no-message-img" src={Cat} alt="No messages cat" />
             <span className="helper-text">Looks like you haven't started any conversation yet!</span>
             <Link to='../browse'><ButtonAlt name='Start Looking' icon='fas fa-city'/></Link>
           </div>
-          <img src={Logo} className="logo-msg-no"/>
+          <img src={Logo} className="logo-msg-no" alt="Puppy Love Logo"/>
         </div>
         </Fragment>  
       )
@@ -123,19 +122,19 @@ class ChatList extends Component {
       <Fragment>
       <div className="container h-100 bg-white inbox-container"> 
         <div className="block">
-          <h2 className="chat-heading"><i class="fas fa-paw pink"></i> Conversations <i class="fas fa-paw pink"></i></h2>
+          <h2 className="chat-heading"><i className="fas fa-paw pink"></i> Conversations <i className="fas fa-paw pink"></i></h2>
           <span className="helper-text-alt">(Keep conversations going and have fun getting to meet and chat with others!)</span>
         </div>
         <div className="message-box">
           {this.state.messages
-            .map((convo) => {
+            .map((convo, i) => {
             const url =`../chat/user?q=${convo.uniqueName}`
             const count = convo.messagesCount;
             const unreadCount = convo.lastConsumedMessageIndex === null ? count : count - convo.lastConsumedMessageIndex - 1
             return (
-              <Link to={url} className="inbox">
+              <Link to={url} key={i} className="inbox">
                 <div className="row inbox-row">
-                  <p><i class="fas fa-paw"></i> {convo.createdBy === this.state.username ? "Conversation" : convo.createdBy}</p>
+                  <p><i className="fas fa-paw"></i> {convo.createdBy === this.state.username ? "Conversation" : convo.createdBy}</p>
                   <span className="unread-count">{unreadCount} Unread</span>
                   <span className="total-count">{convo.messagesCount} Total</span>
                 </div>
@@ -143,7 +142,7 @@ class ChatList extends Component {
               )   
             })
           }          
-          <img src={Logo} className="logo-msg"/>
+          <img src={Logo} className="logo-msg" alt="Logo"/>
         </div>
       </div>
     </Fragment>

@@ -20,7 +20,9 @@ const Signup = ({ setAuth }) => {
   const [pet_description, setPetDescription] = useState("");
   const [pet_hobbies, setPetHobbies] = useState("");
   const [pet_meet_description, setPetMeetDescription] = useState("");
+  // eslint-disable-next-line
   const [fileInputState, setFileInputState] = useState("");
+  // eslint-disable-next-line
   const [petFileInputState, setPetFileInputState] = useState("");
   const [previewSource, setPreviewSource] = useState("");
   const [previewPetSource, setPreviewPetSource] = useState("");
@@ -67,7 +69,7 @@ const Signup = ({ setAuth }) => {
       setPreviewSource(reader.result);
     }
   }
-  
+
   const handlePetFileInputChange = (e) => {
     const petFile = e.target.files[0]
     previewPetFile(petFile)
@@ -141,16 +143,16 @@ const Signup = ({ setAuth }) => {
           <div className="row mt-5">
             <div className='input-field'>
               <label>I am</label>
-              <select onChange={e => setGender(e.target.value)} required>
-                <option value="none" selected disabled hidden></option> 
+              <select onChange={e => setGender(e.target.value)} defaultValue="none" required>
+                <option value="none" disabled hidden></option> 
                 <option value="male">A Man</option>
                 <option value="female">A Woman</option>
               </select>
             </div>
             <div className='input-field ml-5'>
               <label>Seeking </label>
-              <select onChange={e => setSeekingGender(e.target.value)} required>
-                <option value="none" selected disabled hidden></option> 
+              <select onChange={e => setSeekingGender(e.target.value)} defaultValue="none" required>
+                <option value="none" disabled hidden></option> 
                 <option value="male">A Man</option>
                 <option value="female">A Woman</option>
               </select>
@@ -222,8 +224,8 @@ const Signup = ({ setAuth }) => {
           </div>
           <div className='input-field'>
             <label className="block">Pet Type </label>
-            <select onChange={e => setPetType(e.target.value)} className="w-expanded" required>
-              <option value="none" selected disabled hidden></option> 
+            <select onChange={e => setPetType(e.target.value)} defaultValue="none" className="w-expanded" required>
+              <option value="none" disabled hidden></option> 
               <option value="dog">Dog</option>
               <option value="cat">Cat</option>
             </select>

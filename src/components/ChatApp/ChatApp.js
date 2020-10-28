@@ -87,7 +87,6 @@ class ChatApp extends Component {
       .then(channel => channel)
       .catch(error => {
         console.log(error)
-        console.log(error.body)
         if (error.body.code === 50300) {
           return this.client.createChannel({ uniqueName: uid });
         } else {
@@ -103,11 +102,6 @@ class ChatApp extends Component {
         this.channel.getMessages().then(this.messagesLoaded);
         this.channel.on('messageAdded', this.messageAdded);
         this.channel.setAllMessagesConsumed();
-      })
-      .then(() => {
-        client.getUserChannelDescriptors().then(function(paginator) {
-          paginator.items.map(item => console.log(item))
-        }); 
       })
       .catch(this.handleError);
   }
@@ -190,9 +184,9 @@ class ChatApp extends Component {
     } else if (this.state.isLoading) {
       return (
         <div className="loading-msg">
-          <i class="fas fa-paw pink loading-icon"></i>
+          <i className="fas fa-paw pink loading-icon"></i>
           <p>Loading Chat ...</p>
-          <i class="fas fa-paw pink loading-icon"></i>
+          <i className="fas fa-paw pink loading-icon"></i>
         </div>
       )
     }
@@ -201,7 +195,7 @@ class ChatApp extends Component {
         <GoBackButton props={this.props}/>
         <div className="col-flex">
           <h2 className="chat-header">           
-            <i class="fas fa-paw pink" /> Now Chatting <i class="fas fa-paw pink" />        
+            <i className="fas fa-paw pink" /> Now Chatting <i className="fas fa-paw pink" />        
             <span className="form-helper-text block chat-helper">(Try asking them about their pet, favorite animal, or their interests!)</span> 
           </h2>
           <ChatUI

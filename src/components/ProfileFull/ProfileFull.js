@@ -1,4 +1,3 @@
-import { parse } from 'query-string';
 import React, {Fragment} from 'react';
 import {Link} from 'react-router-dom';
 import config from '../../config';
@@ -37,7 +36,6 @@ class ProfileFull extends React.Component {
         });
   
         const parseRes = await response.json();
-        console.log(parseRes)
         this.setState({
           current_id: parseRes.user_id
         })
@@ -50,7 +48,6 @@ class ProfileFull extends React.Component {
       try {   
         const response = await fetch(`${API_ENDPOINT}users/${currentUserId}`)
         const jsonData = await response.json()
-  
         setProfileInfo(jsonData)
       } catch (err) {
           console.error(err.message)

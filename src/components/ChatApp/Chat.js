@@ -20,7 +20,6 @@ class Chat extends Component {
   }
 
   componentDidMount() {
-    console.log(this.props.match.params)
     const { API_ENDPOINT } = config;
     const getCurrentId = async () => {
       try {
