@@ -62,5 +62,8 @@
     border-bottom: none;
     border-radius: 5px;
   }
+  .carousel .slider-wrapper.axis-horizontal .slider .slide {
+    border: 1px solid #000000;
+  }
 }
 

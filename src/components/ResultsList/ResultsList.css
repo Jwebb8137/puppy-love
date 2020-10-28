@@ -132,9 +132,3 @@
 .carousel-container {
   background: #f8e5e5;
 }
-
-@media (min-width: 768px) { 
-  .results {
-    border: 1px solid #808080;
-  }
-}
