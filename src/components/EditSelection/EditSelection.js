@@ -5,15 +5,10 @@ import "./EditSelection.css";
 const { API_ENDPOINT } = config;
 
 const EditSelection = (props) => {
-  const { photo_url } = props.user;
   const { user_id } = props.user;
-  const [description, setDescription] = useState(props.photo_url);
   const [previewSource, setPreviewSource] = useState("");
   const [fileInputState, setFileInputState] = useState("");
   const [err, setErr] = useState("");
-
-
-  //Profile image file
 
   const handleFileInputChange = (e) => {
     const file = e.target.files[0]
@@ -38,8 +33,6 @@ const EditSelection = (props) => {
   const onClose = e => {
     setShow(false);
   };
-
-  //edit description function
 
   const updateDescription = async e => {
     e.preventDefault();

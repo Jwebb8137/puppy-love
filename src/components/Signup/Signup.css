@@ -8,7 +8,7 @@ label {
 }
 
 textarea {
-  border: 1px solid black;
+  border: 1px solid #000000;
   border-radius: 5px;
   margin-top: .75rem;
   padding: 10px;
@@ -28,7 +28,7 @@ textarea {
 
 .form-container {
   background: #F8E5E5;
-  border: 1px solid grey;
+  border: 1px solid #808080;
   border-radius: 5px;
   font-family: 'Grandstander', cursive;
   margin: 1rem auto 0;
@@ -43,12 +43,13 @@ textarea {
   justify-content: center;
   margin-top: 15px;
 }
+
 .ml-5 {
   margin-left: 20px;
 }
 
 input[typeOf="text"], input[typeOf="email"], input[type="password"] {
-  border: 1px solid black;
+  border: 1px solid #000000;
   border-radius: 5px;
   font-size: 20px;
   margin: .25rem auto 0;
@@ -60,7 +61,7 @@ input[typeOf="text"], input[typeOf="email"], input[type="password"] {
 }
 
 select {
-  border: 1px solid black;
+  border: 1px solid #000000;
   border-radius: 5px;
   font-size: 18px;
   margin: .25rem auto 1rem;
@@ -129,8 +130,8 @@ select {
   font-size: .8em;
   font-weight: 700;
   color: #282c34;
-  background-color: white;
-  border: 1px solid black;
+  background-color: #ffffff;
+  border: 1px solid #000000;
   border-radius: 5px;
   display: inline-block;
   padding: .7rem .5rem;
@@ -138,8 +139,8 @@ select {
 
 .inputfile:focus + label,
 .inputfile + label:hover {
-  background-color: gray;
-  color: white;
+  background-color: #808080;
+  color: #ffffff;
 }
 
 .inputfile + label {
@@ -164,8 +165,8 @@ select {
   font-size: .8em;
   font-weight: 700;
   color: #282c34;
-  background-color: white;
-  border: 1px solid black;
+  background-color: #ffffff;
+  border: 1px solid #000000;
   border-radius: 5px;
   display: inline-block;
   padding: .7rem .5rem;
@@ -173,8 +174,8 @@ select {
 
 .petinputfile:focus + label,
 .petinputfile + label:hover {
-  background-color: gray;
-  color: white;
+  background-color: #808080;
+  color: #ffffff;
 }
 
 .petinputfile + label {

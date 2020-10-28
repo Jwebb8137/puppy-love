@@ -8,7 +8,7 @@
 }
 
 .carousel.carousel-slider .control-arrow {
-  background: gray;
+  background: #808080;
 }
 
 .carousel .slider-wrapper.axis-horizontal .slider .slide {
@@ -16,7 +16,7 @@
 }
 
 .carousel.carousel-slider {
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid #808080;
   border-radius: 0;
 }
 

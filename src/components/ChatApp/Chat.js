@@ -19,7 +19,6 @@ class Chat extends Component {
     this.handleUsernameChange = this.handleUsernameChange.bind(this);
   }
 
-
   componentDidMount() {
     console.log(this.props.match.params)
     const { API_ENDPOINT } = config;
@@ -58,7 +57,6 @@ class Chat extends Component {
     getCurrentId();
     getTargetInfo();
   }
-
 
   handleLogin(event) {
     event.preventDefault();

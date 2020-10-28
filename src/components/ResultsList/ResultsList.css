@@ -108,7 +108,7 @@
 }
 
 .bg-gray {
-  background: gray;
+  background: #808080;
 }
 
 .jc-center {
@@ -135,6 +135,6 @@
 
 @media (min-width: 768px) { 
   .results {
-    border: 1px solid gray;
+    border: 1px solid #808080;
   }
 }

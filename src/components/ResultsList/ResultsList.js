@@ -1,6 +1,5 @@
 import React, { Fragment } from 'react';
 import {Link} from 'react-router-dom';
-import config from '../../config';
 import './ResultsList.css';
 import Carousel from '../Carousel/Carousel';
 import Dog from '../../images/dog.jpg';

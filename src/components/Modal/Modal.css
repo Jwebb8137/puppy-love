@@ -8,6 +8,7 @@
   padding-top: 3vh;
   visibility: visible;
 }
+
 .modal.off {
   opacity: 0;
   visibility: hidden;
@@ -21,14 +22,17 @@
   padding: 1rem;
   margin: 0;
 }
+
 .modal .content {
   padding: 1rem;
 }
+
 .modal .actions {
   border-top: 1px solid #ccc;
   background: #fff;
   padding: 2rem 1rem;
 }
+
 .modal .actions button {
   display: flex;
   border: 0;
@@ -53,6 +57,7 @@
   padding: .55rem;
   max-width: 300px;
 }
+
 .modal-sub-heading {
   font-size: 1.2rem;
   margin: 1.25rem auto .15rem;

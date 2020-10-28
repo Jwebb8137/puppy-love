@@ -40,57 +40,52 @@ class ChatList extends Component {
         console.error(err.message)
       }
     }
+    getName();
 
-    getName()
-
-  const chatClient = async (parseRes) => {
-    const { API_ENDPOINT } = config;
-    fetch(`${API_ENDPOINT}chat/token`, {
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      method: 'POST',
-      body: `identity=${encodeURIComponent(parseRes.username)}`
-    })
+    const chatClient = async (parseRes) => {
+      const { API_ENDPOINT } = config;
+      fetch(`${API_ENDPOINT}chat/token`, {
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        method: 'POST',
+        body: `identity=${encodeURIComponent(parseRes.username)}`
+      })
       .then(res => res.json())
       .then(this.setState({username: parseRes.username}))
       .then(this.setState({current_id: parseRes.user_id}))
       .then(data => Chat.create(data.token))
       .then(setupChatClient)
       .catch(handleError);
-  }
-
-  const handleError = error => {
-    console.error(error);
-    this.setState({
-      error: 'Could not load chat.'
-    });
-  }
-
-  const setupChatClient = async (client) => {
-    const updateMessages = messageList => {
+    }
+    
+    const handleError = error => {
+      console.error(error);
       this.setState({
-        messages: messageList,
-        isLoading: false,
-        messageList: true
-      })  
-    }
-    const uid = this.state.current_id;
-    this.client = client;
-    try {
-      const getMessages = await client.getUserChannelDescriptors().then(function(paginator) {
-        const messageList = paginator.items.map(item => {
-          return item
-        })
-        // for (i=0; i<paginator.items.length; i++) {
-        //   var channel = paginator.items[i];
-        //   console.log('Channel: ' + channel.friendlyName);
-        // }
-        console.log(messageList)
-        updateMessages(messageList);
+        error: 'Could not load chat.'
       });
-    } catch (error) {
-      this.handleError(error)
     }
-  }}
+
+    const setupChatClient = async (client) => {
+      const updateMessages = messageList => {
+        this.setState({
+          messages: messageList,
+          isLoading: false,
+          messageList: true
+        })  
+      }
+      const uid = this.state.current_id;
+      this.client = client;
+      try {
+        const getMessages = await client.getUserChannelDescriptors().then(function(paginator) {
+          const messageList = paginator.items.map(item => {
+            return item
+          })
+          updateMessages(messageList);
+        });
+      } catch (error) {
+        this.handleError(error)
+      }
+    }
+  }
 
   render() {
     console.log(this.state.messages)
@@ -109,54 +104,51 @@ class ChatList extends Component {
         </Fragment>
       )
     }
-
-      if (this.state.messages.length < 1) {
-        return (
-          <Fragment>
-          <div className="container h-100 bg-white inbox-container"> 
-            <div className="block">
-              <h2 className="chat-heading"><i class="fas fa-paw pink"></i> Conversations <i class="fas fa-paw pink"></i></h2>
-              <img className="no-message-img" src={Cat} alt="No messages cat" />
-              <span className="helper-text">Looks like you haven't started any conversation yet!</span>
-              <Link to='../browse'><ButtonAlt name='Start Looking' icon='fas fa-city'/></Link>
-            </div>
-            <img src={Logo} className="logo-msg-no"/>
-          </div>
-          </Fragment>  
-        )
-      }
-      
+    if (this.state.messages.length < 1) {
       return (
         <Fragment>
         <div className="container h-100 bg-white inbox-container"> 
           <div className="block">
             <h2 className="chat-heading"><i class="fas fa-paw pink"></i> Conversations <i class="fas fa-paw pink"></i></h2>
-           <span className="helper-text-alt">(Keep conversations going and have fun getting to meet and chat with others!)</span>
+            <img className="no-message-img" src={Cat} alt="No messages cat" />
+            <span className="helper-text">Looks like you haven't started any conversation yet!</span>
+            <Link to='../browse'><ButtonAlt name='Start Looking' icon='fas fa-city'/></Link>
           </div>
-          <div className="message-box">
-            {this.state.messages
-                .map((convo, i) => {
-                const url =`../chat/user?q=${convo.uniqueName}`
-                const count = convo.messagesCount;
-                const unreadCount = convo.lastConsumedMessageIndex === null ? count : count - convo.lastConsumedMessageIndex - 1
-                return (
-                  <Link to={url} className="inbox">
-                    <div className="row inbox-row">
-                      <p><i class="fas fa-paw"></i> {convo.createdBy === this.state.username ? "Conversation" : convo.createdBy}</p>
-                      <span className="unread-count">{unreadCount} Unread</span>
-                      <span className="total-count">{convo.messagesCount} Total</span>
-                    </div>
-                  </Link>
-                  )   
-                })
-              }          
-            <img src={Logo} className="logo-msg"/>
-          </div>
+          <img src={Logo} className="logo-msg-no"/>
         </div>
-      </Fragment>
+        </Fragment>  
       )
-    }
-  
+    }    
+    return (
+      <Fragment>
+      <div className="container h-100 bg-white inbox-container"> 
+        <div className="block">
+          <h2 className="chat-heading"><i class="fas fa-paw pink"></i> Conversations <i class="fas fa-paw pink"></i></h2>
+          <span className="helper-text-alt">(Keep conversations going and have fun getting to meet and chat with others!)</span>
+        </div>
+        <div className="message-box">
+          {this.state.messages
+            .map((convo) => {
+            const url =`../chat/user?q=${convo.uniqueName}`
+            const count = convo.messagesCount;
+            const unreadCount = convo.lastConsumedMessageIndex === null ? count : count - convo.lastConsumedMessageIndex - 1
+            return (
+              <Link to={url} className="inbox">
+                <div className="row inbox-row">
+                  <p><i class="fas fa-paw"></i> {convo.createdBy === this.state.username ? "Conversation" : convo.createdBy}</p>
+                  <span className="unread-count">{unreadCount} Unread</span>
+                  <span className="total-count">{convo.messagesCount} Total</span>
+                </div>
+              </Link>
+              )   
+            })
+          }          
+          <img src={Logo} className="logo-msg"/>
+        </div>
+      </div>
+    </Fragment>
+    )
+  }
 }
 
 export default ChatList;

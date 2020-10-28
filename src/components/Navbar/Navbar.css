@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 header {
   display: flex;
   height: 100%;
@@ -15,27 +16,33 @@ header {
   color: #000;
   z-index: 9999!important;
 }
+
 .brand-logo {
   max-width: 175px;
   float: left;
   padding: 10px 0px;
 }
+
 .brand-logo img {
   max-width: 100%;
 }
+
 .fa-times {
   color: #fff;
 }
+
 .navigation {
   margin: 0px;
   float: right;
   opacity: 1;
   z-index: 9999;
 }
+
 .navigation li {
   list-style: none;
   float: left;
 }
+
 .navigation li {
   color: #000;
   font-family: 'Grandstander', cursive;
@@ -47,11 +54,13 @@ header {
   display: block;
   text-decoration: none;
 }
+
 .navigation li i {
   margin-right: .5em;
   font-size: 20px;
   margin-bottom: 7px;
 }
+
 .show-menu-btn,
 .hide-menu-btn {
   transition: 0.4s;
@@ -59,23 +68,28 @@ header {
   cursor: pointer;
   display: none;
 }
+
 .show-menu-btn {
   margin: 0px;
   float: right;
 }
+
 .show-menu-btn i {
   line-height: 100px;
 }
+
 .navigation a:hover,
 .show-menu-btn:hover,
 .hide-menu-btn:hover {
   color: #000;
 }
+
 #toggle-btn {
   position: absolute;
   visibility: hidden;
   z-index: -1111;
 }
+
 a:hover {
   opacity: .8;
 }
@@ -101,6 +115,7 @@ a:hover {
   .hide-menu-btn {
     display: block;
   }
+  
   .navigation {
     position: fixed;
     width: 100vw;
@@ -111,20 +126,24 @@ a:hover {
     padding: 75px 0px;
     transition: 1s;
   }
+
   .navigation li {
-    background: floralwhite;
-    border-bottom: 1px solid gray;
-    border-top: 1px solid gray;
+    background: #fffaf0;
+    border-bottom: 1px solid #808080;
+    border-top: 1px solid #808080;
     width: 100%;
   }
+
   .navigation li a {
     padding: 15px 15px;
     text-align: left;
   }
+
   .navigation li a i {
     width: auto;
     font-size: 20px;
   }
+
   .hide-menu-btn {
     background: #fa255e;
     position: absolute;
@@ -136,10 +155,12 @@ a:hover {
   .nav-respond {
     top: 0px;
   }
+
   .top-border {
-    border-top: 1px solid gray;
+    border-top: 1px solid #808080;
     margin-top: 25px;
   }
+
   #mobile-logo {
     display: block;
     padding: 12px 8px;
@@ -154,18 +175,23 @@ a:hover {
     position: relative;
     top: 5px;
   }
+
   .navigation li {
     color: #000;
   }
+
   .brand-logo {
     padding: 5px 0;
   }
+
   header {
-    border-bottom: 1px solid gray;
+    border-bottom: 1px solid #808080;
   }
+
   .navigation li{
     font-size: 1rem;
   }
+  
   #mobile-logo {
     display: none;
     width: 200px;

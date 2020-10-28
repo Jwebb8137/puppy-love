@@ -25,7 +25,7 @@ class Home extends React.Component {
           <div>
             <i class="fas fa-paw lg-icon pink"></i>
             <h2 className='sub-heading'>The secret to finding <span className='pink'>LOVE</span>?</h2>
-            <p className='sub-text mt-1'>For pet lovers that's easy! Your furry best friend not only hold's our heart but is going to be your key for finding that special someone!</p>
+            <p className='sub-text mt-1'>For pet lovers that's easy! Your furry best friend not only hold's your heart but is going to be your key for finding that special someone!</p>
             <Link to='signup'><Button name='Sign Up Now' icon='fas fa-paw'/></Link>
           </div>
           <img src={Photo2} className='photo-100' alt="Cute animals"/>

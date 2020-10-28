@@ -5,9 +5,7 @@ import EditSelection from '../EditSelection/EditSelection';
 import './Dashboard.css';
 
 const Dashboard = ({ setAuth }) => {
-
   const { API_ENDPOINT } = config;
-
   const [userInfo, setUserInfo] = useState("");
 
   async function getName() {
@@ -16,11 +14,8 @@ const Dashboard = ({ setAuth }) => {
         method: "GET",
         headers: { token: localStorage.token }
       });
-
       const parseRes = await response.json();
-
       setUserInfo(parseRes)
-
     } catch (err) {
       console.error(err.message)
     }

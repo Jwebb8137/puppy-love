@@ -12,7 +12,6 @@ const DemoCarousel = () => {
   }, []);
 
   const { API_ENDPOINT } = config;
-
   const [profiles, setProfiles] = useState([]);
   const [userInfo, setUserInfo] = useState({});
   const [isLoading, setIsLoading] = useState(true);
@@ -35,11 +34,8 @@ const DemoCarousel = () => {
         method: "GET",
         headers: { token: localStorage.token }
       });
-
       const parseRes = await response.json();
-
       setUserInfo(parseRes)
-
     } catch (err) {
       console.error(err.message)
     }
@@ -59,7 +55,6 @@ const DemoCarousel = () => {
       </div>
     )
   }
-
   return (
     <Carousel showThumbs={false}>
       {profiles

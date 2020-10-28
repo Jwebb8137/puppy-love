@@ -26,7 +26,6 @@ const Signup = ({ setAuth }) => {
   const [previewPetSource, setPreviewPetSource] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [err, setError] = useState("");
-
   const { API_ENDPOINT } = config;
 
   useEffect(() => {
@@ -48,18 +47,13 @@ const Signup = ({ setAuth }) => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body)
       })
-
       const parseRes = await response.json();
       localStorage.setItem("token", parseRes.token);
       setAuth(true);
-      // window.location = "/browse"
-
     } catch (err) {
       console.error(err.message)
     }
   }
-
-  //Profile image file
 
   const handleFileInputChange = (e) => {
     const file = e.target.files[0]
@@ -73,9 +67,7 @@ const Signup = ({ setAuth }) => {
       setPreviewSource(reader.result);
     }
   }
-
-  //Pet image file
-
+  
   const handlePetFileInputChange = (e) => {
     const petFile = e.target.files[0]
     previewPetFile(petFile)

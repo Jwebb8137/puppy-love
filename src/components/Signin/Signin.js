@@ -9,38 +9,32 @@ const SignIn = ({ setAuth }) => {
     username: "",
     passwordInput: ""
   });
-
   const [err, setError] = useState("");
-
   const { API_ENDPOINT } = config;
-
   const { username, passwordInput } = inputs;
-
+  
   const onChange = (e) => {
     setInputs({ ...inputs, [e.target.name]: e.target.value });
   };
 
-    const onSubmitForm = async e => {
-      e.preventDefault();
+  const onSubmitForm = async e => {
+    e.preventDefault();
 
-      try {
-        const body = { username, passwordInput };
-        const response = await fetch(`${API_ENDPOINT}login`, {
-          method: "POST",
-          headers: {"Content-type" : "application/json"},
-          body: JSON.stringify(body)
-        });
-
-        const parseRes = await response.json();
-
-        localStorage.setItem("token", parseRes.token);
-
-        setAuth(true);
-      } catch (err) {
-        console.error(err.message)
-        setError("Wrong username or password, try again!")
-      }
-    };
+    try {
+      const body = { username, passwordInput };
+      const response = await fetch(`${API_ENDPOINT}login`, {
+        method: "POST",
+        headers: {"Content-type" : "application/json"},
+        body: JSON.stringify(body)
+      });
+      const parseRes = await response.json();
+      localStorage.setItem("token", parseRes.token);
+      setAuth(true);
+    } catch (err) {
+      console.error(err.message)
+      setError("Wrong username or password, try again!")
+    }
+  };
 
   return (
     <div className='signin'>

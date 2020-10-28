@@ -10,9 +10,9 @@ import Logo from "../../images/logo-alt.jpg";
 
 function MessageTemplate(props) {
   return (
-      <div className="k-bubble">
-          <div>{props.item.text}</div>
-      </div>
+    <div className="k-bubble">
+      <div>{props.item.text}</div>
+    </div>
   );
 }
 
@@ -80,14 +80,7 @@ class ChatApp extends Component {
 
   setupChatClient(client) {
     const values = queryString.parse(this.props.location.search)
-    console.log(values)
-    const channelName = `${values.q}`;
-    console.log(channelName)
-    // const uid = `${this.props.currentUser*this.props.targetUser}`
     const uid = values.q ? values.q : `${(parseInt(values.target) / 5) * (parseInt(values.user) / 5)}`;
-    console.log(uid)
-    console.log(this.props.currentUser)
-    console.log(this.props.target)
     this.client = client;
     this.client
       .getChannelByUniqueName(uid)
@@ -111,14 +104,9 @@ class ChatApp extends Component {
         this.channel.on('messageAdded', this.messageAdded);
         this.channel.setAllMessagesConsumed();
       })
-      //get user channels
       .then(() => {
         client.getUserChannelDescriptors().then(function(paginator) {
           paginator.items.map(item => console.log(item))
-          // for (i=0; i<paginator.items.length; i++) {
-          //   var channel = paginator.items[i];
-          //   console.log('Channel: ' + channel.friendlyName);
-          // }
         }); 
       })
       .catch(this.handleError);
@@ -175,12 +163,12 @@ class ChatApp extends Component {
 
   uploadButton = (props) => {
     return (
-        <React.Fragment>
-            <input type='file' onChange={this.handleInputChange} style={{display: 'none'}} ref={el => this.fileUpload = el}/>
-            <button className={'k-button k-flat k-button-icon'}  onClick={() => this.fileUpload.click()}>
-                <span className={'k-icon ' + props.icon} style={{fontSize: '20px'}}/>
-            </button>
-        </React.Fragment>
+      <React.Fragment>
+        <input type='file' onChange={this.handleInputChange} style={{display: 'none'}} ref={el => this.fileUpload = el}/>
+        <button className={'k-button k-flat k-button-icon'}  onClick={() => this.fileUpload.click()}>
+          <span className={'k-icon ' + props.icon} style={{fontSize: '20px'}}/>
+        </button>
+      </React.Fragment>
     )
   }
 

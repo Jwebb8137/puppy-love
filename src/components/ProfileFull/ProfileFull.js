@@ -61,9 +61,6 @@ class ProfileFull extends React.Component {
   }  
 
   render() {
-    // const currentUserId = this.props.match.params.userid;
-    // const url =`../chat/user?q=${convo.uniqueName}`
-    console.log(this.state)
     const userChat = `/chat/user?user=${this.state.current_id}&target=${this.state.profileInfo.user_id}`;
     const {first_name, last_name, age, hobbies, pet_name, pet_type, pet_hobbies, pet_meet_description, username, description, gender, seeking_gender, photo_url, pet_description, photo_pet_url} = this.state.profileInfo;
     const petIcon = `fas fa-${pet_type}`;
