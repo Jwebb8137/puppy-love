@@ -1,68 +1,47 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h1>Puppy Love Dating App</h1>
 
-## Available Scripts
+<img src="./src/images/logo-alt.jpg" width="200"/>
 
-In the project directory, you can run:
+  <p>With all of the dating sites geared towards specific interests or lifestyles why hasn't this been thought of sooner? Wanting to give pet lovers a place they can connect with others I created PuppyLove. A dating app geared towards individuals with a deep passion for all things animals!</p>
+  
+## PERN Stack
+<p>PuppyLove was built using the PERN stack as the foundation of the application. The application includes JWT authentication for login and access, a messaging feature using Twilio's Chat API (limited functionality), and image uploads are handled using Cloudinary's API. Designed with a mobile first approach the application includes a Carousel feature to browse users as well as responsive navigation and layouts.</p>
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Login Authentication
+<p>Using JWT, bcrypt, & form data users are able to create profiles, log in & out, and are granted limited access within the applicaiton before being authenticated.</p>
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+<p>
+  <img src="./src/images/20201027_233801.jpg" class="m-5 d-inline-block" width="300"/>
+  <img src="./src/images/20201027_233825.jpg" class="m-5 d-inline-block" width="300"/>
+</p>
 
-### `npm test`
+### Chat & Messaging
+<p>Users have the ability to browse and message other users they are interested in talking to. Users are also able to access their active conversations through the messages feature within the application.</p>
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<p>
+  <img src="./src/images/20201028_193605.jpg" class="m-5 d-inline-block" width="300"/>
+  <img src="./src/images/20201028_193618.jpg" class="m-5 d-inline-block" width="300"/>
+</p>
+ 
+### User Profiles
+<p>Users are able to create profiles that show off who they are, their interests, and photos of themselves and their pets. Users are also able to create sub-profiles for their animals which are display on the user's profile. Users also have access to a user dashboard that allows them to re-upload their main profile photo and gives a summary of their stored information.</p>
 
-### `npm run build`
+<p>
+  <img src="./src/images/20201027_233904.jpg" class="m-5 d-inline-block" width="300"/>
+  <img src="./src/images/20201027_233915.jpg" class="m-5 d-inline-block" width="300"/>
+</p>
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Browsing Profiles
+<p>Boasting a carousel design users are able to browse through other user profiles while having the ability to view their full profile, pet's sub-profile, and message them.</p>
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+<p>
+  <img src="./src/images/20201027_233851.jpg" class="m-5 d-inline-block" width="300"/>
+  <img src="./src/images/Screenshot_20201028-194114_Chrome.jpg" class="m-5 d-inline-block" width="300"/>
+</p>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Additional Information
+<p>This application was designed and developed as part of a full-stack project that required developing an application using the PERN stack. As my first full-stack project I expanded upon those requirements by including additional features and functionality within the application such as login authentication & use of 3rd party API's (Twilio & Cloudinary). Also worth nothing is that while working with Twilio's Chat API I did run into issues that limited my ability to incorporate a fully functioning chat feature within the application. While is does allow user's connected into the same chat room to real-time communicate and send messages to other users there is limited functionality as of this writing related to receiving messages and retrieving conversations.</p>  
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
