@@ -42,7 +42,7 @@ const EditSelection = (props) => {
       const body = { previewSource, user_id };
       // eslint-disable-next-line
       const response = await fetch(
-        `${API_ENDPOINT}/api/users/${user_id}`,
+        `${API_ENDPOINT}/api/users/profile-pic/${user_id}`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
