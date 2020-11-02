@@ -22,7 +22,7 @@ const SignIn = ({ setAuth }) => {
 
     try {
       const body = { username, passwordInput };
-      const response = await fetch(`${API_ENDPOINT}login`, {
+      const response = await fetch(`${API_ENDPOINT}/api/login`, {
         method: "POST",
         headers: {"Content-type" : "application/json"},
         body: JSON.stringify(body)

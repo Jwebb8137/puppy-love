@@ -10,7 +10,7 @@ const Dashboard = ({ setAuth }) => {
 
   async function getName() {
     try {
-      const response = await fetch(`${API_ENDPOINT}dashboard`, {
+      const response = await fetch(`${API_ENDPOINT}/api/dashboard`, {
         method: "GET",
         headers: { token: localStorage.token }
       });

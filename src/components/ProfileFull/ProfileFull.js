@@ -30,7 +30,7 @@ class ProfileFull extends React.Component {
 
     const getName = async () => {
       try {
-        const response = await fetch(`${API_ENDPOINT}dashboard`, {
+        const response = await fetch(`${API_ENDPOINT}/api/dashboard`, {
           method: "GET",
           headers: { token: localStorage.token }
         });
@@ -46,7 +46,7 @@ class ProfileFull extends React.Component {
 
     const getProfile = async () => {
       try {   
-        const response = await fetch(`${API_ENDPOINT}users/${currentUserId}`)
+        const response = await fetch(`${API_ENDPOINT}/api/users/${currentUserId}`)
         const jsonData = await response.json()
         setProfileInfo(jsonData)
       } catch (err) {

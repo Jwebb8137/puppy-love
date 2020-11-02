@@ -18,7 +18,7 @@ const DemoCarousel = () => {
 
   const getProfiles = async () => {
     try {   
-      const response = await fetch(`${API_ENDPOINT}users`);
+      const response = await fetch(`${API_ENDPOINT}/api/users`);
       const jsonData = await response.json();
 
       setProfiles(jsonData);
@@ -30,7 +30,7 @@ const DemoCarousel = () => {
 
   async function getUser() {
     try {
-      const response = await fetch(`${API_ENDPOINT}dashboard`, {
+      const response = await fetch(`${API_ENDPOINT}/api/dashboard`, {
         method: "GET",
         headers: { token: localStorage.token }
       });
