@@ -133,7 +133,7 @@ class ChatList extends Component {
             return (
               <Conversation 
                 convo={convo} 
-                index={i} 
+                key={i} 
                 id={convo.uniqueName}
                 url={url}
                 unreadCount={unreadCount}

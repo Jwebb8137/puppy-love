@@ -1,4 +1,4 @@
-import React, { useEffect, useState, Fragment } from 'react';
+import React, { useEffect, useState } from 'react';
 import {Link} from 'react-router-dom';
 import config from '../../config';
 
@@ -10,6 +10,7 @@ const Conversation = (props) => {
 
   const { API_ENDPOINT } = config;
   const [convoData, setConvoData] = useState({});
+  // eslint-disable-next-line
   const [convoId, setConvoId] = useState(props.id);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -24,6 +25,7 @@ const Conversation = (props) => {
       setIsLoading(false)
     } catch (err) {
         console.error(err.message)
+        setIsLoading(false)
     }
   }
 
@@ -43,9 +45,9 @@ const Conversation = (props) => {
   }
 
   return (
-    <Link to={props.url} key={props.i} className="inbox">
+    <Link to={props.url} className="inbox">
       <div className="row inbox-row">
-       <p><i className="fas fa-paw"></i> {convoData.chat_member_secondary}</p>
+       <p><i className="fas fa-paw"></i> {convoData.chat_member_secondary ? convoData.chat_member_secondary : "Conversation"}</p>
        <span className="unread-count">{props.unreadCount} Unread</span>
        <span className="total-count">{props.convo.messagesCount} Total</span>
       </div>
