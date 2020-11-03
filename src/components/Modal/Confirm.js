@@ -42,7 +42,7 @@ export default class Confirm extends React.Component {
         <div className="container delete-content">
           <p>There is no way to recover your account once it is deleted. To confirm your decision press delete below.</p>
           <button id="delete-btn" onClick={e => this.deleteAccount(e)} className="toggle-button btn font-alt mt-10">
-            Delete <i class="far fa-trash-alt"></i>
+            Delete <i className="far fa-trash-alt"></i>
           </button>
         </div>
       </div>

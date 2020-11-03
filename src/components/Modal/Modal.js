@@ -25,11 +25,11 @@ export default class Modal extends React.Component {
             {this.props.petDescription}
           </div>
           <div>
-           <h3 className="profile-sub-heading">My <span className="pink">Hobbies! </span><i className="fas fa-hiking"></i></h3>
+           <h3 className="profile-sub-heading mb-1">My <span className="pink">Hobbies! </span><i className="fas fa-hiking"></i></h3>
             {this.props.petHobbies}
           </div>
           <div>
-            <h3 className="profile-sub-heading">Our <span className="pink">Story! </span><i className="fas fa-heartbeat"></i></h3>
+            <h3 className="profile-sub-heading mb-1">Our <span className="pink">Story! </span><i className="fas fa-heartbeat"></i></h3>
             {this.props.petMeet}
             </div>
         </div>
