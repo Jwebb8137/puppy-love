@@ -38,7 +38,7 @@ const Signup = ({ setAuth }) => {
     e.preventDefault();
 
     if(!previewSource && !previewPetSource) {
-      setError("* A Picture Is Required!")
+      setError("* A Picture Is Required! / Check to make sure everything is filled out!")
       return;
     }  
     try {
@@ -268,6 +268,7 @@ const Signup = ({ setAuth }) => {
           </div>
         </div>
         <button typeof="submit" id="profile-submit" className="btn-sm btn-sm-bg-alt">Get Started <i className="fas fa-caret-right"></i></button>
+        <div className="err-msg">{err}</div>
       </form>
     </div>
   )
