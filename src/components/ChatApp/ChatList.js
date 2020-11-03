@@ -5,6 +5,7 @@ import config from '../../config';
 import "./ChatList.css";
 import Logo from "../../images/logo-alt.jpg";
 import Cat from "../../images/no-messages.jpg";
+import Conversation from "./Conversation";
 import ButtonAlt from "../../components/Buttons/ButtonAlt";
 
 require('dotenv').config();
@@ -27,13 +28,11 @@ class ChatList extends Component {
     const { API_ENDPOINT } = config;
     async function getName() {
       try {
-        const response = await fetch(`${API_ENDPOINT}dashboard`, {
+        const response = await fetch(`${API_ENDPOINT}/api/dashboard`, {
           method: "GET",
           headers: { token: localStorage.token }
-        });
-  
+        }); 
         const parseRes = await response.json();
-  
         chatClient(parseRes)
       } catch (err) {
         console.error(err.message)
@@ -43,7 +42,7 @@ class ChatList extends Component {
 
     const chatClient = async (parseRes) => {
       const { API_ENDPOINT } = config;
-      fetch(`${API_ENDPOINT}chat/token`, {
+      fetch(`${API_ENDPOINT}/chat/token`, {
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         method: 'POST',
         body: `identity=${encodeURIComponent(parseRes.username)}`
@@ -132,13 +131,13 @@ class ChatList extends Component {
             const count = convo.messagesCount;
             const unreadCount = convo.lastConsumedMessageIndex === null ? count : count - convo.lastConsumedMessageIndex - 1
             return (
-              <Link to={url} key={i} className="inbox">
-                <div className="row inbox-row">
-                  <p><i className="fas fa-paw"></i> {convo.createdBy === this.state.username ? "Conversation" : convo.createdBy}</p>
-                  <span className="unread-count">{unreadCount} Unread</span>
-                  <span className="total-count">{convo.messagesCount} Total</span>
-                </div>
-              </Link>
+              <Conversation 
+                convo={convo} 
+                index={i} 
+                id={convo.uniqueName}
+                url={url}
+                unreadCount={unreadCount}
+              />
               )   
             })
           }          

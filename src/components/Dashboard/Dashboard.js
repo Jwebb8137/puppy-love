@@ -2,11 +2,13 @@ import React, {Fragment, useState, useEffect} from "react";
 import {Link} from 'react-router-dom';
 import config from '../../config';
 import EditSelection from '../EditSelection/EditSelection';
+import Confirm from '../Modal/Confirm';
 import './Dashboard.css';
 
 const Dashboard = ({ setAuth }) => {
   const { API_ENDPOINT } = config;
   const [userInfo, setUserInfo] = useState("");
+  const [show, setShow] = useState(false);
 
   async function getName() {
     try {
@@ -28,6 +30,10 @@ const Dashboard = ({ setAuth }) => {
     getName()
     // eslint-disable-next-line
   }, []);
+
+  const showModal = () => {
+    setShow(!show)
+  };
 
   return (
     <Fragment>
@@ -82,6 +88,10 @@ const Dashboard = ({ setAuth }) => {
               <p>Pet Description: <span className="font-alt">{pet_description}</span></p>
             </div>
           </div>
+          <div className="modal-delete-container">
+            <Confirm onClose={showModal} show={show} user={userInfo.user_id}></Confirm>
+          </div>
+          <button id="delete-account" className="delete-btn" onClick={showModal}>Delete Account <i className="far fa-trash-alt"></i></button>
         </div>
       </div>
     </Fragment>

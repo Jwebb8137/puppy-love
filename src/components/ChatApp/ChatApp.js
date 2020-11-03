@@ -4,7 +4,8 @@ import config from '../../config';
 import './ChatApp.css';
 import { Chat as ChatUI } from '@progress/kendo-react-conversational-ui';
 import {withRouter} from 'react-router-dom';
-import queryString from 'query-string'
+// eslint-disable-next-line
+import queryString, { parse } from 'query-string'
 import GoBackButton from '../Buttons/GoBackButton';
 import Logo from "../../images/logo-alt.jpg";
 
@@ -16,6 +17,8 @@ function MessageTemplate(props) {
   );
 }
 
+const { API_ENDPOINT } = config;
+
 class ChatApp extends Component {
   constructor(props) {
     super(props);
@@ -24,6 +27,7 @@ class ChatApp extends Component {
       isLoading: true,
       messages: [],
       target_name: "",
+      target_username: "",
       target_petName: "",
       target_id: ""
     };
@@ -42,7 +46,7 @@ class ChatApp extends Component {
   componentDidMount() {
     const { API_ENDPOINT } = config;
     const values = queryString.parse(this.props.location.search)
-    fetch(`${API_ENDPOINT}chat/token`, {
+    fetch(`${API_ENDPOINT}/chat/token`, {
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       method: 'POST',
       body: `identity=${encodeURIComponent(this.props.username)}`
@@ -54,7 +58,8 @@ class ChatApp extends Component {
 
       const getTargetInfo = async () => {
         try {
-          const response = await fetch(`${API_ENDPOINT}target-info?target=${values.target}`, {
+          // eslint-disable-next-line
+          const response = await fetch(`${API_ENDPOINT}/api/target-info?target=${values.target}`, {
             method: "GET",
             headers: { token: localStorage.token }
           });
@@ -62,7 +67,8 @@ class ChatApp extends Component {
           this.setState({
             target_id: parseRes.user_id,
             target_name: parseRes.first_name,
-            target_petName: parseRes.pet_name
+            target_petName: parseRes.pet_name,
+            target_username: parseRes.username
           })
         } catch (err) {
           console.error(err.message)
@@ -81,6 +87,24 @@ class ChatApp extends Component {
   setupChatClient(client) {
     const values = queryString.parse(this.props.location.search)
     const uid = values.q ? values.q : `${(parseInt(values.target) / 5) * (parseInt(values.user) / 5)}`;
+    
+    const chatInfo = async () => {
+      try {
+        const chatMemberSecondary = this.state.target_username;
+        const chatMemberOrigin = this.props.username;
+        const body = { uid, chatMemberOrigin, chatMemberSecondary };
+        // eslint-disable-next-line
+        const response = await fetch(`${API_ENDPOINT}/api/chatroom/info`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(body)
+        })
+      } catch (err) {
+        console.error(err.message)
+      }
+    }
+
+    chatInfo();
     this.client = client;
     this.client
       .getChannelByUniqueName(uid)

@@ -1,6 +1,7 @@
 import Chat from "./Chat";
 import ChatApp from "./ChatApp";
 import ChatList from "./ChatList";
+import Conversation from "./Conversation";
 import React from 'react';
 import { shallow } from 'enzyme';
 
@@ -20,4 +21,8 @@ it("renders without crashing", () => {
 
 it("renders without crashing", () => {
   shallow(<ChatList />);
+});
+
+it("renders without crashing", () => {
+  shallow(<Conversation />);
 });

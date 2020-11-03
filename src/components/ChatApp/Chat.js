@@ -23,7 +23,7 @@ class Chat extends Component {
     const { API_ENDPOINT } = config;
     const getCurrentId = async () => {
       try {
-        const response = await fetch(`${API_ENDPOINT}dashboard`, {
+        const response = await fetch(`${API_ENDPOINT}/api/dashboard`, {
           method: "GET",
           headers: { token: localStorage.token }
         });
@@ -40,7 +40,7 @@ class Chat extends Component {
 
     const getTargetInfo = async () => {
       try {
-        const response = await fetch(`${API_ENDPOINT}target-info?target=${this.state.target_id}`, {
+        const response = await fetch(`${API_ENDPOINT}/api/target-info?target=${this.state.target_id}`, {
           method: "GET",
           headers: { token: localStorage.token }
         });

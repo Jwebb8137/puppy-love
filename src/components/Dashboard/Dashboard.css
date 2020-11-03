@@ -54,6 +54,13 @@
   justify-content: center;
 }
 
+#delete-account {
+  border: none;
+  font-size: 1.25rem;
+  margin: 1rem;
+  padding: 12px 20px;
+}
+
 @media (min-width: 768px) { 
   .dash-img {
     border-radius: 5px;
