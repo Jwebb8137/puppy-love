@@ -65,8 +65,10 @@
 }
 
 .profile-sub-text {
-  flex: 1;
+  flex: 1 1;
   padding: .4rem;
+  width: 90vw;
+  margin: auto;
 }
 
 .profile-sub-text > span{
