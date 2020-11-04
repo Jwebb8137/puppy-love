@@ -67,7 +67,6 @@ const Signup = ({ setAuth }) => {
     reader.readAsDataURL(file);
     reader.onloadend = () => {
       setPreviewSource(reader.result);
-      console.log(reader.result)
     }
   }
 

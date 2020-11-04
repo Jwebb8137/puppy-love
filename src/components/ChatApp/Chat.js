@@ -38,13 +38,14 @@ class Chat extends Component {
       }
     }
 
+    
     const getTargetInfo = async () => {
       try {
         const response = await fetch(`${API_ENDPOINT}/api/target-info?target=${this.state.target_id}`, {
           method: "GET",
           headers: { token: localStorage.token }
         });
-        const parseRes = await response.json();
+        const parseRes = await JSON.parse(JSON.stringify(response));
         this.setState({
           target_name: parseRes.first_name,
           target_petName: parseRes.pet_name,

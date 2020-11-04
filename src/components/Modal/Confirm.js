@@ -11,7 +11,6 @@ export default class Confirm extends React.Component {
 
   deleteAccount = async (e) => {
     const user = this.props.user;
-    console.log(user)
     try {
       // eslint-disable-next-line
       const response = await fetch(`${API_ENDPOINT}/api/users/${user}`, {
