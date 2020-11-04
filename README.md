@@ -10,7 +10,7 @@
 ## Features
 
 ### Login Authentication
-<p>Using JWT, bcrypt, & form data users are able to create profiles, log in & out, and are granted limited access within the applicaiton before being authenticated.</p>
+<p>Using JWT, bcrypt, & form data users are able to create profiles, log in & out, and are granted limited access within the application before being authenticated.</p>
 
 <p>
   <img src="./src/images/20201027_233801.jpg" class="m-5 d-inline-block" width="300"/>
