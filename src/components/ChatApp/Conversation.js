@@ -20,7 +20,7 @@ const Conversation = (props) => {
         method: "GET",
         headers: { token: localStorage.token }
       })
-      const jsonData = await JSON.stringify(response);
+      const jsonData = await response.json();
       setConvoData(jsonData);
       setIsLoading(false)
     } catch (err) {
