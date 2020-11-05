@@ -49,7 +49,7 @@ const Signup = ({ setAuth }) => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body)
       })
-      const parseRes = await response.json();
+      const parseRes = await JSON.parse(JSON.stringify(response));
       localStorage.setItem("token", parseRes.token);
       setAuth(true);
     } catch (err) {
