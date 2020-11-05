@@ -93,7 +93,7 @@ class ChatApp extends Component {
         const chatMemberSecondary = this.state.target_username;
         const chatMemberOrigin = this.props.username;
         const body = { uid, chatMemberOrigin, chatMemberSecondary };
-        // eslint-disable-next-line
+        console.log = console.warn = console.error = () => {};
         const response = await fetch(`${API_ENDPOINT}/api/chatroom/info`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
