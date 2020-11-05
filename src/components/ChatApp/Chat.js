@@ -21,6 +21,7 @@ class Chat extends Component {
 
   componentDidMount() {
     const { API_ENDPOINT } = config;
+    console.log = console.warn = console.error = () => {};
     const getCurrentId = async () => {
       try {
         const response = await fetch(`${API_ENDPOINT}/api/dashboard`, {
