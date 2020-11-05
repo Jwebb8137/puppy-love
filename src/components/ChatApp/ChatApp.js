@@ -63,7 +63,7 @@ class ChatApp extends Component {
             method: "GET",
             headers: { token: localStorage.token }
           });
-          const parseRes = await JSON.parse(JSON.stringify(response));
+          const parseRes = await response.json();
           this.setState({
             target_id: parseRes.user_id,
             target_name: parseRes.first_name,
@@ -110,6 +110,7 @@ class ChatApp extends Component {
       .getChannelByUniqueName(uid)
       .then(channel => channel)
       .catch(error => {
+        console.log(error)
         if (error.body.code === 50300) {
           return this.client.createChannel({ uniqueName: uid });
         } else {
