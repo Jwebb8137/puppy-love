@@ -24,6 +24,7 @@ function App() {
   }
 
   async function isAuth() {
+    console.log = console.warn = console.error = () => {};
     try {
       const response = await fetch(`${API_ENDPOINT}/api/is-verified`, {
         method: "GET",
