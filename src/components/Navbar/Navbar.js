@@ -2,6 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import './Navbar.css';
 import Logo from '../../images/logo.jpg';
+import LogoAlt from '../../images/Icon.png';
 
 export default class Navbar extends React.Component {
   handleMenu = () => {
@@ -50,7 +51,12 @@ export default class Navbar extends React.Component {
             <Link to='/chatlist/user'><li onClick={this.handleMenu}><i className="fas fa-user"></i> Messages</li></Link>
             <label htmlFor="toggle-btn" className="hide-menu-btn" onClick={this.handleMenu}><i className="fas fa-times"></i></label>
             <Link to='/signin'><button id="nav-logout" onClick={this.handleMenu} className="dash-btn">Login <i className="fas fa-sign-in-alt"></i></button></Link>
-            <img src={Logo} id="mobile-logo" alt="Puppy Love Logo"/>
+            <img src={LogoAlt} id="mobile-logo" alt="Puppy Love Logo"/>
+            <img src={LogoAlt} id="mobile-logo" alt="Puppy Love Logo"/>
+            <img src={LogoAlt} id="mobile-logo" alt="Puppy Love Logo"/>
+            <img src={LogoAlt} id="mobile-logo" alt="Puppy Love Logo"/>
+            <img src={LogoAlt} id="mobile-logo" alt="Puppy Love Logo"/>
+            <img src={LogoAlt} id="mobile-logo" alt="Puppy Love Logo"/>
           </ul>
           <label htmlFor="toggle-btn" className="show-menu-btn"><i className="fas fa-bars" onClick={this.handleMenu}></i></label>
         </nav>

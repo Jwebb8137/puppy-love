@@ -162,9 +162,10 @@ a:hover {
   }
 
   #mobile-logo {
-    display: block;
+    display: inline-block;
+    margin-top: 10px;
     padding: 12px 8px;
-    width: 200px;
+    width: 50px;
   }
 }
 
