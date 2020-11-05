@@ -44,7 +44,7 @@
 ### Test it out!
 <p>Below are two testable accounts that show off the different features of the application. Chats have already been created between the two accounts to allow real-time testing of the chat feature as well!
 <p>Username: testme1 / Password: Testing123<p>
-<p>Username: testme2 / Password: Testing123<p>
+<p>Username: useme2test / Password: Testing123<p>
 <p>( Please do not delete the test accounts )</p>
 
 ## Additional Information
