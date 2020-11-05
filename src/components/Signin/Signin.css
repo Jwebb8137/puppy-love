@@ -51,11 +51,11 @@ input:not([type=submit]):valid {
 }
 
 input:not([type=submit]):invalid:required {
-  background: #fff url('http://www.developerdrive.com/wp-content/uploads/2013/08/asterisk1.png') no-repeat right top; 
+  background: #fff url('https://www.developerdrive.com/wp-content/uploads/2013/08/asterisk1.png') no-repeat right top; 
 }
 
 input:not([type=submit]):valid:required {
-  background: #fff url('http://www.developerdrive.com/wp-content/uploads/2013/08/asterisk1.png') no-repeat right top; 
+  background: #fff url('https://www.developerdrive.com/wp-content/uploads/2013/08/asterisk1.png') no-repeat right top; 
 }
 
 input:not([type=submit]):optional {
