@@ -19,7 +19,7 @@ const DemoCarousel = () => {
   const getProfiles = async () => {
     try {   
       const response = await fetch(`${API_ENDPOINT}/api/users`);
-      const jsonData = await JSON.parse(JSON.stringify(response));
+      const jsonData = await response.json();
 
       setProfiles(jsonData);
       setIsLoading(false)
@@ -34,7 +34,7 @@ const DemoCarousel = () => {
         method: "GET",
         headers: { token: localStorage.token }
       });
-      const parseRes = await JSON.parse(JSON.stringify(response));
+      const parseRes = await response.json();
       setUserInfo(parseRes)
     } catch (err) {
       console.error(err.message)

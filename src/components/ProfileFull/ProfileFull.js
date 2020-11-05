@@ -35,7 +35,7 @@ class ProfileFull extends React.Component {
           headers: { token: localStorage.token }
         });
   
-        const parseRes = await JSON.parse(JSON.stringify(response));
+        const parseRes = await response.json();
         this.setState({
           current_id: parseRes.user_id
         })
@@ -47,7 +47,7 @@ class ProfileFull extends React.Component {
     const getProfile = async () => {
       try {   
         const response = await fetch(`${API_ENDPOINT}/api/users/${currentUserId}`)
-        const jsonData = await JSON.parse(JSON.stringify(response));
+        const jsonData = await response.json()
         setProfileInfo(jsonData)
       } catch (err) {
           console.error(err.message)

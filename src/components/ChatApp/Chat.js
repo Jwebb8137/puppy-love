@@ -27,7 +27,7 @@ class Chat extends Component {
           method: "GET",
           headers: { token: localStorage.token }
         });
-        const parseRes = await JSON.parse(JSON.stringify(response));
+        const parseRes = await response.json();
         this.setState({
           current_id: parseRes.user_id,
           username: parseRes.username,
@@ -45,7 +45,7 @@ class Chat extends Component {
           method: "GET",
           headers: { token: localStorage.token }
         });
-        const parseRes = await JSON.parse(JSON.stringify(response));
+        const parseRes = await JSON.stringify(response);
         this.setState({
           target_name: parseRes.first_name,
           target_petName: parseRes.pet_name,
