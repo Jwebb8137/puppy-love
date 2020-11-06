@@ -10,7 +10,7 @@
 ## Features
 
 ### Login Authentication
-<p>Using JWT, bcrypt, & form data users are able to create profiles, log in & out, and are granted limited access within the applicaiton before being authenticated.</p>
+<p>Using JWT, bcrypt, & form data users are able to create profiles, log in & out, and are granted limited access within the application before being authenticated.</p>
 
 <p>
   <img src="./src/images/20201027_233801.jpg" class="m-5 d-inline-block" width="300"/>
@@ -43,8 +43,8 @@
 
 ### Test it out!
 <p>Below are two testable accounts that show off the different features of the application. Chats have already been created between the two accounts to allow real-time testing of the chat feature as well!
-<p>Username: testaccount1 / Password: Testing123<p>
 <p>Username: testme1 / Password: Testing123<p>
+<p>Username: useme2test / Password: Testing123<p>
 <p>( Please do not delete the test accounts )</p>
 
 ## Additional Information
